@@ -1,0 +1,16 @@
+user_id,username,platform,is_expert,is_verified_purchase,reputation_score,total_reviews
+user_001,TechReviewer92,Reddit,true,false,0.92,245
+user_002,JohnDoe_UK,Amazon,false,true,0.78,34
+user_003,@TechGuru2026,Twitter,true,false,0.85,1200
+user_004,SarahM_Designer,Amazon,false,true,0.88,56
+user_005,Dell_Support_Staff,Dell Forums,true,false,0.95,890
+user_006,GamingLaptopFan,YouTube,true,false,0.84,167
+user_007,PriyaNegi_India,Amazon,false,true,0.82,28
+user_008,DevOpsEngineer,Stack Overflow,true,false,0.91,340
+user_009,CasualBuyer,Amazon,false,true,0.71,12
+user_010,@TechJournalist,Twitter,true,false,0.89,890
+user_011,BusinessUser123,Best Buy,false,true,0.75,18
+user_012,ITAdmin_Corp,Dell Forums,true,false,0.90,456
+user_013,GamerDude,Reddit,false,true,0.68,45
+user_014,WorkstationPro,YouTube,true,false,0.87,234
+user_015,OfficeWorker,Trustpilot,false,true,0.73,9

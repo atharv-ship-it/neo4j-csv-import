@@ -1,0 +1,11 @@
+solution_id,type,description,source_type,effectiveness,confirmation_count,implementation_complexity
+sol_001,BIOS_Setting_Change,"Disable CPU power management in BIOS settings to reduce thermal load",Community_Workaround,0.72,18,Easy
+sol_002,Firmware_Update,"Update BIOS to latest version (fixes thermal throttling and performance issues)",Vendor_Official,0.89,56,Moderate
+sol_003,Thermal_Repaste,"Replace factory thermal paste with high-quality paste (e.g., Thermal Grizzly, PTM7950)",Community_Workaround,0.85,34,Hard
+sol_004,Driver_Update,"Download specific NVIDIA/Intel driver version from Dell support to fix conflicts",Vendor_Official,0.94,67,Easy
+sol_005,Software_Tool,"Use HWiNFO, ThrottleStop, or similar tools to monitor and control thermals",Community_Workaround,0.68,22,Moderate
+sol_006,Hardware_Reset,"Perform hard reset by holding power button for 15-20 seconds",Vendor_Official,0.76,45,Easy
+sol_007,Warranty_Replacement,"Contact Dell support for warranty replacement of defective component",Vendor_Official,0.82,29,Easy
+sol_008,Battery_Optimization,"Enable battery saver mode, adjust BIOS battery charge configuration",Vendor_Official,0.65,31,Easy
+sol_009,Undervolting,"Undervolt CPU/GPU using XTU or similar tools to reduce heat",Community_Workaround,0.79,28,Moderate
+sol_010,Power_Management_Reset,"Reset Windows power management settings using PowerCFG commands",Vendor_Official,0.71,19,Moderate
