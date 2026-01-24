@@ -1,0 +1,16 @@
+issue_id,type,severity,description,first_reported_date,status,credibility_score,total_report_count
+issue_001,Overheating,High,"Device runs hot under sustained load, thermal throttling occurs",2025-12-15,Open,0.88,45
+issue_002,Battery_Drain,Medium,"Battery drains faster than advertised, inconsistent battery life",2025-11-20,Open,0.82,28
+issue_003,Display_Issues,Medium,"Screen flicker, display problems, color issues",2025-10-05,Open,0.79,18
+issue_004,Driver_Conflict,High,"GPU/NVIDIA driver crashes with Windows 11 updates",2025-09-10,Acknowledged_by_Vendor,0.91,22
+issue_005,Build_Quality,Medium,"Chassis creaking, hinge issues, structural problems",2025-11-01,Open,0.76,15
+issue_006,Keyboard_Issue,Low,"Keys not registering, keyboard responsiveness problems",2025-12-20,Open,0.74,12
+issue_007,Fan_Noise,Low,"Fan spins loudly even during light tasks",2025-12-01,Open,0.80,19
+issue_008,Trackpad_Responsiveness,Low,"Trackpad becomes unresponsive, gesture issues",2026-01-05,Open,0.72,8
+issue_009,Warranty_Service,Medium,"Slow Dell support response, warranty claim delays",2025-10-15,Acknowledged,0.85,25
+issue_010,Charging_Issues,High,"Laptop not charging properly, slow charging, adapter recognition problems",2025-11-28,Open,0.83,16
+issue_011,CMOS_Battery,Medium,"CMOS battery failure causing date/time reset and boot issues",2025-09-22,Acknowledged_by_Vendor,0.87,11
+issue_012,Performance_Throttling,High,"CPU/GPU throttles unexpectedly even at normal temperatures",2025-12-10,Open,0.84,14
+issue_013,BIOS_Bug,High,"BIOS issues causing CPU frequency scaling problems",2025-10-18,Partially_Fixed,0.89,9
+issue_014,Docking_Station,Medium,"USB-C docking station compatibility issues",2025-11-12,Open,0.78,10
+issue_015,Monitor_Defects,High,"External monitor defects, HDR issues, dead pixels",2025-10-25,Open,0.81,7
