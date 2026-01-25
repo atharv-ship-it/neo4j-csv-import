@@ -34,7 +34,7 @@ app.post("/api/query", async (req, res) => {
     });
   }
   try {
-    const { question } = req.body;
+    const { question, conversationHistory = [] } = req.body;
 
     if (!question || typeof question !== "string") {
       return res.status(400).json({
@@ -42,8 +42,17 @@ app.post("/api/query", async (req, res) => {
       });
     }
 
-    console.log(`[${new Date().toISOString()}] Query: "${question}"`);
-    const result = await answerUserQuery(question);
+    // Trim history to last 6 messages and sanitize
+    const trimmedHistory = conversationHistory
+      .slice(-6)
+      .filter(msg => msg.role && msg.content)
+      .map(msg => ({
+        role: msg.role === 'user' ? 'user' : 'assistant',
+        content: String(msg.content).slice(0, 500) // Cap each message to 500 chars
+      }));
+
+    console.log(`[${new Date().toISOString()}] Query: "${question}" (history: ${trimmedHistory.length} msgs)`);
+    const result = await answerUserQuery(question, trimmedHistory);
 
     if (result.error) {
       return res.status(400).json(result);

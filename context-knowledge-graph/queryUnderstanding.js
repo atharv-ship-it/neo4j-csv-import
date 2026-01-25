@@ -241,17 +241,15 @@ function fillTemplate(cypherTemplate, params) {
 /**
  * LLM fallback: generate Cypher when no template matches
  */
-async function generateCypher(question) {
+async function generateCypher(question, conversationHistory = []) {
   const schema = await getSchema();
   const schemaDoc = schema.domainGuidance;
 
-  const response = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
-    temperature: 0,
-    messages: [
-      {
-        role: "system",
-        content: `You generate ONLY Cypher queries for Neo4j. Return ONLY the query.
+  // Build messages array with conversation context
+  const messages = [
+    {
+      role: "system",
+      content: `You generate ONLY Cypher queries for Neo4j. Return ONLY the query.
 
 ${schemaDoc}
 
@@ -261,10 +259,24 @@ Rules:
 3. Use toLower() for case-insensitive text search
 4. Use DISTINCT for relationship counts
 5. When filtering by severity, use exact values from the schema (e.g., "high", "medium", "low")
-6. When filtering by product, platform, or type, refer to the actual values listed in the schema`,
-      },
-      { role: "user", content: question },
-    ],
+6. When filtering by product, platform, or type, refer to the actual values listed in the schema
+7. If the user references something from conversation history (e.g., "that", "those", "it"), use context to understand what they mean`,
+    },
+  ];
+
+  // Inject last 4 messages of conversation history for context
+  if (conversationHistory.length > 0) {
+    const recentHistory = conversationHistory.slice(-4);
+    messages.push(...recentHistory);
+  }
+
+  // Add current question
+  messages.push({ role: "user", content: question });
+
+  const response = await openai.chat.completions.create({
+    model: "gpt-4o-mini",
+    temperature: 0,
+    messages,
   });
 
   return response.choices[0].message.content.trim();
@@ -294,7 +306,7 @@ function optimizeCypher(cypher) {
 /**
  * Turn data into natural language answer
  */
-async function verbalizeAnswer(question, data) {
+async function verbalizeAnswer(question, data, conversationHistory = []) {
   if (!data || data.length === 0) {
     return "No results found for your query.";
   }
@@ -306,24 +318,34 @@ async function verbalizeAnswer(question, data) {
       ? `\n[Showing ${MAX_RESULTS} of ${data.length} results]`
       : "";
 
+  // Build messages with minimal history for context-aware responses
+  const messages = [
+    {
+      role: "system",
+      content:
+        "Convert data to natural language. Use ONLY the provided data. No markdown. Plain text only. If the user refers to previous context, acknowledge it naturally.",
+    },
+  ];
+
+  // Add last 2 messages for context (keeps verbalization fast)
+  if (conversationHistory.length > 0) {
+    const recentHistory = conversationHistory.slice(-2);
+    messages.push(...recentHistory);
+  }
+
+  messages.push({
+    role: "user",
+    content: `Question: ${question}\n\nData:\n${JSON.stringify(
+      truncatedData,
+      null,
+      2
+    )}${truncationNote}`,
+  });
+
   const response = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     temperature: 0.1,
-    messages: [
-      {
-        role: "system",
-        content:
-          "Convert data to natural language. Use ONLY the provided data. No markdown. Plain text only.",
-      },
-      {
-        role: "user",
-        content: `Question: ${question}\n\nData:\n${JSON.stringify(
-          truncatedData,
-          null,
-          2
-        )}${truncationNote}`,
-      },
-    ],
+    messages,
   });
 
   return response.choices[0].message.content.trim();
@@ -332,7 +354,7 @@ async function verbalizeAnswer(question, data) {
 /**
  * Main entry point
  */
-export async function answerUserQuery(userQuestion) {
+export async function answerUserQuery(userQuestion, conversationHistory = []) {
   try {
     if (QUERY_TEMPLATES[0].embedding === null) {
       await initializeTemplates();
@@ -355,9 +377,9 @@ export async function answerUserQuery(userQuestion) {
       cypher = fillTemplate(classification.template.cypher, params);
       method = "template";
     } else {
-      // 2. Fallback to LLM generated Cypher
+      // 2. Fallback to LLM generated Cypher (with conversation context)
       console.log("🤖 No template match - generating Cypher with LLM");
-      const raw = await generateCypher(userQuestion);
+      const raw = await generateCypher(userQuestion, conversationHistory);
       cypher = optimizeCypher(raw);
       method = "generated";
     }
@@ -379,8 +401,8 @@ export async function answerUserQuery(userQuestion) {
       }
     }
 
-    // 4. Verbalize answer
-    const answer = await verbalizeAnswer(userQuestion, data);
+    // 4. Verbalize answer (with conversation context)
+    const answer = await verbalizeAnswer(userQuestion, data, conversationHistory);
 
     return {
       cypher,

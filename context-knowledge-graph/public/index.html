@@ -373,6 +373,7 @@
 
     let isLoading = false;
     let isServerReady = false;
+    let conversationHistory = []; // Track conversation for context
 
     // Check server readiness
     async function checkServerReady() {
@@ -446,6 +447,7 @@
 
       // Add user message
       addMessage(question, 'user');
+      conversationHistory.push({ role: 'user', content: question });
       userInput.value = '';
 
       // Show loading
@@ -460,7 +462,7 @@
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ question }),
+          body: JSON.stringify({ question, conversationHistory: conversationHistory.slice(-6) }),
         });
 
         const data = await response.json();
@@ -470,6 +472,11 @@
           addMessage(data.error || 'Failed to process your question', 'error');
         } else {
           addMessage(data.answer, 'assistant');
+          conversationHistory.push({ role: 'assistant', content: data.answer });
+          // Trim history to last 6 messages (3 exchanges) to control tokens
+          if (conversationHistory.length > 6) {
+            conversationHistory = conversationHistory.slice(-6);
+          }
         }
       } catch (error) {
         removeLoadingMessage();
