@@ -105,6 +105,69 @@ async function main() {
 
     console.log("✅ Nodes imported");
 
+
+    // ===============================
+    // PRODUCT NODES + LINKS
+    // ===============================
+
+    // 1) Create one Product node per distinct product name
+    await runQuery(
+      driver,
+      `
+      MATCH (r:Report)
+      WITH DISTINCT r.product AS product
+      MERGE (p:Product {name: product})
+      `
+    );
+
+    // 2) Assign categories (Laptop / Desktop / Monitor)
+    await runQuery(
+      driver,
+      `
+      MATCH (p:Product)
+      WHERE p.name IN [
+        "XPS 13", "XPS 13 Plus", "XPS 15", "XPS 17",
+        "Alienware m16", "Alienware m18", "Alienware x14",
+        "G15", "G16",
+        "Inspiron 14", "Inspiron 15", "Inspiron 15 3520", "Inspiron 16",
+        "Latitude 5430", "Latitude 7440", "Latitude 9440", "Latitude E7440",
+        "Precision 5570", "Precision 7780",
+        "Vostro 3501", "Vostro 3520"
+      ]
+      SET p.category = "Laptop"
+      `
+    );
+
+    await runQuery(
+      driver,
+      `
+      MATCH (p:Product)
+      WHERE p.name IN ["OptiPlex", "OptiPlex 7050", "OptiPlex 7450", "Alienware Aurora"]
+      SET p.category = "Desktop"
+      `
+    );
+
+    await runQuery(
+      driver,
+      `
+      MATCH (p:Product)
+      WHERE p.name IN ["UltraSharp U3223QE"]
+      SET p.category = "Monitor"
+      `
+    );
+
+    // 3) Link Reports to their Product
+    await runQuery(
+      driver,
+      `
+      MATCH (r:Report)
+      MATCH (p:Product {name: r.product})
+      MERGE (r)-[:ABOUT_PRODUCT]->(p)
+      `
+    );
+
+    console.log("✅ Product nodes created, categorized, and linked");
+
     // ===============================
     // RELATIONSHIPS
     // ===============================
