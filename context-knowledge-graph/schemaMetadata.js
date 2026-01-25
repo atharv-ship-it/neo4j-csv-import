@@ -180,6 +180,27 @@ export async function getSchema() {
 │ }                                                                       │
 └─────────────────────────────────────────────────────────────────────────┘
 
+┌─────────────────────────────────────────────────────────────────────────┐
+│ NODE: Product (Device Models)                                           │
+├─────────────────────────────────────────────────────────────────────────┤
+│ Properties:                                                             │
+│ • name (String, UNIQUE) - Canonical product name                        │
+│   Examples: "XPS 13", "XPS 15", "Alienware m16", "OptiPlex 7050"        │
+│ • category (String) - Device category                                   │
+│   Valid values: "Laptop", "Desktop", "Monitor"                          │
+│                                                                         │
+│ Relationships:                                                          │
+│ • (report:Report)-[:ABOUT_PRODUCT]->(product:Product)                   │
+│   Meaning: This report is about this product                            │
+│                                                                         │
+│ Example JSON:                                                           │
+│ {                                                                       │
+│   name: "XPS 13",                                                       │
+│   category: "Laptop"                                                    │
+│ }                                                                       │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 2. GRAPH SCHEMA - RELATIONSHIP TYPES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -211,7 +232,13 @@ Relationships (All properties: [empty/none] - no property data)
      Meaning: This report was published on this platform/source
      Cardinality: Each report published on exactly one platform
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  6. ABOUT_PRODUCT
+     Pattern: (Report)-[:ABOUT_PRODUCT]->(Product)
+     Meaning: This report is about this specific Dell product model
+     Cardinality: Many reports can be about the same product
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━══
 3. CYPHER LANGUAGE FUNDAMENTALS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -369,6 +396,26 @@ EVERY query should end with LIMIT:
   LIMIT 100      <- Default safe limit
   LIMIT 10       <- For smaller result sets
   LIMIT 1000     <- Only for very specific queries
+
+Rule 9: USE Product.category FOR DEVICE CLASS
+─────────────────────────────────────────────
+
+Use Product.category to distinguish laptops, desktops, and monitors.
+
+✅ To answer "How many desktops are there?":
+MATCH (p:Product)
+WHERE p.category = "Desktop"
+RETURN count(p) AS desktop_count
+LIMIT 100
+
+✅ To filter reports by device type:
+MATCH (r:Report)-[:ABOUT_PRODUCT]->(p:Product)
+WHERE p.category = "Laptop"
+RETURN r
+LIMIT 100
+
+❌ Do NOT guess category from report.product string alone.
+
 
 Queries without LIMIT may return millions of rows!
 
@@ -530,6 +577,23 @@ Explanation:
   • Aggregates reports per user
   • Calculates average sentiment across their reviews
   • Shows who are the most engaged critics/supporters
+
+PATTERN 9: Reports by Device Category
+─────────────────────────────────────
+
+Goal: Find all reports about desktop products.
+
+MATCH (report:Report)-[:ABOUT_PRODUCT]->(product:Product)
+WHERE product.category = "Desktop"
+RETURN report.report_id, report.product, report.sentiment_score
+ORDER BY report.sentiment_score ASC
+LIMIT 50
+
+Explanation:
+• Joins reports to products through ABOUT_PRODUCT
+• Uses Product.category instead of guessing from product name
+• Easily switch "Desktop" to "Laptop" or "Monitor"
+
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 7. ADVANCED PATTERNS & TECHNIQUES
