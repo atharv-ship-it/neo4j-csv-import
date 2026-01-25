@@ -594,6 +594,16 @@ Explanation:
 • Uses Product.category instead of guessing from product name
 • Easily switch "Desktop" to "Laptop" or "Monitor"
 
+PATTERN 10: Issues for a specific product
+──────────────────────────────────────────
+For questions about issues on a specific product:
+
+MATCH (report:Report)-[:ABOUT_PRODUCT]->(product:Product {name: "<PRODUCT_NAME>"})
+MATCH (report)-[:MENTIONS]->(issue:Issue)
+WITH issue.type AS issue_type, issue.severity AS severity, count(DISTINCT report) AS report_count
+RETURN issue_type, severity, report_count
+ORDER BY report_count DESC
+LIMIT 20
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 7. ADVANCED PATTERNS & TECHNIQUES
