@@ -1,0 +1,40 @@
+{
+  "name": "dell-feedback-knowledge-graph",
+  "version": "2.0.0",
+  "description": "AI-powered query engine for Dell product feedback using Neo4j and OpenAI",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js",
+    "import": "node import.js",
+    "cache:warmup": "CACHE_WARMUP=true node server.js",
+    "cache:stats": "curl http://localhost:3000/api/cache/stats",
+    "cache:clear": "curl -X POST http://localhost:3000/api/cache/clear",
+    "test": "node --test"
+  },
+  "keywords": [
+    "neo4j",
+    "knowledge-graph",
+    "openai",
+    "natural-language",
+    "query-engine",
+    "dell",
+    "customer-feedback"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "openai": "^4.67.3",
+    "neo4j-driver": "^5.26.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
