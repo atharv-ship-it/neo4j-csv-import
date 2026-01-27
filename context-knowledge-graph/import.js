@@ -47,8 +47,10 @@ async function main() {
       'https://raw.githubusercontent.com/atharv-ship-it/neo4j-csv-import/refs/heads/main/csv/sources.csv'
       AS row
       MERGE (s:Source {source_id: row.source_id})
-      SET s.platform = row.platform,
-          s.base_url = row.base_url
+      SET s.source_name = row.source_name,
+          s.source_url = row.source_url,
+          s.source_type = row.source_type,
+          s.independence_weight = toFloat(row.independence_weight)
       `
     );
 
@@ -60,8 +62,7 @@ async function main() {
       AS row
       MERGE (u:User {user_id: row.user_id})
       SET u.username = row.username,
-          u.platform = row.platform
-      `
+          u.user_expertise_level = row.user_expertise_level`
     );
 
     await runQuery(
@@ -71,9 +72,12 @@ async function main() {
       'https://raw.githubusercontent.com/atharv-ship-it/neo4j-csv-import/refs/heads/main/csv/issues.csv'
       AS row
       MERGE (i:Issue {issue_id: row.issue_id})
-      SET i.type = row.type,
-          i.severity = row.severity,
-          i.description = row.description
+      SET i.issue_title = row.issue_title,
+          i.issue_description = row.issue_description,
+          i.category = row.category,
+          i.affected_models = row.affected_models,
+          i.first_seen_timestamp = datetime(row.first_seen_timestamp),
+          i.last_seen_timestamp = datetime(row.last_seen_timestamp)
       `
     );
 
@@ -84,8 +88,11 @@ async function main() {
       'https://raw.githubusercontent.com/atharv-ship-it/neo4j-csv-import/refs/heads/main/csv/solutions.csv'
       AS row
       MERGE (s:Solution {solution_id: row.solution_id})
-      SET s.type = row.type,
-          s.description = row.description
+      SET s.solution_title = row.solution_title,
+          s.solution_description = row.solution_description,
+          s.solution_effectiveness_score = toFloat(row.solution_effectiveness_score),
+          s.solution_type = row.solution_type,
+          s.category = row.category
       `
     );
 
@@ -96,10 +103,11 @@ async function main() {
       'https://raw.githubusercontent.com/atharv-ship-it/neo4j-csv-import/refs/heads/main/csv/reports.csv'
       AS row
       MERGE (r:Report {report_id: row.report_id})
-      SET r.product = row.product,
-          r.text = row.text,
-          r.platform = row.platform,
-          r.sentiment_score = toFloat(row.sentiment_score)
+      SET r.report_content = row.report_content,
+          r.report_title = row.report_title,
+          r.timestamp = datetime(row.timestamp),
+          r.confidence_score = toFloat(row.confidence_score),
+          r.issue_context = row.issue_context
       `
     );
 
@@ -110,31 +118,29 @@ async function main() {
     // PRODUCT NODES + LINKS
     // ===============================
 
-    // 1) Create one Product node per distinct product name
+    // Extract unique products from affected_models in issues
     await runQuery(
       driver,
       `
-      MATCH (r:Report)
-      WITH DISTINCT r.product AS product
-      MERGE (p:Product {name: product})
+      MATCH (i:Issue)
+      WITH i, split(i.affected_models, ',') AS models
+      UNWIND models AS model
+      WITH DISTINCT trim(model) AS product_name
+      WHERE product_name <> ''
+      MERGE (p:Product {name: product_name})
       `
     );
 
-    // 2) Assign categories (Laptop / Desktop / Monitor)
+    // Categorize products
     await runQuery(
       driver,
       `
       MATCH (p:Product)
-      WHERE p.name IN [
-        "XPS 13", "XPS 13 Plus", "XPS 15", "XPS 17",
-        "Alienware m16", "Alienware m18", "Alienware x14",
-        "G15", "G16",
-        "Inspiron 14", "Inspiron 15", "Inspiron 15 3520", "Inspiron 16",
-        "Latitude 5430", "Latitude 7440", "Latitude 9440", "Latitude E7440",
-        "Precision 5570", "Precision 7780",
-        "Vostro 3501", "Vostro 3520"
-      ]
-      SET p.category = "Laptop"
+      WHERE p.name CONTAINS 'XPS' OR p.name CONTAINS 'Inspiron' OR 
+            p.name CONTAINS 'Latitude' OR p.name CONTAINS 'G15' OR
+            p.name CONTAINS 'Alienware' OR p.name CONTAINS 'Precision' OR
+            p.name CONTAINS 'Vostro'
+      SET p.category = 'Laptop'
       `
     );
 
@@ -142,8 +148,8 @@ async function main() {
       driver,
       `
       MATCH (p:Product)
-      WHERE p.name IN ["OptiPlex", "OptiPlex 7050", "OptiPlex 7450", "Alienware Aurora"]
-      SET p.category = "Desktop"
+      WHERE p.name CONTAINS 'OptiPlex' OR p.name CONTAINS 'Aurora'
+      SET p.category = 'Desktop'
       `
     );
 
@@ -151,22 +157,63 @@ async function main() {
       driver,
       `
       MATCH (p:Product)
-      WHERE p.name IN ["UltraSharp U3223QE"]
-      SET p.category = "Monitor"
+      WHERE p.name CONTAINS 'UltraSharp' OR p.name CONTAINS 'Monitor'
+      SET p.category = 'Monitor'
       `
     );
 
-    // 3) Link Reports to their Product
+    console.log("  ✓ Products categorized");
+
+    // ===============================
+    // STEP 3: PRODUCT NODES (DERIVED FROM REPORTS)
+    // ===============================
+    console.log("\n🏷️  Creating Product nodes...");
+
+    // Extract unique products from affected_models in issues
     await runQuery(
       driver,
       `
-      MATCH (r:Report)
-      MATCH (p:Product {name: r.product})
-      MERGE (r)-[:ABOUT_PRODUCT]->(p)
+      MATCH (i:Issue)
+      WITH i, split(i.affected_models, ',') AS models
+      UNWIND models AS model
+      WITH DISTINCT trim(model) AS product_name
+      WHERE product_name <> ''
+      MERGE (p:Product {name: product_name})
       `
     );
 
-    console.log("✅ Product nodes created, categorized, and linked");
+    // Categorize products
+    await runQuery(
+      driver,
+      `
+      MATCH (p:Product)
+      WHERE p.name CONTAINS 'XPS' OR p.name CONTAINS 'Inspiron' OR 
+            p.name CONTAINS 'Latitude' OR p.name CONTAINS 'G15' OR
+            p.name CONTAINS 'Alienware' OR p.name CONTAINS 'Precision' OR
+            p.name CONTAINS 'Vostro'
+      SET p.category = 'Laptop'
+      `
+    );
+
+    await runQuery(
+      driver,
+      `
+      MATCH (p:Product)
+      WHERE p.name CONTAINS 'OptiPlex' OR p.name CONTAINS 'Aurora'
+      SET p.category = 'Desktop'
+      `
+    );
+
+    await runQuery(
+      driver,
+      `
+      MATCH (p:Product)
+      WHERE p.name CONTAINS 'UltraSharp' OR p.name CONTAINS 'Monitor'
+      SET p.category = 'Monitor'
+      `
+    );
+
+    console.log("  ✓ Products categorized");
 
     // ===============================
     // RELATIONSHIPS
@@ -191,7 +238,9 @@ async function main() {
       AS row
       MATCH (r:Report {report_id: row.report_id})
       MATCH (i:Issue {issue_id: row.issue_id})
-      MERGE (r)-[:MENTIONS]->(i)
+      MERGE (r)-[m:MENTIONS]->(i)
+      SET m.evidence_strength = toInteger(row.evidence_strength),
+          m.certainty_level = row.certainty_level
       `
     );
 
@@ -203,7 +252,8 @@ async function main() {
       AS row
       MATCH (r:Report {report_id: row.report_id})
       MATCH (s:Source {source_id: row.source_id})
-      MERGE (r)-[:PUBLISHED_VIA]->(s)
+      MERGE (r)-[p:PUBLISHED_VIA]->(s)
+      SET p.source_reliability_score = toFloat(row.source_reliability_score)
       `
     );
 
@@ -215,7 +265,9 @@ async function main() {
       AS row
       MATCH (r:Report {report_id: row.report_id})
       MATCH (s:Solution {solution_id: row.solution_id})
-      MERGE (r)-[:SUGGESTS]->(s)
+      MERGE (r)-[sg:SUGGESTS]->(s)
+      SET sg.suggestion_confidence = toInteger(row.suggestion_confidence),
+          sg.is_experimental = toBoolean(row.is_experimental)
       `
     );
 
@@ -227,19 +279,129 @@ async function main() {
       AS row
       MATCH (r:Report {report_id: row.report_id})
       MATCH (s:Solution {solution_id: row.solution_id})
-      MERGE (r)-[:CONFIRMS]->(s)
+      MERGE (r)-[c:CONFIRMS]->(s)
+      SET c.confirmation_strength = toInteger(row.confirmation_strength),
+          c.post_fix_outcome = row.post_fix_outcome,
+          c.confirmed_at_timestamp = datetime(row.confirmed_at_timestamp)
       `
     );
 
     console.log("✅ Relationships imported");
     console.log("🎉 Import completed successfully");
 
+    // ===============================
+    // STEP 5: CONNECT ISSUES TO PRODUCTS
+    // ===============================
+    console.log("\n🎯 Linking Issues to Products...");
+
+    await runQuery(
+      driver,
+      `
+      MATCH (i:Issue)
+      WITH i, split(i.affected_models, ',') AS models
+      UNWIND models AS model
+      WITH i, trim(model) AS product_name
+      MATCH (p:Product {name: product_name})
+      MERGE (i)-[:AFFECTS]->(p)
+      `
+    );
+    console.log("  ✓ AFFECTS relationships created");
+
+    // ===============================
+    // STEP 6: CONNECT REPORTS TO PRODUCTS VIA ISSUES
+    // ===============================
+    console.log("\n🔄 Linking Reports to Products...");
+
+    await runQuery(
+      driver,
+      `
+      MATCH (r:Report)-[:MENTIONS]->(i:Issue)-[:AFFECTS]->(p:Product)
+      WITH r, p, count(DISTINCT i) AS issue_count
+      MERGE (r)-[a:ABOUT_PRODUCT]->(p)
+      SET a.issue_count = issue_count
+      `
+    );
+    console.log("  ✓ ABOUT_PRODUCT relationships created");
+
+    // ===============================
+    // STEP 7: CREATE DERIVED INTELLIGENCE INDEXES
+    // ===============================
+    console.log("\n🧠 Creating intelligence indexes...");
+
+    // Index for temporal queries
+    await runQuery(driver, "CREATE INDEX report_timestamp IF NOT EXISTS FOR (r:Report) ON (r.timestamp)");
+    await runQuery(driver, "CREATE INDEX issue_first_seen IF NOT EXISTS FOR (i:Issue) ON (i.first_seen_timestamp)");
+    await runQuery(driver, "CREATE INDEX issue_last_seen IF NOT EXISTS FOR (i:Issue) ON (i.last_seen_timestamp)");
+    
+    // Index for confidence-based filtering
+    await runQuery(driver, "CREATE INDEX report_confidence IF NOT EXISTS FOR (r:Report) ON (r.confidence_score)");
+    await runQuery(driver, "CREATE INDEX solution_effectiveness IF NOT EXISTS FOR (s:Solution) ON (s.solution_effectiveness_score)");
+    
+    console.log("  ✓ Performance indexes created");
+
+    // ===============================
+    // STEP 8: VALIDATION
+    // ===============================
+    console.log("\n✅ Running validation checks...");
+
+    const stats = await runQuery(driver, `
+      MATCH (r:Report) WITH count(r) AS reports
+      MATCH (i:Issue) WITH reports, count(i) AS issues
+      MATCH (s:Solution) WITH reports, issues, count(s) AS solutions
+      MATCH (u:User) WITH reports, issues, solutions, count(u) AS users
+      MATCH (src:Source) WITH reports, issues, solutions, users, count(src) AS sources
+      MATCH (p:Product) WITH reports, issues, solutions, users, sources, count(p) AS products
+      RETURN reports, issues, solutions, users, sources, products
+    `);
+
+    const counts = stats.records[0].toObject();
+    console.log("\n📊 Import Statistics:");
+    console.log(`  • Reports: ${counts.reports}`);
+    console.log(`  • Issues: ${counts.issues}`);
+    console.log(`  • Solutions: ${counts.solutions}`);
+    console.log(`  • Users: ${counts.users}`);
+    console.log(`  • Sources: ${counts.sources}`);
+    console.log(`  • Products: ${counts.products}`);
+
+    const relStats = await runQuery(driver, `
+      MATCH ()-[r:MENTIONS]->() WITH count(r) AS mentions
+      MATCH ()-[r:SUGGESTS]->() WITH mentions, count(r) AS suggests
+      MATCH ()-[r:CONFIRMS]->() WITH mentions, suggests, count(r) AS confirms
+      MATCH ()-[r:AUTHORED]->() WITH mentions, suggests, confirms, count(r) AS authored
+      MATCH ()-[r:PUBLISHED_VIA]->() WITH mentions, suggests, confirms, authored, count(r) AS published
+      MATCH ()-[r:ABOUT_PRODUCT]->() WITH mentions, suggests, confirms, authored, published, count(r) AS about
+      MATCH ()-[r:AFFECTS]->() WITH mentions, suggests, confirms, authored, published, about, count(r) AS affects
+      RETURN mentions, suggests, confirms, authored, published, about, affects
+    `);
+
+    const relCounts = relStats.records[0].toObject();
+    console.log("\n🔗 Relationship Statistics:");
+    console.log(`  • MENTIONS: ${relCounts.mentions}`);
+    console.log(`  • SUGGESTS: ${relCounts.suggests}`);
+    console.log(`  • CONFIRMS: ${relCounts.confirms}`);
+    console.log(`  • AUTHORED: ${relCounts.authored}`);
+    console.log(`  • PUBLISHED_VIA: ${relCounts.published}`);
+    console.log(`  • ABOUT_PRODUCT: ${relCounts.about}`);
+    console.log(`  • AFFECTS: ${relCounts.affects}`);
+
+    console.log("\n🎉 Import completed successfully!");
+    console.log("\n🧠 Knowledge Graph Intelligence Features:");
+    console.log("  ✓ Temporal tracking (first_seen, last_seen, confirmed_at)");
+    console.log("  ✓ Confidence scoring (report confidence, evidence strength)");
+    console.log("  ✓ Solution effectiveness tracking (scores + outcomes)");
+    console.log("  ✓ Source credibility (reliability, independence weights)");
+    console.log("  ✓ User expertise modeling (novice → expert)");
+    console.log("  ✓ Multi-hop intelligence paths ready for queries");
+
   } catch (err) {
     console.error("❌ Import failed:", err);
+    throw err;
   } finally {
     await driver.close();
   }
 }
+
+
 
 // ===============================
 // HELPERS

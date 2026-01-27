@@ -33,6 +33,7 @@ app.post("/api/query", async (req, res) => {
       error: "Server is still initializing. Please wait a moment.",
     });
   }
+  
   try {
     const { question, conversationHistory = [] } = req.body;
 
@@ -61,6 +62,7 @@ app.post("/api/query", async (req, res) => {
     res.json({
       answer: result.answer,
       cypher: result.cypher,
+      intent: result.intent,
       method: result.method,
       confidence: result.confidence,
       rowCount: result.data?.length ?? 0,
@@ -77,7 +79,11 @@ app.post("/api/query", async (req, res) => {
 
 // Health check
 app.get("/api/health", (req, res) => {
-  res.json({ status: "ok", timestamp: new Date().toISOString() });
+  res.json({ 
+    status: "ok", 
+    timestamp: new Date().toISOString(),
+    ready: isServerReady
+  });
 });
 
 // Serve frontend
@@ -89,15 +95,29 @@ app.get("*", (req, res) => {
 app.listen(PORT, async () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
   console.log(`📊 API endpoint: http://localhost:${PORT}/api/query`);
+  console.log(`\n🔄 Initializing knowledge graph...`);
 
-  await initializeSchemaCache();
-  isServerReady = true;
-  console.log(`🚀 Server ready to accept queries`);
+  try {
+    await initializeSchemaCache();
+    isServerReady = true;
+    console.log(`\n🚀 Server ready to accept queries`);
+    console.log(`\n🧠 Intelligence Features:`);
+    console.log(`  • Multi-hop graph traversal`);
+    console.log(`  • Confidence-weighted scoring`);
+    console.log(`  • Evidence strength tracking`);
+    console.log(`  • Solution outcome verification`);
+    console.log(`  • Temporal trend analysis`);
+    console.log(`  • Source credibility weighting`);
+    console.log(`  • User expertise modeling`);
+  } catch (error) {
+    console.error("❌ Failed to initialize schema:", error);
+    console.error("Server will not accept queries until this is resolved.");
+  }
 });
 
 // Graceful shutdown
 process.on("SIGINT", async () => {
-  console.log("🛑 Shutting down server...");
+  console.log("\n🛑 Shutting down server...");
   await closeDriver();
   process.exit(0);
 });
