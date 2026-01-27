@@ -45,7 +45,7 @@ app.post("/api/query", async (req, res) => {
 
     // Trim history to last 6 messages and sanitize
     const trimmedHistory = conversationHistory
-      .slice(-6)
+      .slice(-10)
       .filter(msg => msg.role && msg.content)
       .map(msg => ({
         role: msg.role === 'user' ? 'user' : 'assistant',

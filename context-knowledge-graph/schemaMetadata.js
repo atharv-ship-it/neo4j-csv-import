@@ -1,6 +1,5 @@
 // schemaMetadata.js
-// PURPOSE: Schema + Intelligence-Driven Domain Knowledge
-// PRINCIPLE: Teach the system HOW THE GRAPH MAKES DECISIONS using enhanced metadata
+// PURPOSE: Load Neo4j schema and provide domain guidance for LLM
 
 import neo4j from "neo4j-driver";
 
@@ -74,295 +73,176 @@ export async function getSchema() {
     const schema = {
       nodes: nodeResult.records.map((r) => ({
         label: r.get("nodeType").replace(/[`:\s]/g, ""),
-        properties: r.get("properties"),
+        properties: (r.get("properties") || []).map(p => ({
+          property: p.property || 'unknown',
+          types: p.types || ['unknown'],
+        })),
       })),
-
       relationships: relResult.records.map((r) => ({
         type: r.get("relType").replace(/[`:\s]/g, ""),
-        properties: r.get("properties"),
+        properties: (r.get("properties") || []).map(p => ({
+          property: p.property || 'unknown',
+          types: p.types || ['unknown'],
+        })),
       })),
-
-      // Extracted domain values for query building
       categories,
       sourceTypes,
       expertiseLevels,
       products,
       solutionTypes,
 
-      // =====================================================================
-      // ENHANCED GRAPH INTELLIGENCE CONTRACT
-      // =====================================================================
+      // Domain guidance for LLM - this is the intelligence layer
       domainGuidance: `
-╔════════════════════════════════════════════════════════════════════╗
-║    CONTEXT KNOWLEDGE GRAPH – INTELLIGENCE DECISION ENGINE          ║
-╚════════════════════════════════════════════════════════════════════╝
+╔════════════════════════════════════════════════════════════════════════════╗
+║          CONTEXT KNOWLEDGE GRAPH – INTELLIGENCE ENGINE                    ║
+╚════════════════════════════════════════════════════════════════════════════╝
 
-THIS IS NOT A DATABASE. THIS IS AN INTELLIGENCE LAYER.
-Every query MUST produce DECISIONS, not data dumps.
+THIS IS AN INTELLIGENCE LAYER, NOT A DATABASE.
+Queries produce INSIGHTS, not raw data dumps.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. GRAPH INTELLIGENCE PRINCIPLES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+GRAPH NODES & PROPERTIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-The graph contains ENHANCED METADATA that enables intelligent decisions:
+Report: Observations with confidence scoring
+  • report_id, report_content, report_title, timestamp
+  • confidence_score (0-1) - weighted by source + user expertise
+  • issue_context - factual summary
 
-• Reports have CONFIDENCE SCORES (0-1) based on source + user expertise
-• Issues have TEMPORAL TRACKING (first_seen, last_seen) for trend analysis
-• Solutions have EFFECTIVENESS SCORES (0-1) + OUTCOME TRACKING
-• Relationships have STRENGTH METRICS (evidence, confirmation, suggestion)
-• Sources have CREDIBILITY METRICS (reliability, independence)
-• Users have EXPERTISE LEVELS (novice, intermediate, expert, unknown)
+Issue: Recurring patterns with temporal tracking
+  • issue_id, issue_title, issue_description, category
+  • affected_models, first_seen_timestamp, last_seen_timestamp
+  • NOTE: Severity is COMPUTED from evidence, not stored
 
-EVERY DECISION MUST USE THESE METRICS.
+Solution: Fixes with effectiveness tracking
+  • solution_id, solution_title, solution_description
+  • solution_effectiveness_score (0-1)
+  • solution_type (workaround | permanent | partial)
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-2. NODE SEMANTICS (ENHANCED)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+User: Evidence sources with expertise levels
+  • user_id, username
+  • user_expertise_level (novice | intermediate | expert | unknown)
 
-NODE: Report
-Intelligence: Noisy observations with WEIGHTED CREDIBILITY
-Properties:
-• report_id (UNIQUE)
-• report_content (raw text)
-• report_title (summary)
-• timestamp (datetime) - when observed
-• confidence_score (0-1) - derived from source + user expertise
-• issue_context (factual summary, max 200 chars)
+Source: Information channels with credibility
+  • source_id, source_name, source_url
+  • source_type (forum | review | support | blog)
+  • independence_weight (0-1)
 
-NODE: Issue
-Intelligence: Recurring patterns with TEMPORAL EVOLUTION
-Properties:
-• issue_id (UNIQUE)
-• issue_title
-• issue_description
-• category (battery, display, thermal, connectivity, etc.)
-• affected_models (comma-separated product names)
-• first_seen_timestamp (datetime) - emergence tracking
-• last_seen_timestamp (datetime) - recency tracking
-NOTE: NO severity field - severity is COMPUTED from evidence
+Product: Entities being evaluated
+  • name (unique), category (Laptop | Desktop | Monitor)
 
-NODE: Solution
-Intelligence: Fixes with VERIFIED EFFECTIVENESS
-Properties:
-• solution_id (UNIQUE)
-• solution_title
-• solution_description
-• solution_effectiveness_score (0-1) - stated/measured effectiveness
-• solution_type (workaround | permanent | partial)
-• category (maps to issue category)
+Available Data:
+• Products: ${products.map(p => p.name).join(", ")}
+• Issue Categories: ${categories.join(", ")}
+• Source Types: ${sourceTypes.join(", ")}
+• Solution Types: ${solutionTypes.join(", ")}
+• Expertise Levels: ${expertiseLevels.join(", ")}
 
-NODE: User
-Intelligence: Evidence sources with EXPERTISE WEIGHTING
-Properties:
-• user_id (UNIQUE)
-• username
-• user_expertise_level (novice | intermediate | expert | unknown)
-
-NODE: Source
-Intelligence: Information channels with CREDIBILITY METRICS
-Properties:
-• source_id (UNIQUE)
-• source_name
-• source_url
-• source_type (forum | review | support | blog)
-• independence_weight (0-1) - how independent/unbiased
-
-NODE: Product
-Intelligence: Entities with INFERRED HEALTH SCORES
-Properties:
-• name (UNIQUE)
-• category (Laptop | Desktop | Monitor)
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-3. RELATIONSHIP SEMANTICS (WEIGHTED EVIDENCE)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+RELATIONSHIPS & EVIDENCE STRENGTH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 (User)-[:AUTHORED]->(Report)
-Meaning: Attribution for expertise weighting
-
 (Report)-[:MENTIONS {evidence_strength, certainty_level}]->(Issue)
-Intelligence: HOW STRONGLY the report evidences the issue
-Properties:
-• evidence_strength (1-5) - strength of evidence
-• certainty_level (low | medium | high) - author's confidence
-
+(Report)-[:CONFIRMS {confirmation_strength, post_fix_outcome}]->(Solution)
 (Report)-[:SUGGESTS {suggestion_confidence, is_experimental}]->(Solution)
-Intelligence: HYPOTHESIS-level fixes (unverified)
-Properties:
-• suggestion_confidence (1-5) - how confident the suggestion is
-• is_experimental (boolean) - if the solution is experimental
-
-(Report)-[:CONFIRMS {confirmation_strength, post_fix_outcome, confirmed_at_timestamp}]->(Solution)
-Intelligence: VERIFIED fixes with outcome tracking
-Properties:
-• confirmation_strength (1-5) - strength of confirmation
-• post_fix_outcome (resolved | improved | no_change | worse)
-• confirmed_at_timestamp (datetime) - when confirmed
-
-(Report)-[:PUBLISHED_VIA {source_reliability_score}]->(Source)
-Intelligence: Evidence provenance with reliability
-Properties:
-• source_reliability_score (0-1) - reliability for this specific report
-
 (Report)-[:ABOUT_PRODUCT {issue_count}]->(Product)
-Intelligence: Scope binding
-Properties:
-• issue_count - number of distinct issues mentioned
-
+(Report)-[:PUBLISHED_VIA {source_reliability_score}]->(Source)
 (Issue)-[:AFFECTS]->(Product)
-Intelligence: Problem-product mapping
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-4. INTELLIGENCE METRICS (COMPUTED IN CYPHER)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+QUERY PATTERNS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-ISSUE SEVERITY (COMPUTED - not stored):
-frequency × evidence_strength × certainty_weight × confidence_score × recency_factor
-
-SOLUTION CONFIDENCE (COMPUTED):
-(confirmations × confirmation_strength × effectiveness_score) / attempts
-
-PRODUCT HEALTH SCORE (COMPUTED):
-distinct_issues × weighted_report_count × avg_confidence × temporal_factor
-
-SOURCE CREDIBILITY (COMPUTED):
-independence_weight × avg_reliability_score × platform_diversity
-
-USER AUTHORITY (COMPUTED):
-expertise_weight × report_count × avg_confidence_of_reports
-
-TEMPORAL RELEVANCE (COMPUTED):
-1 / (days_since_last_seen + 1) - recent issues score higher
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-5. DECISION QUERY CONTRACT (MANDATORY PATTERNS)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-EVERY USER QUERY MUST RETURN:
-1. A NUMERIC SCORE (impact, confidence, severity, health, etc.)
-2. A RANK (1 = highest priority)
-3. SUPPORTING EVIDENCE COUNTS (how many reports, confirmations, etc.)
-4. DECISION LABEL (if score crosses threshold)
-
-CANONICAL RANKING PATTERN:
-MATCH (r:Report)-[m:MENTIONS]->(i:Issue)
-WHERE m.certainty_level IN ['medium', 'high']
-  AND r.confidence_score >= 0.5
+PATTERN 1: Issue Severity Ranking
+────────────────────────────────────
+MATCH (u:User)-[:AUTHORED]->(r:Report)-[m:MENTIONS]->(i:Issue)
+WHERE r.confidence_score >= 0.4
 WITH i,
-     count(DISTINCT r) AS frequency,
-     avg(m.evidence_strength) AS avg_evidence,
-     avg(r.confidence_score) AS avg_confidence,
-     duration.between(i.last_seen_timestamp, datetime()).days AS days_since
-WITH i,
-     (frequency * avg_evidence * avg_confidence) / (1 + days_since) AS severity_score
-ORDER BY severity_score DESC
-WITH collect({issue: i, score: severity_score, frequency: frequency}) AS rows
-UNWIND range(0, size(rows)-1) AS idx
-RETURN rows[idx].issue.issue_title AS issue,
-       rows[idx].issue.category AS category,
-       round(rows[idx].score * 100) / 100 AS severity_score,
-       rows[idx].frequency AS report_count,
-       idx + 1 AS rank
+  count(DISTINCT r) AS frequency,
+  avg(r.confidence_score) AS avg_confidence,
+  avg(m.evidence_strength) AS avg_evidence,
+  sum(CASE m.certainty_level WHEN 'high' THEN 2.0 WHEN 'medium' THEN 1.5 ELSE 1.0 END) AS certainty_weight,
+  sum(CASE u.user_expertise_level WHEN 'expert' THEN 2.0 WHEN 'intermediate' THEN 1.5 ELSE 1.0 END) AS expertise_weight
+WITH i, frequency, avg_confidence, avg_evidence, certainty_weight, expertise_weight,
+  (frequency * avg_confidence * avg_evidence * certainty_weight * expertise_weight) / 100.0 AS raw_severity
+WITH max(raw_severity) AS max_severity,
+     min(raw_severity) AS min_severity,
+     collect({issue: i, severity: raw_severity, frequency: frequency}) AS all_issues
+UNWIND all_issues AS item
+RETURN item.issue.issue_title AS issue,
+  round((item.severity - min_severity) / (max_severity - min_severity) * 1000) / 1000 AS normalized_severity,
+  item.severity AS raw_severity,
+  item.frequency AS report_count
+ORDER BY normalized_severity DESC
 LIMIT 10
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-6. QUERY CATEGORIES (INTELLIGENCE PATHS)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PATTERN 2: Product-Specific Issues
+──────────────────────────────────
+MATCH (r:Report)-[:ABOUT_PRODUCT]->(p:Product)
+MATCH (r)-[m:MENTIONS]->(i:Issue)
+WHERE toLower(p.name) CONTAINS toLower($product)
+  AND r.confidence_score >= 0.4
+WITH i, p,
+  count(DISTINCT r) AS frequency,
+  avg(r.confidence_score) AS avg_confidence
+RETURN i.issue_title AS issue, p.name AS product,
+  round(frequency * avg_confidence * 1000) / 1000 AS impact_score,
+  frequency AS report_count
+ORDER BY impact_score DESC
+LIMIT 10
 
-ISSUE PRIORITIZATION:
-• What problems are most severe? → Multi-hop: Report→Issue, weight by confidence+evidence+recency
-• What issues are trending? → Temporal: Compare first_seen vs last_seen density
-• What affects product X? → Filter: Report→Product→Issue, aggregate by evidence
+PATTERN 3: Solution Effectiveness
+─────────────────────────────────
+MATCH (r:Report)-[c:CONFIRMS]->(s:Solution)
+WITH s,
+  count(DISTINCT r) AS confirmations,
+  avg(c.confirmation_strength) AS avg_strength,
+  sum(CASE c.post_fix_outcome
+    WHEN 'resolved' THEN 1.0
+    WHEN 'improved' THEN 0.7
+    WHEN 'no_change' THEN 0.3
+    ELSE 0.0 END) / count(*) AS success_rate
+RETURN s.solution_title AS solution,
+  round((confirmations * avg_strength * success_rate * s.solution_effectiveness_score) * 1000) / 1000 AS effectiveness_score,
+  confirmations
+ORDER BY effectiveness_score DESC
+LIMIT 10
 
-SOLUTION EVALUATION:
-• What fixes work best? → Multi-hop: Report→CONFIRMS→Solution, weight by outcome+strength
-• Are there experimental fixes? → Filter: SUGGESTS with is_experimental=true
-• What's the success rate? → Aggregate: CONFIRMS outcomes (resolved/improved vs no_change/worse)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SCORING WEIGHTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-PRODUCT HEALTH:
-• Which products are most problematic? → Multi-hop: Product←Issue←Report, weight by confidence
-• Is product X getting better? → Temporal: Compare issue frequency over time
-• What's the risk score? → Aggregate: distinct issues × weighted reports
+User Expertise: expert=2.0, intermediate=1.5, novice=1.0, unknown=0.8
+Certainty Level: high=2.0, medium=1.5, low=1.0
+Post-Fix Outcome: resolved=1.0, improved=0.7, no_change=0.3, worse=0.0
+Solution Type: permanent=1.2, workaround=0.8, partial=0.6
 
-SOURCE CREDIBILITY:
-• Which sources are most reliable? → Aggregate: independence_weight × avg_reliability
-• Do expert users confirm? → Filter: User.expertise_level='expert' + CONFIRMS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CRITICAL CYPHER RULES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-TEMPORAL ANALYSIS:
-• Are issues getting resolved? → Temporal: Compare first_seen to last confirmed_at
-• What's emerging? → Temporal: first_seen in last 30 days + high frequency
+✅ Use WHERE after WITH (NOT HAVING - Neo4j doesn't support it)
+✅ All WITH expressions need AS aliases
+✅ Use count(DISTINCT x) to avoid duplicates
+✅ Use toLower() + CONTAINS for fuzzy matching
+✅ Include ORDER BY score DESC and LIMIT for rankings
+✅ Use confidence_score >= 0.4 as minimum threshold
+✅ Round scores: round(value * 1000) / 1000
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-7. EXPERTISE WEIGHTING TABLE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• WITH drops variables - carry forward everything you need in later clauses
+• If RETURN uses a variable, it must be in the last WITH clause
 
-User Expertise → Weight:
-• expert → 2.0
-• intermediate → 1.5
-• novice → 1.0
-• unknown → 0.8
-
-USAGE: Multiply by evidence_strength or confirmation_strength
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-8. CERTAINTY WEIGHTING TABLE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Certainty Level → Weight:
-• high → 2.0
-• medium → 1.5
-• low → 1.0
-
-USAGE: Multiply with evidence_strength
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-9. OUTCOME SCORING TABLE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-post_fix_outcome → Success Score:
-• resolved → 1.0
-• improved → 0.7
-• no_change → 0.3
-• worse → 0.0
-
-USAGE: Calculate solution success rate
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-10. ENFORCEMENT RULES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-❌ INVALID QUERY: MATCH (r:Report) RETURN r.report_content
-Reason: No score, no rank, no decision
-
-✅ VALID QUERY: (see examples in section 5)
-
-❌ INVALID: Ignore confidence_score in aggregation
-✅ VALID: Weight all aggregations by confidence_score
-
-❌ INVALID: Use stored severity from Issue node
-✅ VALID: Compute severity from Report evidence
-
-❌ INVALID: LLM interprets "resolved" vs "improved"
-✅ VALID: Cypher applies outcome_score weights
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-11. SUCCESS CRITERIA
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-The system demonstrates intelligence if:
-✓ Removing the LLM preserves all rankings and scores
-✓ Multiple LLMs produce identical numeric conclusions
-✓ Every answer traces to weighted graph traversal
-✓ Confidence, expertise, and temporal factors affect all decisions
-✓ Solutions are ranked by actual confirmation outcomes
-✓ Issues are ranked by composite evidence metrics
-
-THIS FILE DEFINES GRAPH INTELLIGENCE AUTHORITY.
+⚠️ NEVER query Issue.affected_models directly (comma-separated string). ALWAYS use (Issue)-[:AFFECTS]->(Product) for product filtering
+❌ Never use HAVING clause
+❌ Don't return raw nodes without scoring (RETURN r is invalid for rankings)
+❌ Don't invent properties not in schema
 `.trim(),
     };
 
     schemaCache = schema;
     return schema;
+
   } catch (error) {
     console.error("Error loading schema:", error);
     throw error;
@@ -370,20 +250,11 @@ THIS FILE DEFINES GRAPH INTELLIGENCE AUTHORITY.
 }
 
 export async function initializeSchemaCache() {
-  console.log("🔍 Loading Neo4j schema with intelligence metadata...");
+  console.log("🔍 Loading Neo4j schema...");
   const schema = await getSchema();
-  console.log(
-    `✅ Schema loaded: ${schema.nodes.length} node types, ${schema.relationships.length} relationship types`
-  );
-  console.log("\n📋 Node Labels:");
-  schema.nodes.forEach((n) => console.log(`  • ${n.label}`));
-  console.log("\n🔗 Relationships:");
-  schema.relationships.forEach((r) => console.log(`  • ${r.type}`));
-  console.log("\n🎯 Domain Categories:", schema.categories.join(", "));
-  console.log("🏷️  Source Types:", schema.sourceTypes.join(", "));
-  console.log("🧠 Expertise Levels:", schema.expertiseLevels.join(", "));
-  console.log("🔧 Solution Types:", schema.solutionTypes.join(", "));
-  console.log(`📦 Products: ${schema.products.length} unique products`);
+  console.log(`✅ Schema loaded: ${schema.nodes.length} node types, ${schema.relationships.length} relationship types`);
+  console.log("📦 Products:", schema.products.map(p => p.name).join(", "));
+  console.log("🎯 Categories:", schema.categories.join(", "));
 }
 
 export function closeDriver() {
