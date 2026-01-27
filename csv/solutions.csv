@@ -1,11 +1,44 @@
-solution_id,type,description,source_type,effectiveness,confirmation_count,implementation_complexity
-sol_001,BIOS_Setting_Change,"Disable CPU power management in BIOS settings to reduce thermal load",Community_Workaround,0.72,18,Easy
-sol_002,Firmware_Update,"Update BIOS to latest version (fixes thermal throttling and performance issues)",Vendor_Official,0.89,56,Moderate
-sol_003,Thermal_Repaste,"Replace factory thermal paste with high-quality paste (e.g., Thermal Grizzly, PTM7950)",Community_Workaround,0.85,34,Hard
-sol_004,Driver_Update,"Download specific NVIDIA/Intel driver version from Dell support to fix conflicts",Vendor_Official,0.94,67,Easy
-sol_005,Software_Tool,"Use HWiNFO, ThrottleStop, or similar tools to monitor and control thermals",Community_Workaround,0.68,22,Moderate
-sol_006,Hardware_Reset,"Perform hard reset by holding power button for 15-20 seconds",Vendor_Official,0.76,45,Easy
-sol_007,Warranty_Replacement,"Contact Dell support for warranty replacement of defective component",Vendor_Official,0.82,29,Easy
-sol_008,Battery_Optimization,"Enable battery saver mode, adjust BIOS battery charge configuration",Vendor_Official,0.65,31,Easy
-sol_009,Undervolting,"Undervolt CPU/GPU using XTU or similar tools to reduce heat",Community_Workaround,0.79,28,Moderate
-sol_010,Power_Management_Reset,"Reset Windows power management settings using PowerCFG commands",Vendor_Official,0.71,19,Moderate
+solution_id,solution_title,solution_description,solution_effectiveness_score,solution_type,category
+solution_0000,Recalibrate battery via BIOS,Run battery calibration utility in BIOS settings,0.7,workaround,battery
+solution_0001,Update BIOS and battery drivers,Install latest BIOS and Dell Power Manager updates,0.85,permanent,battery
+solution_0002,Disable 80% charge limit in BIOS,Turn off battery charge threshold setting,0.95,permanent,battery
+solution_0003,Replace battery under warranty,Contact Dell support for battery replacement,0.95,permanent,battery
+solution_0004,Update Intel Graphics drivers,Install latest drivers from Intel website,0.75,permanent,display
+solution_0005,Adjust display refresh rate,Lower refresh rate to 60Hz in display settings,0.6,workaround,display
+solution_0006,RMA for screen replacement,Return unit for display panel replacement,0.98,permanent,display
+solution_0007,Disable panel self-refresh,Turn off PSR in Intel Graphics settings,0.7,workaround,display
+solution_0008,Repaste CPU/GPU with thermal paste,Apply quality thermal paste like Thermal Grizzly Kryonaut,0.85,permanent,thermal
+solution_0009,Undervolting CPU via ThrottleStop,Reduce CPU voltage by -80mV to -125mV,0.8,workaround,thermal
+solution_0010,Use laptop cooling pad,Elevate laptop with active cooling pad,0.55,workaround,thermal
+solution_0011,Update BIOS for improved fan curves,Install latest BIOS with thermal optimizations,0.7,permanent,thermal
+solution_0012,Disable CPU Turbo Boost,Limit maximum processor frequency in power settings,0.75,workaround,thermal
+solution_0013,Reinstall Realtek audio drivers,Clean install of latest Realtek HD Audio drivers,0.8,permanent,audio
+solution_0014,Disable audio enhancements,Turn off all audio effects in sound settings,0.65,workaround,audio
+solution_0015,Update Windows audio stack,Install latest Windows updates for audio fixes,0.7,permanent,audio
+solution_0016,Update trackpad drivers from Dell,Install latest touchpad firmware and drivers,0.75,permanent,input
+solution_0017,Adjust trackpad sensitivity settings,Lower palm rejection and sensitivity in Windows,0.6,workaround,input
+solution_0018,Clean keyboard with compressed air,Remove debris under keys causing double typing,0.5,workaround,input
+solution_0019,Replace keyboard assembly,Have Dell technician replace keyboard unit,0.95,permanent,input
+solution_0020,Update Intel WiFi drivers,Install latest Intel WiFi/Bluetooth drivers,0.85,permanent,connectivity
+solution_0021,Disable WiFi power management,Prevent Windows from turning off WiFi adapter,0.75,workaround,connectivity
+solution_0022,Change WiFi channel and band,Switch router to 5GHz and less congested channel,0.6,workaround,connectivity
+solution_0023,Replace Intel WiFi card with Killer,Swap Intel AX201 with Killer AX1650 card,0.8,permanent,connectivity
+solution_0024,Rollback BIOS to previous version,Downgrade BIOS using Dell recovery tool,0.9,workaround,firmware
+solution_0025,Update to latest stable BIOS,Install newest tested BIOS release,0.85,permanent,firmware
+solution_0026,Reset BIOS to defaults,Clear CMOS and restore factory BIOS settings,0.65,workaround,firmware
+solution_0027,Update NVMe firmware,Install latest SSD firmware from manufacturer,0.8,permanent,storage
+solution_0028,Disable modern standby,Force S3 sleep mode instead of S0ix,0.85,workaround,storage
+solution_0029,Enable write cache buffer flushing,Adjust disk cache settings in device manager,0.6,workaround,storage
+solution_0030,Clean USB-C port contacts,Use isopropyl alcohol to clean charging port,0.55,workaround,power
+solution_0031,Replace power adapter,Get replacement charger from Dell,0.95,permanent,power
+solution_0032,Update USB-C firmware via Dell Update,Install Thunderbolt firmware updates,0.75,permanent,power
+solution_0033,Uninstall Dell bloatware,Remove Dell Update and SupportAssist services,0.85,permanent,software
+solution_0034,Clean install Windows,Fresh Windows installation without Dell software,0.9,permanent,software
+solution_0035,Roll back Intel Graphics driver,Use DDU and install previous stable driver,0.8,workaround,software
+solution_0036,Disable Windows Hello,Use PIN or password login instead,0.7,workaround,software
+solution_0037,Tighten hinge screws,Remove bottom panel and tighten display hinges,0.6,workaround,build_quality
+solution_0038,RMA for hinge replacement,Request complete hinge assembly replacement,0.95,permanent,build_quality
+solution_0039,Clean palmrest with specific solution,Use isopropyl alcohol and microfiber cloth,0.4,workaround,build_quality
+solution_0040,Update Thunderbolt firmware and drivers,Install latest Thunderbolt Control Center updates,0.8,permanent,ports
+solution_0041,Reset USB controllers in Device Manager,Uninstall and reinstall USB controller drivers,0.7,workaround,ports
+solution_0042,Replace motherboard under warranty,Contact Dell for motherboard replacement,0.95,permanent,ports
