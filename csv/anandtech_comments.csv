@@ -1,0 +1,3449 @@
+thread_url,comment_author,comment_text,source_platform,comment_date
+https://forums.anandtech.com/threads/charge-ms-surface-laptop-w-usb-cable.2632473/post-41523723,C1,"[C1](https://forums.anandtech.com/members/c1.232336/)
+
+##### Platinum Member
+
+Feb 21, 20082,424133106
+
+AI Overview
+
+No, you cannot charge a Surface laptop model 1943 (which is a Surface Laptop Go) with a regular USB-A or basic USB-C cable because it requires a USB-C Power Delivery (PD) charger with specific wattage and voltage to charge correctly. You can use a USB-C to USB-C cable to charge it, but only with a Power Delivery (PD) compatible charger that can provide at least the 39W the device came with, or higher, for optimal results.
+
+PS: I remember recently trying to charge my DELL 7320 laptop using a 35 watt PS from a chromebook when instead the DELL requires a 65 watt PS. There was an alert in the BIOS of inadequate PS delivery. The unit ran, but the CPU was locked to minimum speed (1.4 Ghz on a 4+ Ghz capable cpu ) & I dont think the battery was able to charge (at least not normally).
+
+
+Last edited: Oct 18, 2025
+
+[![mindless1](https://anandtech-data.community.forum/avatars/s/65/65628.jpg?1476739266)](https://forums.anandtech.com/members/mindless1.65628/)
+",AnandTech,2025-10-16T00:00:00
+https://forums.anandtech.com/threads/charge-ms-surface-laptop-w-usb-cable.2632473/post-41523723,mindless1,"[mindless1](https://forums.anandtech.com/members/mindless1.65628/)
+
+##### Diamond Member
+
+Aug 11, 20018,8281,793136
+
+> [C1 said:](https://forums.anandtech.com/goto/post?id=41523191)
+>
+> PS: I remember recently trying to charge my DELL 7320 laptop using a 35 watt PS from a chromebook when instead the DELL requires a 65 watt PS. There was an alert in the BIOS of inadequate PS delivery. The unit ran, but the CPU was locked to minimum speed (1.4 Ghz on a 4+ Ghz capable cpu ) & I dont think the battery was able to charge (at least not normally).
+>
+>
+> Click to expand...
+
+It's a bit more complicated than that. The Dell PSU had a barrel connector with the two +/- contacts, but also a center pin which was used for data to ""authenticate"" that the laptop was connected to a specific series of Dell PSU.
+
+You could have substituted a different PSU that was capable of 65W or more and the laptop would have still downclocked the CPU and refused to charge the battery, because there was no authentication signal present.
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.anandtech.com/threads/apple-silicon-soc-thread.2587205/)
+
+
+
+  - Started by Eug
+  - Nov 10, 2020
+  - Replies: 11K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and",AnandTech,2025-10-16T00:00:00
+https://forums.anandtech.com/threads/cant-install-w11-on-dell-optiplex-9020-wont-shutdown.2631005/,igor\_kavinski,"[igor\_kavinski](https://forums.anandtech.com/members/igor_kavinski.458890/)
+
+##### Lifer
+
+Jul 27, 202028,17319,210146
+
+Update the BIOS to the latest version and try again.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Geos54](https://forums.anandtech.com/posts/41478914/reactions)
+
+[![BonzaiDuck](https://anandtech-data.community.forum/avatars/s/137/137745.jpg?1568609002)](https://forums.anandtech.com/members/bonzaiduck.137745/)
+",AnandTech,2025-07-19T00:00:00
+https://forums.anandtech.com/threads/cant-install-w11-on-dell-optiplex-9020-wont-shutdown.2631005/,BonzaiDuck,"[BonzaiDuck](https://forums.anandtech.com/members/bonzaiduck.137745/)
+
+##### Lifer
+
+Jun 30, 200416,8692,184126
+
+I don't have issues yet, but I'm trying to prepare myself for unpleasant surprises -- installing Windows 11 on dated hardware, but my systems of interest aren't as old as an i7-4770. I have two i7-6700 boxes with the same Z170 motherboard, and an i7-7700 with a different model of the Z170 under the same manufacturer.
+
+I'm wondering if I can get Win 11 to install on Z170 chipsets. My intention is to perform my ""experiment"" with WinBootMate. And I'm also wondering if I need to tweak the BIOS to assure that it's 100% UEFI and Secure Boot ready.
+
+I found some Win 11 Pro 64-bit retail ""sealed box"" offerings online for about $60 each, and the source and descriptive information seems to be reliable. Win 11, after all, is to be replaced eventually with Windows 12.
+
+If I have trouble with one of these installations, I should be able to recycle the software for the Series 2 Core Ultra system I intend on building around December, since they are retail releases of the OS.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Geos54](https://forums.anandtech.com/posts/41479093/reactions)
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.an",AnandTech,2025-07-19T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,coercitiv,"[coercitiv](https://forums.anandtech.com/members/coercitiv.341496/)
+
+##### Diamond Member
+
+Jan 24, 20147,47017,850136
+
+One thing to note is the prices on your side are rather high. I'm in the EU and the i3 12100 can be had for around £100 (VAT included). Meanwhile the Ultra 5 225 around £150, cheaper than the i5 12400. The old gen CPU prices are clearly affected by lower availability, the 12400 used to be much cheaper in the past.
+
+One side-effect of AMD feeding on scraps for years is they probably learned how to sell cheap CPUs (in the sense of planning for low cost platforms). I think it makes sense for Intel to focus on being competitive down to the bottom i5 SKU, the DIY sector for quad-cores ain't exactly going to help their bottom line. Some of the prices I see for AM4 CPUs in the low-end are extremely low. (3200G at 55 Euros)
+
+That being said, the ""Intel Processor"" branding is still the dumbest rebranding I've seen in years. The mind numbing names both Intel and AMD come up with lately are annoying as hell, but this ""Intel Processor"" idea is just plain stupid, one cannot even understand the product name when showed in a shop, it looks like a mistake or a placeholder.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Tlh97, lightmanek, DAPUNISHER and 5 others](https://forums.anandtech.com/posts/41535422/reactions)
+
+[![mikeymikec](https://anandtech-data.community.forum/avatars/s/293/293403.jpg?1724774028)](https://forums.anandtech.com/members/mikeymikec.293403/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,mikeymikec,"[mikeymikec](https://forums.anandtech.com/members/mikeymikec.293403/)
+
+##### Lifer
+
+May 19, 201121,48216,706136
+
+It doesn't really matter what the figures are but what they are relative to the AMD competition.
+
+The 3200G's availability and bargain bucket price is probably just a case of using up the remainder of supplies as AFAIK it's not compatible with the B550 chipset (I've checked two boards: ASUS PRIME B550M-A and MSI B550M PRO-VDH), and AFAIK supplies of B450 chipset boards are pretty slim.
+
+The Intel 300 should really be going for £60 UKP (relative to the prices I'm seeing). Sure, you can throw it into a currently-available Intel board (at least I assume you can, it's Raptor Lake gen), one might consider it an option to be replaced later as I bet that second-hand Raptor Lake CPUs are going to be as cheap as uh chips once they stop being produced. At £95 though it's almost like Intel is acting like it still rules the roost and can therefore ask for whatever they want for it.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [booklib28 and Mopetar](https://forums.anandtech.com/posts/41535430/reactions)
+
+[H](https://forums.anandtech.com/members/hemedans.355738/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,hemedans,"[hemedans](https://forums.anandtech.com/members/hemedans.355738/)
+
+##### Senior member
+
+Jan 31, 2015303176116
+
+Prebuilt with i3 12100 are so cheap nowadays, which cover many average users needs.
+
+For Enthuasist 12100f is still unbeaten value wise, even something like Rx 6400 would be better than igp in most desktop Apu, if you want to match like of 2200G and 4300G then £30 quadro P620 is enough..
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Ken g6, Mopetar and coercitiv](https://forums.anandtech.com/posts/41535435/reactions)
+
+[![coercitiv](https://anandtech-data.community.forum/avatars/s/341/341496.jpg?1525614148)](https://forums.anandtech.com/members/coercitiv.341496/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,coercitiv,"[coercitiv](https://forums.anandtech.com/members/coercitiv.341496/)
+
+##### Diamond Member
+
+Jan 24, 20147,47017,850136
+
+> [mikeymikec said:](https://forums.anandtech.com/goto/post?id=41535430)
+>
+> It doesn't really matter what the figures are but what they are relative to the AMD competition.
+>
+>
+> Click to expand...
+
+The absolute price affects where the line gets drawn when building on a fixed budget. If we have the same budget and you can fit the i3 12100 while I can fit the Ultra 5 225, then I no longer see Intel's pricing problem in the same way as you do (it's still there, but I'm less affected by it). Not only does it change my perspective when looking at Intel alone, but also when comparing Intel vs. AMD because their 6+ core offering is in a much better spot relative to the competition.
+
+Having said that, I think it's important to reiterate that Intel is currently capacity constrained on their Intel 7 node. Everything that is Alder or Raptor will be considerably more expensive going forward, and I think their entire low-end lineup is based on this older node.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Joe NYC](https://forums.anandtech.com/posts/41535451/reactions)
+
+[D](https://forums.anandtech.com/members/doug-s.453258/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,Doug S,"[Doug S](https://forums.anandtech.com/members/doug-s.453258/)
+
+##### Diamond Member
+
+Feb 8, 20203,8126,747136
+
+Newer more expensive processes like N2/18A and A14/14A won't support the existence of a low end, at least not as low as it is today. When a 100 mm^2 chip costs $50 from the foundry there isn't much room to have a market of CPUs selling for $50. By early next decade that chip might be close to $100 on the then leading edge process.
+
+So either you have to leave N3/N5 class products on your price list essentially forever (will AM5 still be around in 2040?) or you have to abandon the existence of what we currently know as the low end. People who want ""low end"" will probably be buying used and that market will want to see fewer old CPUs/boards sent to the recycler and more into a refurbishment economy for a second life.
+
+[![dullard](https://anandtech-data.community.forum/avatars/s/53/53570.jpg?1258147577)](https://forums.anandtech.com/members/dullard.53570/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,dullard,"[dullard](https://forums.anandtech.com/members/dullard.53570/)
+
+##### Elite Member
+
+May 21, 200126,1914,855126
+
+The industry is both fab constrained and wafer constrained right now. AI is taking all the resources. If you are going to be limited on the number of chips you make because you don't have enough wafers, then you certainly aren't going to make the lowest end processors with the lowest profits.
+
+That said, Intel did finally release one cheaper Arrow Lake: the 205. It isn't on your list. It also is not likely to be a DIY either though.
+
+![www.tomshardware.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fcdn.mos.cms.futurecdn.net%2FbL5iYiBUY2rLX6QTRp4iaU-1920-80.jpg&hash=acee4a80110fc178da21c4ab7105d831&return_error=1)
+
+### [Intel Core Ultra 3 205 delivers impressive results in early review — reportedly surpasses previous-gen Core i3-14100 and Core i5-14400](https://www.tomshardware.com/pc-components/cpus/intel-core-ultra-3-205-delivers-impressive-results-in-early-review-reportedly-surpasses-previous-gen-core-i3-14100-and-core-i5-14400)
+
+New entry-level champ?
+
+![www.tomshardware.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fvanilla.futurecdn.net%2Ftomshardware%2F1518057%2Ffavicon.ico&hash=43118f1cf904a9f77358e1b9111831e1&return_error=1)
+www.tomshardware.com
+
+
+[![dullard](https://anandtech-data.community.forum/avatars/s/53/53570.jpg?1258147577)](https://forums.anandtech.com/members/dullard.53570/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,dullard,"[dullard](https://forums.anandtech.com/members/dullard.53570/)
+
+##### Elite Member
+
+May 21, 200126,1914,855126
+
+> [Doug S said:](https://forums.anandtech.com/goto/post?id=41535601)
+>
+> So either you have to leave N3/N5 class products on your price list essentially forever (will AM5 still be around in 2040?) or you have to abandon the existence of what we currently know as the low end.
+>
+>
+> Click to expand...
+
+That is not necessarily a bad thing. For many, many purposes CPUs are fast enough as-is. My parents browsing the internet and working on genealogy reports have no need for anything powerful. Same goes with many office workers who push paper.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Mopetar](https://forums.anandtech.com/posts/41535605/reactions)
+
+[![DrMrLordX](https://anandtech-data.community.forum/avatars/s/19/19209.jpg?1561869793)](https://forums.anandtech.com/members/drmrlordx.19209/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,DrMrLordX,"[DrMrLordX](https://forums.anandtech.com/members/drmrlordx.19209/)
+
+##### Lifer
+
+Apr 27, 200023,19713,286136
+
+> [dullard said:](https://forums.anandtech.com/goto/post?id=41535602)
+>
+> The industry is both fab constrained and wafer constrained right now.
+>
+>
+> Click to expand...
+
+For Intel (wrt desktop chips) the situation is also complicated by their ""cheap""/old process being relatively expensive (namely, Intel 7). Normally process costs go down over time, but Intel 7 prices still seem to be relatively high, making it difficult for them to get any kind of margins on low-end CPUs they produce on Intel 7. They're definitely capacity-constrained on Intel 3 and 18a.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Tlh97, booklib28 and Joe NYC](https://forums.anandtech.com/posts/41535610/reactions)
+
+[M](https://forums.anandtech.com/members/mopetar.287938/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,Mopetar,"[Mopetar](https://forums.anandtech.com/members/mopetar.287938/)
+
+##### Diamond Member
+
+Jan 31, 20118,5257,786136
+
+> [dullard said:](https://forums.anandtech.com/goto/post?id=41535605)
+>
+> That is not necessarily a bad thing. For many, many purposes CPUs are fast enough as-is. My parents browsing the internet and working on genealogy reports have no need for anything powerful. Same goes with many office workers who push paper.
+>
+>
+> Click to expand...
+
+If you don't need x86 or Windows, a Raspberry Pi is probably good enough for a lot of people.
+
+A lot of people just use their phones for everything and barely touch a desktop outside of a few cases.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [DAPUNISHER](https://forums.anandtech.com/posts/41535638/reactions)
+
+[J](https://forums.anandtech.com/members/joe-nyc.470128/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,Joe NYC,"[Joe NYC](https://forums.anandtech.com/members/joe-nyc.470128/)
+
+##### Diamond Member
+
+Jun 26, 20214,1815,742136
+
+> [coercitiv said:](https://forums.anandtech.com/goto/post?id=41535451)
+>
+> Having said that, I think it's important to reiterate that Intel is currently capacity constrained on their Intel 7 node. Everything that is Alder or Raptor will be considerably more expensive going forward, and I think their entire low-end lineup is based on this older node.
+>
+>
+> Click to expand...
+
+And pretty significant step up in cost from Intel 7 processors monolithic to 2.5D packaged chiplet based CPUs.
+
+So, product availability and pricing of Intel chips on the low end is not going to improve.
+
+[J](https://forums.anandtech.com/members/joe-nyc.470128/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,Joe NYC,"[Joe NYC](https://forums.anandtech.com/members/joe-nyc.470128/)
+
+##### Diamond Member
+
+Jun 26, 20214,1815,742136
+
+> [dullard said:](https://forums.anandtech.com/goto/post?id=41535602)
+>
+> The industry is both fab constrained and wafer constrained right now. AI is taking all the resources. If you are going to be limited on the number of chips you make because you don't have enough wafers, then you certainly aren't going to make the lowest end processors with the lowest profits.
+>
+>
+> Click to expand...
+
+Exactly. Lower cost processors should be moving to N4, but majority of AI bubble is still on N4.
+
+[J](https://forums.anandtech.com/members/jpiniero.281730/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,jpiniero,"[jpiniero](https://forums.anandtech.com/members/jpiniero.281730/)
+
+##### Lifer
+
+Oct 1, 201017,1467,533136
+
+> [dullard said:](https://forums.anandtech.com/goto/post?id=41535602)
+>
+> The industry is both fab constrained and wafer constrained right now. AI is taking all the resources.
+>
+>
+> Click to expand...
+
+Not Intel 7. Intel raised Raptor Lake prices because people weren't buying enough Arrow Lake.
+
+[![Josh128](https://anandtech-data.community.forum/avatars/s/485/485086.jpg?1722880397)](https://forums.anandtech.com/members/josh128.485086/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,Josh128,"[Josh128](https://forums.anandtech.com/members/josh128.485086/)
+
+##### Golden Member
+
+Oct 14, 20221,5172,265106
+
+> [dullard said:](https://forums.anandtech.com/goto/post?id=41535602)
+>
+> The industry is both fab constrained and wafer constrained right now. AI is taking all the resources. If you are going to be limited on the number of chips you make because you don't have enough wafers, then you certainly aren't going to make the lowest end processors with the lowest profits.
+>
+> That said, Intel did finally release one cheaper Arrow Lake: the 205. It isn't on your list. It also is not likely to be a DIY either though.
+>
+> ![www.tomshardware.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fcdn.mos.cms.futurecdn.net%2FbL5iYiBUY2rLX6QTRp4iaU-1920-80.jpg&hash=acee4a80110fc178da21c4ab7105d831&return_error=1)
+>
+> ### [Intel Core Ultra 3 205 delivers impressive results in early review — reportedly surpasses previous-gen Core i3-14100 and Core i5-14400](https://www.tomshardware.com/pc-components/cpus/intel-core-ultra-3-205-delivers-impressive-results-in-early-review-reportedly-surpasses-previous-gen-core-i3-14100-and-core-i5-14400)
+>
+> New entry-level champ?
+>
+> ![www.tomshardware.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fvanilla.futurecdn.net%2Ftomshardware%2F1518057%2Ffavicon.ico&hash=43118f1cf904a9f77358e1b9111831e1&return_error=1)
+> www.tomshardware.com
+>
+>
+> Click to expand...
+
+Adroc Thurston claims otherwise.
+
+[5](https://forums.anandtech.com/members/511.507238/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,511,"[511](https://forums.anandtech.com/members/511.507238/)
+
+##### Diamond Member
+
+Jul 12, 20245,3944,816106
+
+> [Doug S said:](https://forums.anandtech.com/goto/post?id=41535601)
+>
+> Newer more expensive processes like N2/18A and A14/14A won't support the existence of a low end, at least not as low as it is today. When a 100 mm^2 chip costs $50 from the foundry there isn't much room to have a market of CPUs selling for $50. By early next decade that chip might be close to $100 on the then leading edge process.
+>
+> So either you have to leave N3/N5 class products on your price list essentially forever (will AM5 still be around in 2040?) or you have to abandon the existence of what we currently know as the low end. People who want ""low end"" will probably be buying used and that market will want to see fewer old CPUs/boards sent to the recycler and more into a refurbishment economy for a second life.
+>
+>
+> Click to expand...
+
+tbh there will be something cheaper in that era like WCL on Desktop ...
+
+[5](https://forums.anandtech.com/members/511.507238/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,511,"[511](https://forums.anandtech.com/members/511.507238/)
+
+##### Diamond Member
+
+Jul 12, 20245,3944,816106
+
+> [jpiniero said:](https://forums.anandtech.com/goto/post?id=41535719)
+>
+> Not Intel 7. Intel raised Raptor Lake prices because people weren't buying enough Arrow Lake.
+>
+>
+> Click to expand...
+
+Intel 7 is capacity constrained as well those fabs are running in full utilization
+
+[![adroc_thurston](https://anandtech-data.community.forum/avatars/s/492/492831.jpg?1688329096)](https://forums.anandtech.com/members/adroc_thurston.492831/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,adroc\_thurston,"[adroc\_thurston](https://forums.anandtech.com/members/adroc_thurston.492831/)
+
+##### Diamond Member
+
+Jul 2, 20238,43711,168106
+
+> [jpiniero said:](https://forums.anandtech.com/goto/post?id=41535719)
+>
+> because people weren't buying enough Arrow Lake.
+>
+>
+> Click to expand...
+
+Intel wasn't selling it and has no interest in selling it.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [511](https://forums.anandtech.com/posts/41535866/reactions)
+
+[J](https://forums.anandtech.com/members/jpiniero.281730/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,jpiniero,"[jpiniero](https://forums.anandtech.com/members/jpiniero.281730/)
+
+##### Lifer
+
+Oct 1, 201017,1467,533136
+
+> [adroc\_thurston said:](https://forums.anandtech.com/goto/post?id=41535866)
+>
+> Intel wasn't selling it and has no interest in selling it.
+>
+>
+> Click to expand...
+
+Arrow Lake? Of course they are interested, cuz Ayy Eye.
+
+[5](https://forums.anandtech.com/members/511.507238/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,511,"[511](https://forums.anandtech.com/members/511.507238/)
+
+##### Diamond Member
+
+Jul 12, 20245,3944,816106
+
+> [jpiniero said:](https://forums.anandtech.com/goto/post?id=41535895)
+>
+> Arrow Lake? Of course they are interested, cuz Ayy Eye.
+>
+>
+> Click to expand...
+
+you clearly don't know how expensive ARL is for Intel even after accounting for how bad Intel 7 Cost is
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Joe NYC](https://forums.anandtech.com/posts/41535897/reactions)
+
+[J](https://forums.anandtech.com/members/jpiniero.281730/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,jpiniero,"[jpiniero](https://forums.anandtech.com/members/jpiniero.281730/)
+
+##### Lifer
+
+Oct 1, 201017,1467,533136
+
+> [511 said:](https://forums.anandtech.com/goto/post?id=41535897)
+>
+> you clearly don't know how expensive ARL is for Intel
+>
+>
+> Click to expand...
+
+Oh I can believe that.
+
+Will say that I looked at Dell and Lenovo desktops and it seemed to be mainly Arrow Lake.
+
+[![adroc_thurston](https://anandtech-data.community.forum/avatars/s/492/492831.jpg?1688329096)](https://forums.anandtech.com/members/adroc_thurston.492831/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,adroc\_thurston,"[adroc\_thurston](https://forums.anandtech.com/members/adroc_thurston.492831/)
+
+##### Diamond Member
+
+Jul 2, 20238,43711,168106
+
+> [jpiniero said:](https://forums.anandtech.com/goto/post?id=41535895)
+>
+> Arrow Lake? Of course they are interested, cuz Ayy Eye.
+>
+>
+> Click to expand...
+
+ARL is not for AI PC.
+
+> [jpiniero said:](https://forums.anandtech.com/goto/post?id=41535916)
+>
+> Dell and Lenovo desktops
+>
+>
+> Click to expand...
+
+Try a real market.
+
+[![DAPUNISHER](https://anandtech-data.community.forum/avatars/s/67/67347.jpg?1675931613)](https://forums.anandtech.com/members/dapunisher.67347/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,DAPUNISHER,"[DAPUNISHER](https://forums.anandtech.com/members/dapunisher.67347/)
+
+##### Super Moderator CPU Forum Mod and Elite Member
+
+**Super Moderator**
+
+Aug 22, 200132,37333,298146
+
+> [hemedans said:](https://forums.anandtech.com/goto/post?id=41535435)
+>
+> For Enthuasist 12100f is still unbeaten value wise,
+>
+>
+> Click to expand...
+
+Judging by sales clearly not the case. The most popular budget CPU is the one I picked up recently, the Ryzen 5500. I got it for $55 on Prime Day deal. 4.5-4.6GHz all core without unsafe vcore is an easy overclock on a cheap board.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Tlh97, Mopetar, Joe NYC and 1 other person](https://forums.anandtech.com/posts/41535921/reactions)
+
+[J](https://forums.anandtech.com/members/jpiniero.281730/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,jpiniero,"[jpiniero](https://forums.anandtech.com/members/jpiniero.281730/)
+
+##### Lifer
+
+Oct 1, 201017,1467,533136
+
+> [adroc\_thurston said:](https://forums.anandtech.com/goto/post?id=41535918)
+>
+> Try a real market.
+>
+>
+> Click to expand...
+
+Still like a $3B/quarter business. And OEMs are most of that. They obviously aren't selling much in DIY.
+
+[![DAPUNISHER](https://anandtech-data.community.forum/avatars/s/67/67347.jpg?1675931613)](https://forums.anandtech.com/members/dapunisher.67347/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,DAPUNISHER,"[DAPUNISHER](https://forums.anandtech.com/members/dapunisher.67347/)
+
+##### Super Moderator CPU Forum Mod and Elite Member
+
+**Super Moderator**
+
+Aug 22, 200132,37333,298146
+
+> [Mopetar said:](https://forums.anandtech.com/goto/post?id=41535638)
+>
+> If you don't need x86 or Windows, a Raspberry Pi is probably good enough for a lot of people.
+>
+> A lot of people just use their phones for everything and barely touch a desktop outside of a few cases.
+>
+>
+> Click to expand...
+
+A $100-$150 mini PC is all most need for a daily driver.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Mopetar](https://forums.anandtech.com/posts/41535928/reactions)
+
+[5](https://forums.anandtech.com/members/511.507238/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,511,"[511](https://forums.anandtech.com/members/511.507238/)
+
+##### Diamond Member
+
+Jul 12, 20245,3944,816106
+
+N100 is still the bare minimum to be the basic daily driver
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.anandtech.com/threads/apple-silicon-soc-thread.2587205/)
+
+
+
+  - Started by Eug
+  - Nov 10, 2020
+  - Replies: 11K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![IronLynx](https://anandtech-data.community.forum/avatars/s/476/476350.jpg?1716357741)](https://forums.anandtech.com/members/ironlynx.476350/)
+
+
+
+[QuestionZen 6 Speculation Thread](https://forums.anandtech.com/threads/zen-6-speculation-thread.2619444/)
+
+
+
+  - Started by IronLynx
+  - May 22, 2024
+  - Replies: 9K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+[COMPANY](https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/#)
+
+![](https://forums.anandtech.com/styles/anandtech/anandtech/FUTURE_logo_white.png)
+
+AnandTech is part of Future plc, an international media group and leading digital publisher. [**Visit our corporate site**](https://www.futureplc.com/).
+
+© Future Publishing Limited Quay House, The Ambury, Bath BA1 1UA. All",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/dell-27-gaming-monitors-g2724d-and-g2725d-on-sale-for-150-free-shipping-from-dell.2623851/,Jimminy,"[Jimminy](https://forums.anandtech.com/members/jimminy.456792/)
+
+##### Senior member
+
+May 19, 2020503188116
+
+> [MadScientist said:](https://forums.anandtech.com/goto/post?id=41346408)
+>
+> I received [it](https://www.dell.com/en-us/shop/dell-27-gaming-monitor-g2724d/apd/210-bhxc/monitors-monitor-accessories) this week and calibrated it with DisplayCal and a SpyderX Pro at 1440P and 165Hz refresh rate. Review at [Rtings](https://www.rtings.com/monitor/reviews/dell/g2724d). In Custom Color mode my RGB gain calibration settings were 100-100-99. Gamma was 2.2 before and after calibration. For $150. the picture looks great right out of the box and didn't need much tweaking.
+>
+>
+> Click to expand...
+
+Sounds like you got a great deal. My wife had an old LG 27"" that she gave me a while back, when I was looking for a monitor, so maybe that's why I missed this deal (I don't even remember this deal being posted here).
+
+The LG is nothing special, but since I'm not a gaming fanatic, I stopped looking. I don't even have rgb lighting on anything, except a great keyboard I bought on sale ![:)](<Base64-Image-Removed>)
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.anandtech.com/threads/apple-silicon-soc-thread.2587205/)
+
+
+
+  - Started by Eug
+  -",AnandTech,2024-11-27T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,Doug S,"[Doug S](https://forums.anandtech.com/members/doug-s.453258/)
+
+##### Diamond Member
+
+Feb 8, 20203,8126,747136
+
+> [fastandfurious6 said:](https://forums.anandtech.com/goto/post?id=41538929)
+>
+> up to 150% increase throughout all DRAM products 😭
+>
+> 128GB now costs upwards $1000.... was $400 just 6 months ago
+>
+> is it going to go back?
+>
+>
+> Click to expand...
+
+This has all happened before, and it'll happen again. In the mid 90s prices went way up (because of Windows 95 memory requirements) and it took over two years before they hit a lower point than they had been previously. There have been some episodes since but not as big as that one (and this one) so people are caught off guard.
+
+If the AI bubble doesn't burst and they actually follow through with even half of the claimed/planned/announced datacenter projects it might double again before it peaks. They have the money to push Samsung/Micron/etc. into converting lines making DDR5/LPDDR5X to HBM, and they'll happily go along because $$$.
+
+I imagine the China memory fabs are greatly speeding up their timelines and will be able to get a lot more capacity online. The US will likely tariff or otherwise block them but that RAM will be able to be used in PCs/phones shipping to the rest of the world so if you live outside the US you might get some relief later next year.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [lightmanek, adamge, Tlh97 and 3 others](https://forums.anandtech.com/posts/41539006/reactions)
+
+[![misuspita](https://anandtech-data.community.forum/avatars/s/198/198499.jpg?1493063656)](https://forums.anandtech.com/members/misuspita.198499/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,misuspita,"[misuspita](https://forums.anandtech.com/members/misuspita.198499/)
+
+##### Senior member
+
+Jul 15, 2006791959136
+
+I bought a 64gb 6000 cl30 patriot viper ddr5 kit a month ago with 190€. Well, that was lucky ![:)](<Base64-Image-Removed>)))
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [lightmanek](https://forums.anandtech.com/posts/41539049/reactions)
+
+[J](https://forums.anandtech.com/members/johnsonwax.506533/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,johnsonwax,"[johnsonwax](https://forums.anandtech.com/members/johnsonwax.506533/)
+
+##### Senior member
+
+Jun 27, 202446967496
+
+_Apple points and laughs._
+
+[F](https://forums.anandtech.com/members/fjodor2001.270445/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,Fjodor2001,"[Fjodor2001](https://forums.anandtech.com/members/fjodor2001.270445/)
+
+##### Diamond Member
+
+Feb 6, 20104,581731126
+
+> [Doug S said:](https://forums.anandtech.com/goto/post?id=41539006)
+>
+> In the mid 90s prices went way up (because of Windows 95 memory requirements)
+>
+>
+> Click to expand...
+
+Perhaps Windows is also a reason in this case.
+
+I.e. the forced Windows 11 upgrades when Windows 10 went EOL in October 2025, which for a lot of users means that have to buy a new PC.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [lightmanek](https://forums.anandtech.com/posts/41539055/reactions)
+
+[![NTMBK](https://anandtech-data.community.forum/avatars/s/301/301096.jpg?1470821212)](https://forums.anandtech.com/members/ntmbk.301096/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,NTMBK,"[NTMBK](https://forums.anandtech.com/members/ntmbk.301096/)
+
+##### Lifer
+
+Nov 14, 201110,5216,037136
+
+Shouldn't this be in the Memory subforum?
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Thunder 57](https://forums.anandtech.com/posts/41539062/reactions)
+
+[![fastandfurious6](https://anandtech-data.community.forum/avatars/s/505/505099.jpg?1758446810)](https://forums.anandtech.com/members/fastandfurious6.505099/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,fastandfurious6,"[fastandfurious6](https://forums.anandtech.com/members/fastandfurious6.505099/)
+
+##### Senior member
+
+Jun 1, 20249191,05496
+
+Forgot there's a memory section. There's a good thread already there. This can be deleted
+
+**No worries. I'll lock this and anyone that wants to continue the discussion can do it in that thread.**
+
+**-Mod DAPUNISHER**
+
+
+Last edited by a moderator: Dec 2, 2025
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [DAPUNISHER](https://forums.anandtech.com/posts/41539067/reactions)
+
+[D](https://forums.anandtech.com/members/doug-s.453258/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,Doug S,"[Doug S](https://forums.anandtech.com/members/doug-s.453258/)
+
+##### Diamond Member
+
+Feb 8, 20203,8126,747136
+
+> [Fjodor2001 said:](https://forums.anandtech.com/goto/post?id=41539055)
+>
+> Perhaps Windows is also a reason in this case.
+>
+> I.e. the forced Windows 11 upgrades when Windows 10 went EOL in October 2025, which for a lot of users means that have to buy a new PC.
+>
+>
+> Click to expand...
+
+That just doesn't account for all that much, first because most people aren't replacing their PCs over that (look how long it took Windows 7 to drop below a double digit share of the installed base after it went EOL, and I bet Windows 10 will take even longer to get there) and second because the PC that most will buy to replace it doesn't have all that much RAM.
+
+Looking at Best Buy's Black Friday PC/laptop deals (the kind of place average people would look at if they felt like they were ""forced"" to replace their PC) you see Chromebooks with 4 GB, and PCs with 8 GB and 16 GB. I didn't scroll far (their site sucks and is slow/overloaded) but I didn't see anything higher than 16 GB.
+
+That 8 GB to 16 GB range is smartphone territory, and there are 3-4x as many smartphones shipped per year as PCs. Apple going from 8 GB to 12 GB in the iPhone (which ships nearly a quarter billion units per year - for context 262 million PCs shipped in 2024) probably has more impact on the DRAM market than Windows 11 forced upgrades lol
+
+[D](https://forums.anandtech.com/members/doug-s.453258/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,Doug S,"[Doug S](https://forums.anandtech.com/members/doug-s.453258/)
+
+##### Diamond Member
+
+Feb 8, 20203,8126,747136
+
+Just to add to my previous post with some proof from a major PC OEM:
+
+[https://www.msn.com/en-us/technolog...0-shift-yet-pc-sales-have-stalled/ar-AA1RaG8n](https://www.msn.com/en-us/technology/software/dell-says-windows-11-transition-is-far-slower-than-win-10-shift-yet-pc-sales-have-stalled/ar-AA1RaG8n)
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [coercitiv](https://forums.anandtech.com/posts/41540039/reactions)
+
+[J](https://forums.anandtech.com/members/jpiniero.281730/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,jpiniero,"[jpiniero](https://forums.anandtech.com/members/jpiniero.281730/)
+
+##### Lifer
+
+Oct 1, 201017,1467,533136
+
+> [Doug S said:](https://forums.anandtech.com/goto/post?id=41539188)
+>
+> That just doesn't account for all that much, first because most people aren't replacing their PCs over that
+>
+>
+> Click to expand...
+
+Corpos tho. That is not a small number. But they would be done by now. I was given a new machine specifically because of Windows 11.
+
+There might be some hoarding going on by OEMs.
+
+[J](https://forums.anandtech.com/members/jpiniero.281730/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,jpiniero,"[jpiniero](https://forums.anandtech.com/members/jpiniero.281730/)
+
+##### Lifer
+
+Oct 1, 201017,1467,533136
+
+[https://videocardz.com/newz/onexplayer-apex-amd-strix-halo-handhelds-gets-200-price-hike-before-launch-due-to-rising-memory-costs](https://videocardz.com/newz/onexplayer-apex-amd-strix-halo-handhelds-gets-200-price-hike-before-launch-due-to-rising-memory-costs)
+
+A Strix Halo handheld is getting a $200 price hike soon, citing rising memory costs.
+
+[D](https://forums.anandtech.com/members/dzero.506262/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,DZero,"[DZero](https://forums.anandtech.com/members/dzero.506262/)
+
+##### Platinum Member
+
+Jun 20, 20242,12977796
+
+> [Doug S said:](https://forums.anandtech.com/goto/post?id=41539006)
+>
+> This has all happened before, and it'll happen again. In the mid 90s prices went way up (because of Windows 95 memory requirements) and it took over two years before they hit a lower point than they had been previously. There have been some episodes since but not as big as that one (and this one) so people are caught off guard.
+>
+> If the AI bubble doesn't burst and they actually follow through with even half of the claimed/planned/announced datacenter projects it might double again before it peaks. They have the money to push Samsung/Micron/etc. into converting lines making DDR5/LPDDR5X to HBM, and they'll happily go along because $$$.
+>
+> I imagine the China memory fabs are greatly speeding up their timelines and will be able to get a lot more capacity online. The US will likely tariff or otherwise block them but that RAM will be able to be used in PCs/phones shipping to the rest of the world so if you live outside the US you might get some relief later next year.
+>
+>
+> Click to expand...
+
+The issue is that this time is different... is the [USA which is moving ALL in their AI](https://www.wsj.com/tech/ai/how-the-u-s-economy-became-hooked-on-ai-spending-4b6bc7ff).
+
+So yeah, forget cheap prices since the USA would keep it up artificially.
+
+But yeah, China would intervene and at least locally and initially for DDR4 RAMs would be lowered by sheer resolution and intervention. And it will help the rest of the world for that. As for DDR5, it might come later.
+
+[![EXCellR8](https://anandtech-data.community.forum/avatars/s/280/280327.jpg?1663007095)](https://forums.anandtech.com/members/excellr8.280327/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,EXCellR8,"[EXCellR8](https://forums.anandtech.com/members/excellr8.280327/)
+
+##### Diamond Member
+
+Sep 1, 20104,129939136
+
+Ah yes, the steep 4MB memory requirement for Windows 95... how could we forget?
+
+[![dullard](https://anandtech-data.community.forum/avatars/s/53/53570.jpg?1258147577)](https://forums.anandtech.com/members/dullard.53570/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,dullard,"[dullard](https://forums.anandtech.com/members/dullard.53570/)
+
+##### Elite Member
+
+May 21, 200126,1914,855126
+
+> [Doug S said:](https://forums.anandtech.com/goto/post?id=41539006)
+>
+> If the AI bubble doesn't burst and they actually follow through with even half of the claimed/planned/announced datacenter projects it might double again before it peaks. They have the money to push Samsung/Micron/etc. into converting lines making DDR5/LPDDR5X to HBM, and they'll happily go along because $$$.
+>
+> I imagine the China memory fabs are greatly speeding up their timelines and will be able to get a lot more capacity online. The US will likely tariff or otherwise block them but that RAM will be able to be used in PCs/phones shipping to the rest of the world so if you live outside the US you might get some relief later next year.
+>
+>
+> Click to expand...
+
+Your concept is correct but it is even worse than you mentioned in your last paragraph. Spot DRAM prices have now quadrupled from Sept 20 to Dec 1 ($6.84 to $27.20 for 16 Gbit DDR5). Shortages expected to last until 2027 and maybe more. New production might not be fully ready until 2029.
+
+[https://www.tomshardware.com/pc-components/dram/the-ram-pricing-crisis-has-only-just-started-team-group-gm-warns-says-problem-will-get-worse-in-2026-as-dram-and-nand-prices-double-in-one-month](https://www.tomshardware.com/pc-components/dram/the-ram-pricing-crisis-has-only-just-started-team-group-gm-warns-says-problem-will-get-worse-in-2026-as-dram-and-nand-prices-double-in-one-month)
+
+[D](https://forums.anandtech.com/members/dzero.506262/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,DZero,"[DZero](https://forums.anandtech.com/members/dzero.506262/)
+
+##### Platinum Member
+
+Jun 20, 20242,12977796
+
+> [dullard said:](https://forums.anandtech.com/goto/post?id=41542069)
+>
+> Your concept is correct but it is even worse than you mentioned in your last paragraph. Spot DRAM prices have now quadrupled from Sept 20 to Dec 1 ($6.84 to $27.20 for 16 Gbit DDR5). Shortages expected to last until 2027 and maybe more. New production might not be fully ready until 2029.
+>
+> [https://www.tomshardware.com/pc-components/dram/the-ram-pricing-crisis-has-only-just-started-team-group-gm-warns-says-problem-will-get-worse-in-2026-as-dram-and-nand-prices-double-in-one-month](https://www.tomshardware.com/pc-components/dram/the-ram-pricing-crisis-has-only-just-started-team-group-gm-warns-says-problem-will-get-worse-in-2026-as-dram-and-nand-prices-double-in-one-month)
+>
+> Click to expand...
+
+The situation would escalate further, this is bad for everyone, even bussiness since there won't be RAM parts to replace in case the used ones fails.
+
+[![dullard](https://anandtech-data.community.forum/avatars/s/53/53570.jpg?1258147577)](https://forums.anandtech.com/members/dullard.53570/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,dullard,"[dullard](https://forums.anandtech.com/members/dullard.53570/)
+
+##### Elite Member
+
+May 21, 200126,1914,855126
+
+> [DZero said:](https://forums.anandtech.com/goto/post?id=41542076)
+>
+> The situation would escalate further, this is bad for everyone, even bussiness since there won't be RAM parts to replace in case the used ones fails.
+>
+>
+> Click to expand...
+
+It is worse than that. Not enough substrates and wafers (AI / Data Center demand causing shortages + politics) means that we could soon have CPU, GPU, and SDD shortages. Memory is just being hurt first due to politics.
+
+[D](https://forums.anandtech.com/members/dzero.506262/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,DZero,"[DZero](https://forums.anandtech.com/members/dzero.506262/)
+
+##### Platinum Member
+
+Jun 20, 20242,12977796
+
+> [dullard said:](https://forums.anandtech.com/goto/post?id=41542088)
+>
+> It is worse than that. Not enough substrates and wafers (AI / Data Center demand causing shortages + politics) means that we could soon have CPU, GPU, and SDD shortages. Memory is just being hurt first due to politics.
+>
+>
+> Click to expand...
+
+Time to go vintage then.
+
+Status
+Not open for further replies.
+
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.anandtech.com/threads/apple-silicon-soc-thread.2587205/)
+
+
+
+  - Started by Eug
+  - Nov 10, 2020
+  - Replies: 11K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![IronLynx](https://anandtech-data.community.forum/avatars/s/476/476350.jpg?1716357741)](https://forums.anandtech.com/members/ironlynx.476350/)
+
+
+
+[QuestionZen 6 Speculation Thread](https://forums.anandtech.com/threads/zen-6-speculation-thread.2619444/)
+
+
+
+  - Started by IronLynx
+  - May 22, 2024
+  - Replies: 9K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+[COMPANY](https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/#)
+
+![](https://forums.anandtech.com/styles/anandtech/anandtech/FUTURE_logo_white.png)
+
+AnandTech is pa",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,coercitiv,"[coercitiv](https://forums.anandtech.com/members/coercitiv.341496/)
+
+##### Diamond Member
+
+Jan 24, 20147,47017,850136
+
+One thing to note is the prices on your side are rather high. I'm in the EU and the i3 12100 can be had for around £100 (VAT included). Meanwhile the Ultra 5 225 around £150, cheaper than the i5 12400. The old gen CPU prices are clearly affected by lower availability, the 12400 used to be much cheaper in the past.
+
+One side-effect of AMD feeding on scraps for years is they probably learned how to sell cheap CPUs (in the sense of planning for low cost platforms). I think it makes sense for Intel to focus on being competitive down to the bottom i5 SKU, the DIY sector for quad-cores ain't exactly going to help their bottom line. Some of the prices I see for AM4 CPUs in the low-end are extremely low. (3200G at 55 Euros)
+
+That being said, the ""Intel Processor"" branding is still the dumbest rebranding I've seen in years. The mind numbing names both Intel and AMD come up with lately are annoying as hell, but this ""Intel Processor"" idea is just plain stupid, one cannot even understand the product name when showed in a shop, it looks like a mistake or a placeholder.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Tlh97, lightmanek, DAPUNISHER and 5 others](https://forums.anandtech.com/posts/41535422/reactions)
+
+[![mikeymikec](https://anandtech-data.community.forum/avatars/s/293/293403.jpg?1724774028)](https://forums.anandtech.com/members/mikeymikec.293403/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,mikeymikec,"[mikeymikec](https://forums.anandtech.com/members/mikeymikec.293403/)
+
+##### Lifer
+
+May 19, 201121,48216,706136
+
+It doesn't really matter what the figures are but what they are relative to the AMD competition.
+
+The 3200G's availability and bargain bucket price is probably just a case of using up the remainder of supplies as AFAIK it's not compatible with the B550 chipset (I've checked two boards: ASUS PRIME B550M-A and MSI B550M PRO-VDH), and AFAIK supplies of B450 chipset boards are pretty slim.
+
+The Intel 300 should really be going for £60 UKP (relative to the prices I'm seeing). Sure, you can throw it into a currently-available Intel board (at least I assume you can, it's Raptor Lake gen), one might consider it an option to be replaced later as I bet that second-hand Raptor Lake CPUs are going to be as cheap as uh chips once they stop being produced. At £95 though it's almost like Intel is acting like it still rules the roost and can therefore ask for whatever they want for it.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [booklib28 and Mopetar](https://forums.anandtech.com/posts/41535430/reactions)
+
+[H](https://forums.anandtech.com/members/hemedans.355738/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,hemedans,"[hemedans](https://forums.anandtech.com/members/hemedans.355738/)
+
+##### Senior member
+
+Jan 31, 2015303176116
+
+Prebuilt with i3 12100 are so cheap nowadays, which cover many average users needs.
+
+For Enthuasist 12100f is still unbeaten value wise, even something like Rx 6400 would be better than igp in most desktop Apu, if you want to match like of 2200G and 4300G then £30 quadro P620 is enough..
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Ken g6, Mopetar and coercitiv](https://forums.anandtech.com/posts/41535435/reactions)
+
+[![coercitiv](https://anandtech-data.community.forum/avatars/s/341/341496.jpg?1525614148)](https://forums.anandtech.com/members/coercitiv.341496/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,coercitiv,"[coercitiv](https://forums.anandtech.com/members/coercitiv.341496/)
+
+##### Diamond Member
+
+Jan 24, 20147,47017,850136
+
+> [mikeymikec said:](https://forums.anandtech.com/goto/post?id=41535430)
+>
+> It doesn't really matter what the figures are but what they are relative to the AMD competition.
+>
+>
+> Click to expand...
+
+The absolute price affects where the line gets drawn when building on a fixed budget. If we have the same budget and you can fit the i3 12100 while I can fit the Ultra 5 225, then I no longer see Intel's pricing problem in the same way as you do (it's still there, but I'm less affected by it). Not only does it change my perspective when looking at Intel alone, but also when comparing Intel vs. AMD because their 6+ core offering is in a much better spot relative to the competition.
+
+Having said that, I think it's important to reiterate that Intel is currently capacity constrained on their Intel 7 node. Everything that is Alder or Raptor will be considerably more expensive going forward, and I think their entire low-end lineup is based on this older node.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Joe NYC](https://forums.anandtech.com/posts/41535451/reactions)
+
+[D](https://forums.anandtech.com/members/doug-s.453258/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,Doug S,"[Doug S](https://forums.anandtech.com/members/doug-s.453258/)
+
+##### Diamond Member
+
+Feb 8, 20203,8126,747136
+
+Newer more expensive processes like N2/18A and A14/14A won't support the existence of a low end, at least not as low as it is today. When a 100 mm^2 chip costs $50 from the foundry there isn't much room to have a market of CPUs selling for $50. By early next decade that chip might be close to $100 on the then leading edge process.
+
+So either you have to leave N3/N5 class products on your price list essentially forever (will AM5 still be around in 2040?) or you have to abandon the existence of what we currently know as the low end. People who want ""low end"" will probably be buying used and that market will want to see fewer old CPUs/boards sent to the recycler and more into a refurbishment economy for a second life.
+
+[![dullard](https://anandtech-data.community.forum/avatars/s/53/53570.jpg?1258147577)](https://forums.anandtech.com/members/dullard.53570/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,dullard,"[dullard](https://forums.anandtech.com/members/dullard.53570/)
+
+##### Elite Member
+
+May 21, 200126,1914,855126
+
+The industry is both fab constrained and wafer constrained right now. AI is taking all the resources. If you are going to be limited on the number of chips you make because you don't have enough wafers, then you certainly aren't going to make the lowest end processors with the lowest profits.
+
+That said, Intel did finally release one cheaper Arrow Lake: the 205. It isn't on your list. It also is not likely to be a DIY either though.
+
+![www.tomshardware.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fcdn.mos.cms.futurecdn.net%2FbL5iYiBUY2rLX6QTRp4iaU-1920-80.jpg&hash=acee4a80110fc178da21c4ab7105d831&return_error=1)
+
+### [Intel Core Ultra 3 205 delivers impressive results in early review — reportedly surpasses previous-gen Core i3-14100 and Core i5-14400](https://www.tomshardware.com/pc-components/cpus/intel-core-ultra-3-205-delivers-impressive-results-in-early-review-reportedly-surpasses-previous-gen-core-i3-14100-and-core-i5-14400)
+
+New entry-level champ?
+
+![www.tomshardware.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fvanilla.futurecdn.net%2Ftomshardware%2F1518057%2Ffavicon.ico&hash=43118f1cf904a9f77358e1b9111831e1&return_error=1)
+www.tomshardware.com
+
+
+[![dullard](https://anandtech-data.community.forum/avatars/s/53/53570.jpg?1258147577)](https://forums.anandtech.com/members/dullard.53570/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,dullard,"[dullard](https://forums.anandtech.com/members/dullard.53570/)
+
+##### Elite Member
+
+May 21, 200126,1914,855126
+
+> [Doug S said:](https://forums.anandtech.com/goto/post?id=41535601)
+>
+> So either you have to leave N3/N5 class products on your price list essentially forever (will AM5 still be around in 2040?) or you have to abandon the existence of what we currently know as the low end.
+>
+>
+> Click to expand...
+
+That is not necessarily a bad thing. For many, many purposes CPUs are fast enough as-is. My parents browsing the internet and working on genealogy reports have no need for anything powerful. Same goes with many office workers who push paper.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Mopetar](https://forums.anandtech.com/posts/41535605/reactions)
+
+[![DrMrLordX](https://anandtech-data.community.forum/avatars/s/19/19209.jpg?1561869793)](https://forums.anandtech.com/members/drmrlordx.19209/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,DrMrLordX,"[DrMrLordX](https://forums.anandtech.com/members/drmrlordx.19209/)
+
+##### Lifer
+
+Apr 27, 200023,19713,286136
+
+> [dullard said:](https://forums.anandtech.com/goto/post?id=41535602)
+>
+> The industry is both fab constrained and wafer constrained right now.
+>
+>
+> Click to expand...
+
+For Intel (wrt desktop chips) the situation is also complicated by their ""cheap""/old process being relatively expensive (namely, Intel 7). Normally process costs go down over time, but Intel 7 prices still seem to be relatively high, making it difficult for them to get any kind of margins on low-end CPUs they produce on Intel 7. They're definitely capacity-constrained on Intel 3 and 18a.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Tlh97, booklib28 and Joe NYC](https://forums.anandtech.com/posts/41535610/reactions)
+
+[M](https://forums.anandtech.com/members/mopetar.287938/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,Mopetar,"[Mopetar](https://forums.anandtech.com/members/mopetar.287938/)
+
+##### Diamond Member
+
+Jan 31, 20118,5257,786136
+
+> [dullard said:](https://forums.anandtech.com/goto/post?id=41535605)
+>
+> That is not necessarily a bad thing. For many, many purposes CPUs are fast enough as-is. My parents browsing the internet and working on genealogy reports have no need for anything powerful. Same goes with many office workers who push paper.
+>
+>
+> Click to expand...
+
+If you don't need x86 or Windows, a Raspberry Pi is probably good enough for a lot of people.
+
+A lot of people just use their phones for everything and barely touch a desktop outside of a few cases.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [DAPUNISHER](https://forums.anandtech.com/posts/41535638/reactions)
+
+[J](https://forums.anandtech.com/members/joe-nyc.470128/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,Joe NYC,"[Joe NYC](https://forums.anandtech.com/members/joe-nyc.470128/)
+
+##### Diamond Member
+
+Jun 26, 20214,1815,742136
+
+> [coercitiv said:](https://forums.anandtech.com/goto/post?id=41535451)
+>
+> Having said that, I think it's important to reiterate that Intel is currently capacity constrained on their Intel 7 node. Everything that is Alder or Raptor will be considerably more expensive going forward, and I think their entire low-end lineup is based on this older node.
+>
+>
+> Click to expand...
+
+And pretty significant step up in cost from Intel 7 processors monolithic to 2.5D packaged chiplet based CPUs.
+
+So, product availability and pricing of Intel chips on the low end is not going to improve.
+
+[J](https://forums.anandtech.com/members/joe-nyc.470128/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,Joe NYC,"[Joe NYC](https://forums.anandtech.com/members/joe-nyc.470128/)
+
+##### Diamond Member
+
+Jun 26, 20214,1815,742136
+
+> [dullard said:](https://forums.anandtech.com/goto/post?id=41535602)
+>
+> The industry is both fab constrained and wafer constrained right now. AI is taking all the resources. If you are going to be limited on the number of chips you make because you don't have enough wafers, then you certainly aren't going to make the lowest end processors with the lowest profits.
+>
+>
+> Click to expand...
+
+Exactly. Lower cost processors should be moving to N4, but majority of AI bubble is still on N4.
+
+[J](https://forums.anandtech.com/members/jpiniero.281730/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,jpiniero,"[jpiniero](https://forums.anandtech.com/members/jpiniero.281730/)
+
+##### Lifer
+
+Oct 1, 201017,1467,533136
+
+> [dullard said:](https://forums.anandtech.com/goto/post?id=41535602)
+>
+> The industry is both fab constrained and wafer constrained right now. AI is taking all the resources.
+>
+>
+> Click to expand...
+
+Not Intel 7. Intel raised Raptor Lake prices because people weren't buying enough Arrow Lake.
+
+[![Josh128](https://anandtech-data.community.forum/avatars/s/485/485086.jpg?1722880397)](https://forums.anandtech.com/members/josh128.485086/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,Josh128,"[Josh128](https://forums.anandtech.com/members/josh128.485086/)
+
+##### Golden Member
+
+Oct 14, 20221,5172,265106
+
+> [dullard said:](https://forums.anandtech.com/goto/post?id=41535602)
+>
+> The industry is both fab constrained and wafer constrained right now. AI is taking all the resources. If you are going to be limited on the number of chips you make because you don't have enough wafers, then you certainly aren't going to make the lowest end processors with the lowest profits.
+>
+> That said, Intel did finally release one cheaper Arrow Lake: the 205. It isn't on your list. It also is not likely to be a DIY either though.
+>
+> ![www.tomshardware.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fcdn.mos.cms.futurecdn.net%2FbL5iYiBUY2rLX6QTRp4iaU-1920-80.jpg&hash=acee4a80110fc178da21c4ab7105d831&return_error=1)
+>
+> ### [Intel Core Ultra 3 205 delivers impressive results in early review — reportedly surpasses previous-gen Core i3-14100 and Core i5-14400](https://www.tomshardware.com/pc-components/cpus/intel-core-ultra-3-205-delivers-impressive-results-in-early-review-reportedly-surpasses-previous-gen-core-i3-14100-and-core-i5-14400)
+>
+> New entry-level champ?
+>
+> ![www.tomshardware.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fvanilla.futurecdn.net%2Ftomshardware%2F1518057%2Ffavicon.ico&hash=43118f1cf904a9f77358e1b9111831e1&return_error=1)
+> www.tomshardware.com
+>
+>
+> Click to expand...
+
+Adroc Thurston claims otherwise.
+
+[5](https://forums.anandtech.com/members/511.507238/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,511,"[511](https://forums.anandtech.com/members/511.507238/)
+
+##### Diamond Member
+
+Jul 12, 20245,3944,816106
+
+> [Doug S said:](https://forums.anandtech.com/goto/post?id=41535601)
+>
+> Newer more expensive processes like N2/18A and A14/14A won't support the existence of a low end, at least not as low as it is today. When a 100 mm^2 chip costs $50 from the foundry there isn't much room to have a market of CPUs selling for $50. By early next decade that chip might be close to $100 on the then leading edge process.
+>
+> So either you have to leave N3/N5 class products on your price list essentially forever (will AM5 still be around in 2040?) or you have to abandon the existence of what we currently know as the low end. People who want ""low end"" will probably be buying used and that market will want to see fewer old CPUs/boards sent to the recycler and more into a refurbishment economy for a second life.
+>
+>
+> Click to expand...
+
+tbh there will be something cheaper in that era like WCL on Desktop ...
+
+[5](https://forums.anandtech.com/members/511.507238/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,511,"[511](https://forums.anandtech.com/members/511.507238/)
+
+##### Diamond Member
+
+Jul 12, 20245,3944,816106
+
+> [jpiniero said:](https://forums.anandtech.com/goto/post?id=41535719)
+>
+> Not Intel 7. Intel raised Raptor Lake prices because people weren't buying enough Arrow Lake.
+>
+>
+> Click to expand...
+
+Intel 7 is capacity constrained as well those fabs are running in full utilization
+
+[![adroc_thurston](https://anandtech-data.community.forum/avatars/s/492/492831.jpg?1688329096)](https://forums.anandtech.com/members/adroc_thurston.492831/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,adroc\_thurston,"[adroc\_thurston](https://forums.anandtech.com/members/adroc_thurston.492831/)
+
+##### Diamond Member
+
+Jul 2, 20238,43711,168106
+
+> [jpiniero said:](https://forums.anandtech.com/goto/post?id=41535719)
+>
+> because people weren't buying enough Arrow Lake.
+>
+>
+> Click to expand...
+
+Intel wasn't selling it and has no interest in selling it.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [511](https://forums.anandtech.com/posts/41535866/reactions)
+
+[J](https://forums.anandtech.com/members/jpiniero.281730/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,jpiniero,"[jpiniero](https://forums.anandtech.com/members/jpiniero.281730/)
+
+##### Lifer
+
+Oct 1, 201017,1467,533136
+
+> [adroc\_thurston said:](https://forums.anandtech.com/goto/post?id=41535866)
+>
+> Intel wasn't selling it and has no interest in selling it.
+>
+>
+> Click to expand...
+
+Arrow Lake? Of course they are interested, cuz Ayy Eye.
+
+[5](https://forums.anandtech.com/members/511.507238/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,511,"[511](https://forums.anandtech.com/members/511.507238/)
+
+##### Diamond Member
+
+Jul 12, 20245,3944,816106
+
+> [jpiniero said:](https://forums.anandtech.com/goto/post?id=41535895)
+>
+> Arrow Lake? Of course they are interested, cuz Ayy Eye.
+>
+>
+> Click to expand...
+
+you clearly don't know how expensive ARL is for Intel even after accounting for how bad Intel 7 Cost is
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Joe NYC](https://forums.anandtech.com/posts/41535897/reactions)
+
+[J](https://forums.anandtech.com/members/jpiniero.281730/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,jpiniero,"[jpiniero](https://forums.anandtech.com/members/jpiniero.281730/)
+
+##### Lifer
+
+Oct 1, 201017,1467,533136
+
+> [511 said:](https://forums.anandtech.com/goto/post?id=41535897)
+>
+> you clearly don't know how expensive ARL is for Intel
+>
+>
+> Click to expand...
+
+Oh I can believe that.
+
+Will say that I looked at Dell and Lenovo desktops and it seemed to be mainly Arrow Lake.
+
+[![adroc_thurston](https://anandtech-data.community.forum/avatars/s/492/492831.jpg?1688329096)](https://forums.anandtech.com/members/adroc_thurston.492831/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,adroc\_thurston,"[adroc\_thurston](https://forums.anandtech.com/members/adroc_thurston.492831/)
+
+##### Diamond Member
+
+Jul 2, 20238,43711,168106
+
+> [jpiniero said:](https://forums.anandtech.com/goto/post?id=41535895)
+>
+> Arrow Lake? Of course they are interested, cuz Ayy Eye.
+>
+>
+> Click to expand...
+
+ARL is not for AI PC.
+
+> [jpiniero said:](https://forums.anandtech.com/goto/post?id=41535916)
+>
+> Dell and Lenovo desktops
+>
+>
+> Click to expand...
+
+Try a real market.
+
+[![DAPUNISHER](https://anandtech-data.community.forum/avatars/s/67/67347.jpg?1675931613)](https://forums.anandtech.com/members/dapunisher.67347/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,DAPUNISHER,"[DAPUNISHER](https://forums.anandtech.com/members/dapunisher.67347/)
+
+##### Super Moderator CPU Forum Mod and Elite Member
+
+**Super Moderator**
+
+Aug 22, 200132,37333,298146
+
+> [hemedans said:](https://forums.anandtech.com/goto/post?id=41535435)
+>
+> For Enthuasist 12100f is still unbeaten value wise,
+>
+>
+> Click to expand...
+
+Judging by sales clearly not the case. The most popular budget CPU is the one I picked up recently, the Ryzen 5500. I got it for $55 on Prime Day deal. 4.5-4.6GHz all core without unsafe vcore is an easy overclock on a cheap board.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Tlh97, Mopetar, Joe NYC and 1 other person](https://forums.anandtech.com/posts/41535921/reactions)
+
+[J](https://forums.anandtech.com/members/jpiniero.281730/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,jpiniero,"[jpiniero](https://forums.anandtech.com/members/jpiniero.281730/)
+
+##### Lifer
+
+Oct 1, 201017,1467,533136
+
+> [adroc\_thurston said:](https://forums.anandtech.com/goto/post?id=41535918)
+>
+> Try a real market.
+>
+>
+> Click to expand...
+
+Still like a $3B/quarter business. And OEMs are most of that. They obviously aren't selling much in DIY.
+
+[![DAPUNISHER](https://anandtech-data.community.forum/avatars/s/67/67347.jpg?1675931613)](https://forums.anandtech.com/members/dapunisher.67347/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,DAPUNISHER,"[DAPUNISHER](https://forums.anandtech.com/members/dapunisher.67347/)
+
+##### Super Moderator CPU Forum Mod and Elite Member
+
+**Super Moderator**
+
+Aug 22, 200132,37333,298146
+
+> [Mopetar said:](https://forums.anandtech.com/goto/post?id=41535638)
+>
+> If you don't need x86 or Windows, a Raspberry Pi is probably good enough for a lot of people.
+>
+> A lot of people just use their phones for everything and barely touch a desktop outside of a few cases.
+>
+>
+> Click to expand...
+
+A $100-$150 mini PC is all most need for a daily driver.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Mopetar](https://forums.anandtech.com/posts/41535928/reactions)
+
+[5](https://forums.anandtech.com/members/511.507238/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,511,"[511](https://forums.anandtech.com/members/511.507238/)
+
+##### Diamond Member
+
+Jul 12, 20245,3944,816106
+
+N100 is still the bare minimum to be the basic daily driver
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.anandtech.com/threads/apple-silicon-soc-thread.2587205/)
+
+
+
+  - Started by Eug
+  - Nov 10, 2020
+  - Replies: 11K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![IronLynx](https://anandtech-data.community.forum/avatars/s/476/476350.jpg?1716357741)](https://forums.anandtech.com/members/ironlynx.476350/)
+
+
+
+[QuestionZen 6 Speculation Thread](https://forums.anandtech.com/threads/zen-6-speculation-thread.2619444/)
+
+
+
+  - Started by IronLynx
+  - May 22, 2024
+  - Replies: 9K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+[COMPANY](https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/#)
+
+![](https://forums.anandtech.com/styles/anandtech/anandtech/FUTURE_logo_white.png)
+
+AnandTech is part of Future plc, an international media group and leading digital publisher. [**Visit our corporate site**](https://www.futureplc.com/).
+
+© Future Publishing Limited Quay House, The Ambury, Bath BA1 1UA. All",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/i5-14400-in-a-prebuilt-system-rebadged-alder-lake-or-raptor-lake.2633129/post-41544886,Thunder 57,"[Thunder 57](https://forums.anandtech.com/members/thunder-57.220659/)
+
+##### Diamond Member
+
+Aug 19, 20074,2507,049136
+
+> [Dave3000 said:](https://forums.anandtech.com/goto/post?id=41544604)
+>
+> I thinking about buying a low-end pre-built system for a family member as a Christmas gift to replace her 15 year old PC, which is also a low-end tier, and I was considering one with an i5-14400 if it's actually a rebadged Alder Lake. I don't want to buy one with a Raptor Lake inside. I heard that early steppings of the 14400 are actually based on Alder Lake and the later steppings are based on Raptor Lake, so it's the luck of the draw if I end up with one with a rebadged Alder Lake i5-14400. I was consider a PowerSpec B687 and a HP OmniDesk S301-0041, but what are the chances of those having the Alder Lake based i5-14400? Otherwise I might get her a Dell Slim ECS1250 that has the i3-14100 (all those ones are based on Alder Lake right?).
+>
+>
+> Click to expand...
+
+There was some rebading going on. I'm not the best one to ask maybe one of our resident Intel specialists might know more (Calling you [@511](https://forums.anandtech.com/members/507238/) ). One way to easily tell is by the amount of cache. Alder Lake has 1.25MB/core of L2 cache, while Raptor Lake has 2MB/core.
+
+That probably won't show up on a spec sheet though unless they list total cache at which you could do the math. At lower power levels though I would not be conerned. If you are that concerned, maybe take a look at AMD? I know there are far less options that way but honestly I think you are overthinking it.
+
+[D](https://forums.anandtech.com/members/dave3000.286702/)
+",AnandTech,2025-12-11T00:00:00
+https://forums.anandtech.com/threads/i5-14400-in-a-prebuilt-system-rebadged-alder-lake-or-raptor-lake.2633129/post-41544886,Dave3000,"[Dave3000](https://forums.anandtech.com/members/dave3000.286702/)
+
+##### Golden Member
+
+Jan 10, 20111,548114106
+
+Ok
+
+
+Last edited: Dec 11, 2025
+
+[A](https://forums.anandtech.com/members/abwx.291253/)
+",AnandTech,2025-12-11T00:00:00
+https://forums.anandtech.com/threads/i5-14400-in-a-prebuilt-system-rebadged-alder-lake-or-raptor-lake.2633129/post-41544886,Abwx,"[Abwx](https://forums.anandtech.com/members/abwx.291253/)
+
+##### Lifer
+
+Apr 2, 201112,0004,954136
+
+If that can help there s a review of the 14400F wich is the iGPU less version of the 14400,
+
+overall perfs are not wonderfull and efficency is low, not even up to a 5700G of old for both metrics.
+
+[https://www.computerbase.de/artikel/prozessoren/intel-core-i5-14400f-14500-cpu-test.86571/seite-2](https://www.computerbase.de/artikel/prozessoren/intel-core-i5-14400f-14500-cpu-test.86571/seite-2)
+
+[Z](https://forums.anandtech.com/members/zir_blazer.329166/)
+",AnandTech,2025-12-11T00:00:00
+https://forums.anandtech.com/threads/i5-14400-in-a-prebuilt-system-rebadged-alder-lake-or-raptor-lake.2633129/post-41544886,zir\_blazer,"[zir\_blazer](https://forums.anandtech.com/members/zir_blazer.329166/)
+
+##### Golden Member
+
+Jun 6, 20131,265586136
+
+14400 and 14400F (And also 13400 and 13400F) can come in either C0 (Alder Lake) or B0 (Raptor Lake) versions. You can know what it is with the sSpec from Intel Ark Ordering & Compliance tab on CPU heatspreader if you have the Processor at hand, or CPU-Z if computer is working
+
+14400 SRN3Q C0
+
+14400 SRN46 B0
+
+14400F SRN3R C0
+
+14400F SRN47 B0
+
+> [Thunder 57 said:](https://forums.anandtech.com/goto/post?id=41544683)
+>
+> There was some rebading going on. I'm not the best one to ask maybe one of our resident Intel specialists might know more (Calling you [@511](https://forums.anandtech.com/members/507238/) ). One way to easily tell is by the amount of cache. Alder Lake has 1.25MB/core of L2 cache, while Raptor Lake has 2MB/core.
+>
+>
+> Click to expand...
+
+IIRC those are the only models were Raptor Lake has nerfed Cache L2 to match Alder Lake
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Tlh97, coercitiv and Thunder 57](https://forums.anandtech.com/posts/41544775/reactions)
+
+[5](https://forums.anandtech.com/members/511.507238/)
+",AnandTech,2025-12-11T00:00:00
+https://forums.anandtech.com/threads/i5-14400-in-a-prebuilt-system-rebadged-alder-lake-or-raptor-lake.2633129/post-41544886,511,"[511](https://forums.anandtech.com/members/511.507238/)
+
+##### Diamond Member
+
+Jul 12, 20245,3944,816106
+
+Just saw the thread
+
+> [Dave3000 said:](https://forums.anandtech.com/goto/post?id=41544604)
+>
+> I thinking about buying a low-end pre-built system for a family member as a Christmas gift to replace her 15 year old PC, which is also a low-end tier, and I was considering one with an i5-14400 if it's actually a rebadged Alder Lake. I don't want to buy one with a Raptor Lake inside. I heard that early steppings of the 14400 are actually based on Alder Lake and the later steppings are based on Raptor Lake, so it's the luck of the draw if I end up with one with a rebadged Alder Lake i5-14400. I was consider a PowerSpec B687 and a HP OmniDesk S301-0041, but what are the chances of those having the Alder Lake based i5-14400? Otherwise I might get her a Dell Slim ECS1250 that has the i3-14100 (all those ones are based on Alder Lake right?).
+>
+>
+> Click to expand...
+
+14400 is a ADL part so it's not going to degrade and all the part you listed are ADL so degradation shouldn't be an issues it's basically a 12600K without K feature.
+
+Edit: After checking stuff [@zir\_blazer](https://forums.anandtech.com/members/329166/) is correct there may be alder lake/raptor lake mix but they shouldn't degrade considering the max clock is like 4.7 GHz but if you want a safer bet buy 12th gen or you can refer to this.
+
+- Alder Lake and Raptor Lake mixed models:
+  - 14400, 14400F
+- Alder Lake models:
+  - 14500, 14500T, 14490F, 14400T, 14100, 14100F, 14100T, 300, 300T
+
+
+Last edited: Dec 11, 2025
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Thunder 57](https://forums.anandtech.com/posts/41544796/reactions)
+
+[D](https://forums.anandtech.com/members/dave3000.286702/)
+",AnandTech,2025-12-11T00:00:00
+https://forums.anandtech.com/threads/i5-14400-in-a-prebuilt-system-rebadged-alder-lake-or-raptor-lake.2633129/post-41544886,Dave3000,"[Dave3000](https://forums.anandtech.com/members/dave3000.286702/)
+
+##### Golden Member
+
+Jan 10, 20111,548114106
+
+> [511 said:](https://forums.anandtech.com/goto/post?id=41544796)
+>
+> Just saw the thread
+>
+> 14400 is a ADL part so it's not going to degrade and all the part you listed are ADL so degradation shouldn't be an issues it's basically a 12600K without K feature.
+>
+> Edit: After checking stuff [@zir\_blazer](https://forums.anandtech.com/members/329166/) is correct there may be alder lake/raptor lake mix but they shouldn't degrade considering the max clock is like 4.7 GHz but if you want a safer bet buy 12th gen or you can refer to this.
+>
+> - Alder Lake and Raptor Lake mixed models:
+>   - 14400, 14400F
+> - Alder Lake models:
+>   - 14500, 14500T, 14490F, 14400T, 14100, 14100F, 14100T, 300, 300T
+>
+> Click to expand...
+
+I'm considering the Dell ECS1250 with the i3-14100, however it only has 8GB of RAM. For a little cheaper than that Dell system I can get a mini PC with a Ryzen 5 7640HS and 16GB RAM. She already has a good quality wireless keyboard and mouse.
+
+
+Last edited: Dec 12, 2025
+
+[5](https://forums.anandtech.com/members/511.507238/)
+",AnandTech,2025-12-11T00:00:00
+https://forums.anandtech.com/threads/i5-14400-in-a-prebuilt-system-rebadged-alder-lake-or-raptor-lake.2633129/post-41544886,511,"[511](https://forums.anandtech.com/members/511.507238/)
+
+##### Diamond Member
+
+Jul 12, 20245,3944,816106
+
+> [Dave3000 said:](https://forums.anandtech.com/goto/post?id=41544821)
+>
+> I'm considering the Dell ECS1250 with the i3-14100, however it only has 8GB of RAM. For a little cheaper than that Dell system I can get a mini PC with a Ryzen 5 7640HS and 16GB RAM. She already has a good quality wireless keyboard and mouse.
+>
+>
+> Click to expand...
+
+I would avoid 14100 all together a 7640HS would be better than that like way better.
+
+Also Is the mini PC GMKTec?
+
+You can get a 12700H one as well for just slightly more as well depending on what you do
+
+The only gripe with MiniPC is you can't upgrade the CPU.
+
+I don't see problem with 14400 personally unlike the 14600/700/900K or the HX Laptop.
+
+[D](https://forums.anandtech.com/members/dave3000.286702/)
+",AnandTech,2025-12-11T00:00:00
+https://forums.anandtech.com/threads/i5-14400-in-a-prebuilt-system-rebadged-alder-lake-or-raptor-lake.2633129/post-41544886,Dave3000,"[Dave3000](https://forums.anandtech.com/members/dave3000.286702/)
+
+##### Golden Member
+
+Jan 10, 20111,548114106
+
+> [511 said:](https://forums.anandtech.com/goto/post?id=41544886)
+>
+> I would avoid 14100 all together a 7640HS would be better than that like way better.
+>
+> Also Is the mini PC GMKTec?
+>
+> You can get a 12700H one as well for just slightly more as well depending on what you do
+>
+> The only gripe with MiniPC is you can't upgrade the CPU.
+>
+> I don't see problem with 14400 personally unlike the 14600/700/900K or the HX Laptop.
+>
+>
+> Click to expand...
+
+It's a Minisforum. I was considering the GMKtech one with the i5-12450H CPU for $20 more as well and it has better single-core and multicore performance than the 7640HS according the the UserBenchmark website. She will not be gaming, that's for sure, so 4 p-cores + 4 e-cores and 16GB RAM should be more than enough especially in Windows 11 in her use case.
+
+[![Thunder 57](https://anandtech-data.community.forum/avatars/s/220/220659.jpg?1563394416)](https://forums.anandtech.com/members/thunder-57.220659/)
+",AnandTech,2025-12-11T00:00:00
+https://forums.anandtech.com/threads/i5-14400-in-a-prebuilt-system-rebadged-alder-lake-or-raptor-lake.2633129/post-41544886,Thunder 57,"[Thunder 57](https://forums.anandtech.com/members/thunder-57.220659/)
+
+##### Diamond Member
+
+Aug 19, 20074,2507,049136
+
+> [Dave3000 said:](https://forums.anandtech.com/goto/post?id=41544942)
+>
+> It's a Minisforum. I was considering the GMKtech one with the i5-12450H CPU for $20 more as well and it has better single-core and multicore performance than the 7640HS according the the UserBenchmark website. She will not be gaming, that's for sure, so 4 p-cores + 4 e-cores and 16GB RAM should be more than enough especially in Windows 11 in her use case.
+>
+>
+> Click to expand...
+
+Never trust Loserbenchmark. It is so biased towards Intel that even the Intel subreddit banned it there. The 7640HS would be the better choice by far IMHO.
+
+[https://www.reddit.com/r/intel/comments/g36a2a/userbenchmark\_has\_been\_banned\_from\_rintel](https://www.reddit.com/r/intel/comments/g36a2a/userbenchmark_has_been_banned_from_rintel)
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [ToTTenTranz and 511](https://forums.anandtech.com/posts/41544944/reactions)
+
+[5](https://forums.anandtech.com/members/511.507238/)
+",AnandTech,2025-12-11T00:00:00
+https://forums.anandtech.com/threads/i5-14400-in-a-prebuilt-system-rebadged-alder-lake-or-raptor-lake.2633129/post-41544886,511,"[511](https://forums.anandtech.com/members/511.507238/)
+
+##### Diamond Member
+
+Jul 12, 20245,3944,816106
+
+> [Dave3000 said:](https://forums.anandtech.com/goto/post?id=41544942)
+>
+> It's a Minisforum. I was considering the GMKtech one with the i5-12450H CPU for $20 more as well and it has better single-core and multicore performance than the 7640HS according the the UserBenchmark website. She will not be gaming, that's for sure, so 4 p-cores + 4 e-cores and 16GB RAM should be more than enough especially in Windows 11 in her use case.
+>
+>
+> Click to expand...
+
+like Thunder said user benchmark is meh 7640HS should be better vs 12450H
+
+[12700H GMKTEC 16GB DDR4 and 512GB Storage](https://www.gmktec.com/products/intel-12th-core-i7-12700h-mini-pc-nucbox-m3-ultra?spm=..collection_72f4817e-5a65-4acf-bdbd-06cc49c42783.collection_1.16&spm_prev=..index.shoplazza%3A%2F%2Fapps%2Fpage-builder%2Fblocks%2Fcustom-552860083982183275%2F0484f406375641bfd5264294f05b5334_1.1&variant=16f1cf5f-9c73-48cc-98a0-11b60c6e0451)
+
+[7640HS 16GB RAM 512GB Storage](https://www.gmktec.com/products/amd-ryzen-5-7640hs-mini-pc-nucbox-m6-ultra?spm=..product_42560dd9-83c8-4d9f-a4bb-ca467757dbce.header_1.1&spm_prev=..product_42560dd9-83c8-4d9f-a4bb-ca467757dbce.header_1.1&variant=9b66d3ad-91a1-4f84-bfcc-f0e919102f1a)
+
+[7640HS 16/512](https://store.minisforum.com/products/minisforum-um760-slim?_pos=2&_fid=e6b354149&_ss=c&variant=45843362218229)
+
+[12950HX](https://store.minisforum.com/products/minisforum-m1-1295?_pos=2&_fid=72afea530&_ss=c&variant=47073443807477) (12900K) in a PC basically
+
+some options you can pick whichever one you want Intel's one are DDR4 also make sure to buy RAM and storage no barebones
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[",AnandTech,2025-12-11T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469075,lxskllr,"[lxskllr](https://forums.anandtech.com/members/lxskllr.153110/)
+
+##### No Lifer
+
+Nov 30, 200460,76511,126126
+
+No chance of you driving to get them? That's the surest way of getting them in one piece. 200 miles isn't the worst drive in the world.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [brianmanahan and daveybrat](https://forums.anandtech.com/posts/41469016/reactions)
+
+[![nakedfrog](https://anandtech-data.community.forum/avatars/s/48/48656.jpg?1570819179)](https://forums.anandtech.com/members/nakedfrog.48656/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469075,nakedfrog,"[nakedfrog](https://forums.anandtech.com/members/nakedfrog.48656/)
+
+##### No Lifer
+
+Apr 3, 200163,40519,788136
+
+Yeah, TBH for a rare item of this nature 200 miles isn't all that bad.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [daveybrat](https://forums.anandtech.com/posts/41469027/reactions)
+
+[![purbeast0](https://anandtech-data.community.forum/avatars/s/69/69291.jpg?1472648128)](https://forums.anandtech.com/members/purbeast0.69291/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469075,purbeast0,"[purbeast0](https://forums.anandtech.com/members/purbeast0.69291/)
+
+##### No Lifer
+
+Sep 13, 200153,7396,617126
+
+Well it's not necessarily just about the 200 miles, it's about the cost/time as well. It's like $30 each way in tolls, plus probably like $40 gas, plus 8 hours of my time, which isn't quite as easy to do now a days with a family. At that point my 8 hours is only worth $40 if I could get them shipped for $140.
+
+But yes that is something I have contemplated already I just don't know when I'd be able to do that, and who knows how long this lady is going to have them for.
+
+And yes they are rare but not necessarily valuable. Like the one in Cali the lady wanted $20 for. I see another one in Arizona for $25.
+
+I do realize though if I want these ones I may just have to pony up the extra $$$ for them, or time.
+
+Before my kids were born, I drove up to NYC and back in one day to pick up a pair of $800 speakers lol. But that was like 12+ years ago.
+
+[![lxskllr](https://anandtech-data.community.forum/avatars/s/153/153110.jpg?1548545165)](https://forums.anandtech.com/members/lxskllr.153110/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469075,lxskllr,"[lxskllr](https://forums.anandtech.com/members/lxskllr.153110/)
+
+##### No Lifer
+
+Nov 30, 200460,76511,126126
+
+Looks close to the ocean. Maybe you can make the trip more valuable by turning it into a getaway of sorts. There might be something cool to see close by.
+
+edit:
+
+With me knowing nothing, I'd time the trip to reach the ocean before sunrise. Watch the sun come up, have a nice breakfast, spend some time doing resort stuff, then get the monitors, and get on the road so you're home before evening traffic. Or maybe spend the weekend. There's a lot of ways to add value to the trip.
+
+[![Torn Mind](https://anandtech-data.community.forum/avatars/s/318/318317.jpg?1655085606)](https://forums.anandtech.com/members/torn-mind.318317/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469075,Torn Mind,"[Torn Mind](https://forums.anandtech.com/members/torn-mind.318317/)
+
+##### Lifer
+
+Nov 25, 201212,0862,774136
+
+> [lxskllr said:](https://forums.anandtech.com/goto/post?id=41469035)
+>
+> Looks close to the ocean. Maybe you can make the trip more valuable by turning it into a getaway of sorts. There might be something cool to see close by.
+>
+> edit:
+>
+> With me knowing nothing, I'd time the trip to reach the ocean before sunrise. Watch the sun come up, have a nice breakfast, spend some time doing resort stuff, then get the monitors, and get on the road so you're home before evening traffic. Or maybe spend the weekend. There's a lot of ways to add value to the trip.
+>
+>
+> Click to expand...
+
+There's also traffic along the 95 corridor. I think he's a MD'er like you and me. Rush hour sucks and there are many chokepoints. Delaware, Philly, Baltimore(Key Bridge got nuked).
+
+[![RossMAN](https://anandtech-data.community.forum/avatars/s/13/13418.jpg?1564375523)](https://forums.anandtech.com/members/rossman.13418/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469075,RossMAN,"[RossMAN](https://forums.anandtech.com/members/rossman.13418/)
+
+##### Grand Nagus
+
+Feb 24, 200079,088457136
+
+Just curious, would the [Dell UltraSharp U2415](https://www.dell.com/support/product-details/en-us/product/dell-u2415/overview) work for your project? I frequently see them going for $50 - $80 on craigslist/facebook.
+
+![www.displayspecifications.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fwww.displayspecifications.com%2Fimages%2Fmodel%2Ff3cb58%2F640%2Fmain.jpg&hash=85ceed5db53946741280beb34ee19704&return_error=1)
+
+### [24.1"" Dell UltraSharp U2415 - Specifications](https://www.displayspecifications.com/en/model/f3cb58)
+
+Specifications of Dell UltraSharp U2415. Display: 24.1 in, AH-IPS, W-LED, 1920 x 1200 pixels, Viewing angles (H/V): 178 ° / 178 °, Brightness: 300 cd/m², Static contrast: 1000 : 1, Dynamic contrast: 2000000 : 1, Refresh rate: 56 Hz - 76 Hz, sRGB: 99 %, NTSC: 72 %, Dimensions: 532.2 x 350.6 x...
+
+www.displayspecifications.com
+
+
+[![purbeast0](https://anandtech-data.community.forum/avatars/s/69/69291.jpg?1472648128)](https://forums.anandtech.com/members/purbeast0.69291/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469075,purbeast0,"[purbeast0](https://forums.anandtech.com/members/purbeast0.69291/)
+
+##### No Lifer
+
+Sep 13, 200153,7396,617126
+
+> [RossMAN said:](https://forums.anandtech.com/goto/post?id=41469069)
+>
+> Just curious, would the [Dell UltraSharp U2415](https://www.dell.com/support/product-details/en-us/product/dell-u2415/overview) work for your project? I frequently see them going for $50 - $80 on craigslist/facebook.
+>
+> ![www.displayspecifications.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fwww.displayspecifications.com%2Fimages%2Fmodel%2Ff3cb58%2F640%2Fmain.jpg&hash=85ceed5db53946741280beb34ee19704&return_error=1)
+>
+> ### [24.1"" Dell UltraSharp U2415 - Specifications](https://www.displayspecifications.com/en/model/f3cb58)
+>
+> Specifications of Dell UltraSharp U2415. Display: 24.1 in, AH-IPS, W-LED, 1920 x 1200 pixels, Viewing angles (H/V): 178 ° / 178 °, Brightness: 300 cd/m², Static contrast: 1000 : 1, Dynamic contrast: 2000000 : 1, Refresh rate: 56 Hz - 76 Hz, sRGB: 99 %, NTSC: 72 %, Dimensions: 532.2 x 350.6 x...
+>
+> www.displayspecifications.com
+>
+>
+> Click to expand...
+
+Those will work, but 25.5"" will be basically a perfect fit. If I ended up simply not being able to get any 25.5"" monitor, I will go that route but I'm really trying to exhaust my 25.5"" options. There are some on eBay right now too (including the one that I put the pic of above) so if I wanted to splurge I could get them. Also the response time on the Asus 25.5"" one is 2ms, better than any of the 24"" ones.
+
+This is a guy who used a 24"" in his cabinet, and he said his buddy got a 25"" one and he got it to fit perfectly. You can see the bezel a little bit here and he even used some posterboard to clean it up a bit.
+
+![LWFBpg6.jpeg](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fi.imgur.com%2FLWFBpg6.jpeg&hash=654ced7329f60528150becdd4ced15cf)
+
+While my cabinets are not the same game, the bezel is nearly identical. They both take 27"" CRT stock.
+
+![Y4JHycx.jpeg](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fi.imgur.com%2FY4JHycx.jpeg&hash=7d098710eff48250620e6a217f3fe2b5)
+
+I'm turning my cabinets into linked emulation racers and going to be playing old school racers and modern games, so I need games running at 4:3 and 16:9, and a 16:10 monitor in general gives me the best of both worlds and is the closest thing to 4:3 that I can get. It will also fit the best aesthetically.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [nakedfrog](https://forums.anandtech.com/posts/41469073/reactions)
+
+[![RossMAN](https://anandtech-data.community.forum/avatars/s/13/13418.jpg?1564375523)](https://forums.anandtech.com/members/rossman.13418/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469075,RossMAN,"[RossMAN](https://forums.anandtech.com/members/rossman.13418/)
+
+##### Grand Nagus
+
+Feb 24, 200079,088457136
+
+Best of luck on your pursuit of your monitors, I would personally just drive the 200 miles.
+
+If you decide to pivot to Dell it looks like two are available in the area, not sure how far they are from you.
+
+![newjersey.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fimages.craigslist.org%2F00303_bcioYu7l0tB_0x20oM_600x450.jpg&hash=a6c43e6b1246d4cdaa0a5c1ebb23d410&return_error=1)
+
+### [For Sale: Dell UltraSharp U2415 24in LCD Monitor - household items - by owner - housewares sale - craigslist](https://newjersey.craigslist.org/hsh/d/fort-lee-for-sale-dell-ultrasharp-in/7858330059.html)
+
+Description: Check Amazon and compare the prices; Gently used; HDMI Standard; Energy-efficient and tiltable; Includes power cord Price: $55 cash only (Public meet up, text me if interested and can...
+
+![newjersey.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fnewjersey.craigslist.org%2Ffavicon.ico&hash=5bd246e8da3e4d5c24cc23dee1bc50f2&return_error=1)
+newjersey.craigslist.org
+
+
+![rochester.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fimages.craigslist.org%2F01010_iUyZcv9rkVe_0CI0t2_600x450.jpg&hash=05eeb3c39d12fdc31d7b888e5c1ece1c&return_error=1)
+
+### [Two Dell U2415 computer monitors - electronics - by owner - sale - craigslist](https://rochester.craigslist.org/ele/d/canandaigua-dell-u2415-computer-monitor/7853088071.html)
+
+24"", 1920x1080 @60Hz IPS LCD Includes two monitors, two stands, two power cables, one HDMI cable, and one DisplayPort cable.
+
+![rochester.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Frochester.craigslist.org%2Ffavicon.ico&hash=1ff1e3817d33080eeb2db7128096b8bb&return_error=1)
+rochester.craigslist.org
+
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [purbeast0](https://forums.anandtech.com/posts/41469075/reactions)
+
+[![purbeast0](https://anandtech-data.community.forum/avatars/s/69/69291.jpg?1472648128)](https://forums.anandtech.com/members/purbeast0.69291/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469075,purbeast0,"[purbeast0](https://forums.anandtech.com/members/purbeast0.69291/)
+
+##### No Lifer
+
+Sep 13, 200153,7396,617126
+
+> [RossMAN said:](https://forums.anandtech.com/goto/post?id=41469075)
+>
+> Best of luck on your pursuit of your monitors, I would personally just drive the 200 miles.
+>
+> If you decide to pivot to Dell it looks like two are available in the area, not sure how far they are from you.
+>
+> ![newjersey.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fimages.craigslist.org%2F00303_bcioYu7l0tB_0x20oM_600x450.jpg&hash=a6c43e6b1246d4cdaa0a5c1ebb23d410&return_error=1)
+>
+> ### [For Sale: Dell UltraSharp U2415 24in LCD Monitor - household items - by owner - housewares sale - craigslist](https://newjersey.craigslist.org/hsh/d/fort-lee-for-sale-dell-ultrasharp-in/7858330059.html)
+>
+> Description: Check Amazon and compare the prices; Gently used; HDMI Standard; Energy-efficient and tiltable; Includes power cord Price: $55 cash only (Public meet up, text me if interested and can...
+>
+> ![newjersey.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fnewjersey.craigslist.org%2Ffavicon.ico&hash=5bd246e8da3e4d5c24cc23dee1bc50f2&return_error=1)
+> newjersey.craigslist.org
+>
+>
+> ![rochester.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fimages.craigslist.org%2F01010_iUyZcv9rkVe_0CI0t2_600x450.jpg&hash=05eeb3c39d12fdc31d7b888e5c1ece1c&return_error=1)
+>
+> ### [Two Dell U2415 computer monitors - electronics - by owner - sale - craigslist](https://rochester.craigslist.org/ele/d/canandaigua-dell-u2415-computer-monitor/7853088071.html)
+>
+> 24"", 1920x1080 @60Hz IPS LCD Includes two monitors, two stands, two power cables, one HDMI cable, and one DisplayPort cable.
+>
+> ![rochester.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Frochester.craigslist.org%2Ffavicon.ico&hash=1ff1e3817d33080eeb2db7128096b8bb&return_error=1)
+> rochester.craigslist.org
+>
+>
+> Click to expand...
+
+I have a lead on 3 other Asus ones, and 1 of them is looking promising as it's in AZ and one of my buddies lives like 45 mins away. I think it's not quite as far from him if he detours from work so he may swing by for me and mail it to me. And it's dirt cheap if you pay them in cash too.
+
+[![brianmanahan](https://anandtech-data.community.forum/avatars/s/201/201691.jpg?1689715370)](https://forums.anandtech.com/members/brianmanahan.201691/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469075,brianmanahan,"[brianmanahan](https://forums.anandtech.com/members/brianmanahan.201691/)
+
+##### Lifer
+
+Sep 2, 200624,6776,045136
+
+> [lxskllr said:](https://forums.anandtech.com/goto/post?id=41469016)
+>
+> No chance of you driving to get them? That's the surest way of getting them in one piece. 200 miles isn't the worst drive in the world.
+>
+>
+> Click to expand...
+
+yeah, i'll drive 200 miles on a weekend sometimes just for the heck of it
+
+[![Red Squirrel](https://anandtech-data.community.forum/avatars/s/111/111499.jpg?1730836098)](https://forums.anandtech.com/members/red-squirrel.111499/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469075,Red Squirrel,"[Red Squirrel](https://forums.anandtech.com/members/red-squirrel.111499/)
+
+##### No Lifer
+
+May 24, 200371,17114,024126[www.anyf.ca](https://www.anyf.ca/)
+
+I would just try to find something more common that you can get locally or order new, and maybe build a border around it if the cabinet opening is bigger. But I guess you want to try to keep it as legit as possible to it fills in the existing space not more not less.
+
+Maybe overkill but I wonder if a projector could work, essentially build it out like a rear projection TV so you can set it up to the exact size you need. I guess that would be much more work though to get the optics right. There's a whole science that goes into the actual screen layer too so the colours pop out properly.
+
+[![IBMJunkman](https://anandtech-data.community.forum/avatars/s/359/359587.jpg?1431044233)](https://forums.anandtech.com/members/ibmjunkman.359587/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469075,IBMJunkman,"[IBMJunkman](https://forums.anandtech.com/members/ibmjunkman.359587/)
+
+##### Senior member
+
+May 7, 2015955427136
+
+Be wary of UPS doing any packing. I bought 2 pieces of Carver hi-fi stuff from someone on eBay. The seller had UPS pack. What I got was 2 25+ lb pieces of gear in 1 cardboard box with just crumpled newspaper as packing. Needless to say the gear did not fare to well.
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.anandtech.com/threads/apple-silicon-soc-thread.2587205/)
+
+
+
+  - Started by Eug
+  - Nov 10, 2020
+  - Replies: 11K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![IronLynx](https://anandtech-data.community.forum/avatars/s/476/476350.jpg?1716357741)](https://forums.anandtech.com/members/ironlynx.476350/)
+
+
+
+[QuestionZen 6 Speculation Thread](https://forums.anandtech.com/threads/zen-6-speculation-thread.2619444/)
+
+
+
+  - Started by IronLynx
+  - May 22, 2024
+  - Replies: 9K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+[COMPANY](https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/#)
+
+![](https://forums.anandtech.com/styles/anandtech/anandtech/",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/which-gpu-upgrade-made-the-most-noticeable-difference-in-real-world-tasks.2633448/post-41554238,NTMBK,"[NTMBK](https://forums.anandtech.com/members/ntmbk.301096/)
+
+##### Lifer
+
+Nov 14, 201110,5216,037136
+
+Dropped a HD 4670 AGP into an old dual socket Dell workstation with Northwood-derived Xeons. Managed to turn it back into a vaguely useful PC, played a whole lot of Medieval Total War II on that junkheap.
+
+EDIT: I found the old thread: [https://forums.anandtech.com/threads/socket-603-xeon-mp-now-with-benchmarks.2296263/](https://forums.anandtech.com/threads/socket-603-xeon-mp-now-with-benchmarks.2296263/)
+
+
+Last edited: Jan 3, 2026
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.anandtech.com/threads/apple-silicon-soc-thread.2587205/)
+
+
+
+  - Started by Eug
+  - Nov 10, 2020
+  - Replies: 11K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![IronLynx](https://anandtech-data.community.forum/avatars/s/476/476350.jpg?1716357741)](https://forums.anandtech.com/members/ironlynx.476350/)
+
+
+
+[QuestionZen 6 Speculation Thread](https://forums.anandtech.com/threads/zen-6-speculation-thread.2619444/)
+
+
+
+  - Started by IronLynx
+  - May 22, 2024
+  - Replies: 9K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+[COMPANY](https://forums.anandtech.com/threads/which-gpu",AnandTech,2026-01-03T00:00:00
+https://forums.anandtech.com/threads/new-work-laptop-amd-or-intel.2632915/,sdifox,"[sdifox](https://forums.anandtech.com/members/sdifox.180307/)
+
+##### No Lifer
+
+Sep 30, 2005101,07818,169126
+
+![develop3d.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fdevelop3d.com%2Fwp-content%2Fuploads%2F2021%2F08%2FMulticore-for-CAD_Dark-Theme.jpg&hash=70b5356627064db1437c9562c02eb434&return_error=1)
+
+### [Talking heads: Multicore for CAD](https://develop3d.com/cad/multicore-for-cad/)
+
+Is there scope for making CAD software more multithreaded, enabling it to use more cores, more efficiently? We asked the experts to find out more
+
+![develop3d.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fdevelop3d.com%2Fwp-content%2Fuploads%2F2020%2F03%2Ffavicon-65x65.png&hash=7f71ce8edff570c28e69614e9940828b&return_error=1)
+develop3d.com
+
+
+Not sure how applicable is it for your use but worth a read.
+
+[https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Support-for-multi-core-processors-with-AutoCAD.html](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Support-for-multi-core-processors-with-AutoCAD.html)
+
+[![poke01](https://anandtech-data.community.forum/avatars/s/478/478379.jpg?1646784275)](https://forums.anandtech.com/members/poke01.478379/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/new-work-laptop-amd-or-intel.2632915/,poke01,"[poke01](https://forums.anandtech.com/members/poke01.478379/)
+
+##### Diamond Member
+
+Mar 8, 20224,8026,128106
+
+> [In2Photos said:](https://forums.anandtech.com/goto/post?id=41538977)
+>
+> Looking for a new laptop to replace my Dell XPS 15 7590. Need something for office and engineering/2D CAD work. It will be connected to a TB dock most of the time. I had a Lenovo before the Dell and had a much better experience with that laptop so thinking about going back to Lenovo.
+>
+> The P16S Gen 4 AMD has my eye. The model I'm looking at has the HX Pro 370 with 890m graphics, 64GB sodimm RAM, 1TB Gen 4 NVME and the 16"" IPS anti glare screen which is best for outdoor use on job sites. I've used AMD for desktops but never for a laptop. Just figured I'd get some thoughts from others here.
+>
+>
+> Click to expand...
+
+Go for it
+
+[![In2Photos](https://anandtech-data.community.forum/avatars/s/212/212749.jpg?1700168845)](https://forums.anandtech.com/members/in2photos.212749/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/new-work-laptop-amd-or-intel.2632915/,In2Photos,"[In2Photos](https://forums.anandtech.com/members/in2photos.212749/)
+
+##### Platinum Member
+
+Mar 21, 20072,6252,794136
+
+I decided to go with the Lenovo. Spent the last week or so migrating everything over. So far so good. No issues yet, but's it's only been a week. Haven't taken it into the field yet either, but looking forward to it.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [DAPUNISHER](https://forums.anandtech.com/posts/41541813/reactions)
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.anandtech.com/threads/apple-silicon-soc-thread.2587205/)
+
+
+
+  - Started by Eug
+  - Nov 10, 2020
+  - Replies: 11K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![IronLynx](https://anandtech-data.community.forum/avatars/s/476/476350.jpg?1716357741)](https://forums.anandtech.com/members/ironlynx.476350/)
+
+
+
+[QuestionZen 6 Speculation Thread](https://forums.anandtech.com/threads/zen-6-speculation-thread.2619444/)
+
+
+
+  - Started by IronLynx
+  - May 22, 2024
+  - Replies: 9K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+[COMPANY](https://forums.anandtech.com/threads/new-work-laptop-amd-or-intel.2632915/#)
+
+![](https://forums.anandtech.com/styles/anandtech/anand",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469069,lxskllr,"[lxskllr](https://forums.anandtech.com/members/lxskllr.153110/)
+
+##### No Lifer
+
+Nov 30, 200460,76511,126126
+
+No chance of you driving to get them? That's the surest way of getting them in one piece. 200 miles isn't the worst drive in the world.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [brianmanahan and daveybrat](https://forums.anandtech.com/posts/41469016/reactions)
+
+[![nakedfrog](https://anandtech-data.community.forum/avatars/s/48/48656.jpg?1570819179)](https://forums.anandtech.com/members/nakedfrog.48656/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469069,nakedfrog,"[nakedfrog](https://forums.anandtech.com/members/nakedfrog.48656/)
+
+##### No Lifer
+
+Apr 3, 200163,40519,788136
+
+Yeah, TBH for a rare item of this nature 200 miles isn't all that bad.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [daveybrat](https://forums.anandtech.com/posts/41469027/reactions)
+
+[![purbeast0](https://anandtech-data.community.forum/avatars/s/69/69291.jpg?1472648128)](https://forums.anandtech.com/members/purbeast0.69291/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469069,purbeast0,"[purbeast0](https://forums.anandtech.com/members/purbeast0.69291/)
+
+##### No Lifer
+
+Sep 13, 200153,7396,617126
+
+Well it's not necessarily just about the 200 miles, it's about the cost/time as well. It's like $30 each way in tolls, plus probably like $40 gas, plus 8 hours of my time, which isn't quite as easy to do now a days with a family. At that point my 8 hours is only worth $40 if I could get them shipped for $140.
+
+But yes that is something I have contemplated already I just don't know when I'd be able to do that, and who knows how long this lady is going to have them for.
+
+And yes they are rare but not necessarily valuable. Like the one in Cali the lady wanted $20 for. I see another one in Arizona for $25.
+
+I do realize though if I want these ones I may just have to pony up the extra $$$ for them, or time.
+
+Before my kids were born, I drove up to NYC and back in one day to pick up a pair of $800 speakers lol. But that was like 12+ years ago.
+
+[![lxskllr](https://anandtech-data.community.forum/avatars/s/153/153110.jpg?1548545165)](https://forums.anandtech.com/members/lxskllr.153110/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469069,lxskllr,"[lxskllr](https://forums.anandtech.com/members/lxskllr.153110/)
+
+##### No Lifer
+
+Nov 30, 200460,76511,126126
+
+Looks close to the ocean. Maybe you can make the trip more valuable by turning it into a getaway of sorts. There might be something cool to see close by.
+
+edit:
+
+With me knowing nothing, I'd time the trip to reach the ocean before sunrise. Watch the sun come up, have a nice breakfast, spend some time doing resort stuff, then get the monitors, and get on the road so you're home before evening traffic. Or maybe spend the weekend. There's a lot of ways to add value to the trip.
+
+[![Torn Mind](https://anandtech-data.community.forum/avatars/s/318/318317.jpg?1655085606)](https://forums.anandtech.com/members/torn-mind.318317/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469069,Torn Mind,"[Torn Mind](https://forums.anandtech.com/members/torn-mind.318317/)
+
+##### Lifer
+
+Nov 25, 201212,0862,774136
+
+> [lxskllr said:](https://forums.anandtech.com/goto/post?id=41469035)
+>
+> Looks close to the ocean. Maybe you can make the trip more valuable by turning it into a getaway of sorts. There might be something cool to see close by.
+>
+> edit:
+>
+> With me knowing nothing, I'd time the trip to reach the ocean before sunrise. Watch the sun come up, have a nice breakfast, spend some time doing resort stuff, then get the monitors, and get on the road so you're home before evening traffic. Or maybe spend the weekend. There's a lot of ways to add value to the trip.
+>
+>
+> Click to expand...
+
+There's also traffic along the 95 corridor. I think he's a MD'er like you and me. Rush hour sucks and there are many chokepoints. Delaware, Philly, Baltimore(Key Bridge got nuked).
+
+[![RossMAN](https://anandtech-data.community.forum/avatars/s/13/13418.jpg?1564375523)](https://forums.anandtech.com/members/rossman.13418/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469069,RossMAN,"[RossMAN](https://forums.anandtech.com/members/rossman.13418/)
+
+##### Grand Nagus
+
+Feb 24, 200079,088457136
+
+Just curious, would the [Dell UltraSharp U2415](https://www.dell.com/support/product-details/en-us/product/dell-u2415/overview) work for your project? I frequently see them going for $50 - $80 on craigslist/facebook.
+
+![www.displayspecifications.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fwww.displayspecifications.com%2Fimages%2Fmodel%2Ff3cb58%2F640%2Fmain.jpg&hash=85ceed5db53946741280beb34ee19704&return_error=1)
+
+### [24.1"" Dell UltraSharp U2415 - Specifications](https://www.displayspecifications.com/en/model/f3cb58)
+
+Specifications of Dell UltraSharp U2415. Display: 24.1 in, AH-IPS, W-LED, 1920 x 1200 pixels, Viewing angles (H/V): 178 ° / 178 °, Brightness: 300 cd/m², Static contrast: 1000 : 1, Dynamic contrast: 2000000 : 1, Refresh rate: 56 Hz - 76 Hz, sRGB: 99 %, NTSC: 72 %, Dimensions: 532.2 x 350.6 x...
+
+www.displayspecifications.com
+
+
+[![purbeast0](https://anandtech-data.community.forum/avatars/s/69/69291.jpg?1472648128)](https://forums.anandtech.com/members/purbeast0.69291/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469069,purbeast0,"[purbeast0](https://forums.anandtech.com/members/purbeast0.69291/)
+
+##### No Lifer
+
+Sep 13, 200153,7396,617126
+
+> [RossMAN said:](https://forums.anandtech.com/goto/post?id=41469069)
+>
+> Just curious, would the [Dell UltraSharp U2415](https://www.dell.com/support/product-details/en-us/product/dell-u2415/overview) work for your project? I frequently see them going for $50 - $80 on craigslist/facebook.
+>
+> ![www.displayspecifications.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fwww.displayspecifications.com%2Fimages%2Fmodel%2Ff3cb58%2F640%2Fmain.jpg&hash=85ceed5db53946741280beb34ee19704&return_error=1)
+>
+> ### [24.1"" Dell UltraSharp U2415 - Specifications](https://www.displayspecifications.com/en/model/f3cb58)
+>
+> Specifications of Dell UltraSharp U2415. Display: 24.1 in, AH-IPS, W-LED, 1920 x 1200 pixels, Viewing angles (H/V): 178 ° / 178 °, Brightness: 300 cd/m², Static contrast: 1000 : 1, Dynamic contrast: 2000000 : 1, Refresh rate: 56 Hz - 76 Hz, sRGB: 99 %, NTSC: 72 %, Dimensions: 532.2 x 350.6 x...
+>
+> www.displayspecifications.com
+>
+>
+> Click to expand...
+
+Those will work, but 25.5"" will be basically a perfect fit. If I ended up simply not being able to get any 25.5"" monitor, I will go that route but I'm really trying to exhaust my 25.5"" options. There are some on eBay right now too (including the one that I put the pic of above) so if I wanted to splurge I could get them. Also the response time on the Asus 25.5"" one is 2ms, better than any of the 24"" ones.
+
+This is a guy who used a 24"" in his cabinet, and he said his buddy got a 25"" one and he got it to fit perfectly. You can see the bezel a little bit here and he even used some posterboard to clean it up a bit.
+
+![LWFBpg6.jpeg](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fi.imgur.com%2FLWFBpg6.jpeg&hash=654ced7329f60528150becdd4ced15cf)
+
+While my cabinets are not the same game, the bezel is nearly identical. They both take 27"" CRT stock.
+
+![Y4JHycx.jpeg](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fi.imgur.com%2FY4JHycx.jpeg&hash=7d098710eff48250620e6a217f3fe2b5)
+
+I'm turning my cabinets into linked emulation racers and going to be playing old school racers and modern games, so I need games running at 4:3 and 16:9, and a 16:10 monitor in general gives me the best of both worlds and is the closest thing to 4:3 that I can get. It will also fit the best aesthetically.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [nakedfrog](https://forums.anandtech.com/posts/41469073/reactions)
+
+[![RossMAN](https://anandtech-data.community.forum/avatars/s/13/13418.jpg?1564375523)](https://forums.anandtech.com/members/rossman.13418/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469069,RossMAN,"[RossMAN](https://forums.anandtech.com/members/rossman.13418/)
+
+##### Grand Nagus
+
+Feb 24, 200079,088457136
+
+Best of luck on your pursuit of your monitors, I would personally just drive the 200 miles.
+
+If you decide to pivot to Dell it looks like two are available in the area, not sure how far they are from you.
+
+![newjersey.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fimages.craigslist.org%2F00303_bcioYu7l0tB_0x20oM_600x450.jpg&hash=a6c43e6b1246d4cdaa0a5c1ebb23d410&return_error=1)
+
+### [For Sale: Dell UltraSharp U2415 24in LCD Monitor - household items - by owner - housewares sale - craigslist](https://newjersey.craigslist.org/hsh/d/fort-lee-for-sale-dell-ultrasharp-in/7858330059.html)
+
+Description: Check Amazon and compare the prices; Gently used; HDMI Standard; Energy-efficient and tiltable; Includes power cord Price: $55 cash only (Public meet up, text me if interested and can...
+
+![newjersey.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fnewjersey.craigslist.org%2Ffavicon.ico&hash=5bd246e8da3e4d5c24cc23dee1bc50f2&return_error=1)
+newjersey.craigslist.org
+
+
+![rochester.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fimages.craigslist.org%2F01010_iUyZcv9rkVe_0CI0t2_600x450.jpg&hash=05eeb3c39d12fdc31d7b888e5c1ece1c&return_error=1)
+
+### [Two Dell U2415 computer monitors - electronics - by owner - sale - craigslist](https://rochester.craigslist.org/ele/d/canandaigua-dell-u2415-computer-monitor/7853088071.html)
+
+24"", 1920x1080 @60Hz IPS LCD Includes two monitors, two stands, two power cables, one HDMI cable, and one DisplayPort cable.
+
+![rochester.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Frochester.craigslist.org%2Ffavicon.ico&hash=1ff1e3817d33080eeb2db7128096b8bb&return_error=1)
+rochester.craigslist.org
+
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [purbeast0](https://forums.anandtech.com/posts/41469075/reactions)
+
+[![purbeast0](https://anandtech-data.community.forum/avatars/s/69/69291.jpg?1472648128)](https://forums.anandtech.com/members/purbeast0.69291/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469069,purbeast0,"[purbeast0](https://forums.anandtech.com/members/purbeast0.69291/)
+
+##### No Lifer
+
+Sep 13, 200153,7396,617126
+
+> [RossMAN said:](https://forums.anandtech.com/goto/post?id=41469075)
+>
+> Best of luck on your pursuit of your monitors, I would personally just drive the 200 miles.
+>
+> If you decide to pivot to Dell it looks like two are available in the area, not sure how far they are from you.
+>
+> ![newjersey.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fimages.craigslist.org%2F00303_bcioYu7l0tB_0x20oM_600x450.jpg&hash=a6c43e6b1246d4cdaa0a5c1ebb23d410&return_error=1)
+>
+> ### [For Sale: Dell UltraSharp U2415 24in LCD Monitor - household items - by owner - housewares sale - craigslist](https://newjersey.craigslist.org/hsh/d/fort-lee-for-sale-dell-ultrasharp-in/7858330059.html)
+>
+> Description: Check Amazon and compare the prices; Gently used; HDMI Standard; Energy-efficient and tiltable; Includes power cord Price: $55 cash only (Public meet up, text me if interested and can...
+>
+> ![newjersey.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fnewjersey.craigslist.org%2Ffavicon.ico&hash=5bd246e8da3e4d5c24cc23dee1bc50f2&return_error=1)
+> newjersey.craigslist.org
+>
+>
+> ![rochester.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fimages.craigslist.org%2F01010_iUyZcv9rkVe_0CI0t2_600x450.jpg&hash=05eeb3c39d12fdc31d7b888e5c1ece1c&return_error=1)
+>
+> ### [Two Dell U2415 computer monitors - electronics - by owner - sale - craigslist](https://rochester.craigslist.org/ele/d/canandaigua-dell-u2415-computer-monitor/7853088071.html)
+>
+> 24"", 1920x1080 @60Hz IPS LCD Includes two monitors, two stands, two power cables, one HDMI cable, and one DisplayPort cable.
+>
+> ![rochester.craigslist.org](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Frochester.craigslist.org%2Ffavicon.ico&hash=1ff1e3817d33080eeb2db7128096b8bb&return_error=1)
+> rochester.craigslist.org
+>
+>
+> Click to expand...
+
+I have a lead on 3 other Asus ones, and 1 of them is looking promising as it's in AZ and one of my buddies lives like 45 mins away. I think it's not quite as far from him if he detours from work so he may swing by for me and mail it to me. And it's dirt cheap if you pay them in cash too.
+
+[![brianmanahan](https://anandtech-data.community.forum/avatars/s/201/201691.jpg?1689715370)](https://forums.anandtech.com/members/brianmanahan.201691/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469069,brianmanahan,"[brianmanahan](https://forums.anandtech.com/members/brianmanahan.201691/)
+
+##### Lifer
+
+Sep 2, 200624,6776,045136
+
+> [lxskllr said:](https://forums.anandtech.com/goto/post?id=41469016)
+>
+> No chance of you driving to get them? That's the surest way of getting them in one piece. 200 miles isn't the worst drive in the world.
+>
+>
+> Click to expand...
+
+yeah, i'll drive 200 miles on a weekend sometimes just for the heck of it
+
+[![Red Squirrel](https://anandtech-data.community.forum/avatars/s/111/111499.jpg?1730836098)](https://forums.anandtech.com/members/red-squirrel.111499/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469069,Red Squirrel,"[Red Squirrel](https://forums.anandtech.com/members/red-squirrel.111499/)
+
+##### No Lifer
+
+May 24, 200371,17114,024126[www.anyf.ca](https://www.anyf.ca/)
+
+I would just try to find something more common that you can get locally or order new, and maybe build a border around it if the cabinet opening is bigger. But I guess you want to try to keep it as legit as possible to it fills in the existing space not more not less.
+
+Maybe overkill but I wonder if a projector could work, essentially build it out like a rear projection TV so you can set it up to the exact size you need. I guess that would be much more work though to get the optics right. There's a whole science that goes into the actual screen layer too so the colours pop out properly.
+
+[![IBMJunkman](https://anandtech-data.community.forum/avatars/s/359/359587.jpg?1431044233)](https://forums.anandtech.com/members/ibmjunkman.359587/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469069,IBMJunkman,"[IBMJunkman](https://forums.anandtech.com/members/ibmjunkman.359587/)
+
+##### Senior member
+
+May 7, 2015955427136
+
+Be wary of UPS doing any packing. I bought 2 pieces of Carver hi-fi stuff from someone on eBay. The seller had UPS pack. What I got was 2 25+ lb pieces of gear in 1 cardboard box with just crumpled newspaper as packing. Needless to say the gear did not fare to well.
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.anandtech.com/threads/apple-silicon-soc-thread.2587205/)
+
+
+
+  - Started by Eug
+  - Nov 10, 2020
+  - Replies: 11K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![IronLynx](https://anandtech-data.community.forum/avatars/s/476/476350.jpg?1716357741)](https://forums.anandtech.com/members/ironlynx.476350/)
+
+
+
+[QuestionZen 6 Speculation Thread](https://forums.anandtech.com/threads/zen-6-speculation-thread.2619444/)
+
+
+
+  - Started by IronLynx
+  - May 22, 2024
+  - Replies: 9K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+[COMPANY](https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/#)
+
+![](https://forums.anandtech.com/styles/anandtech/anandtech/",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/budget-mobo-recommendation.2633355/post-41548249,aigomorla,"[aigomorla](https://forums.anandtech.com/members/aigomorla.180190/)
+
+##### CPU, Cases&Cooling Mod PC Gaming Mod Elite Member
+
+**Super Moderator**
+
+Sep 28, 200521,1283,654126
+
+problem is the RAM prices are bonkers right now.
+
+You won't even be able to get half the ram requirements for that game with the budget you listed now.
+
+Your honest best bet is trying to find a retired Dell, or HP system, and then dropping in a 1050 class video card. That however even will probably push your budget over.
+
+[![Iron Woode](https://anandtech-data.community.forum/avatars/s/1/1321.jpg?1627427116)](https://forums.anandtech.com/members/iron-woode.1321/)
+",AnandTech,2025-12-22T00:00:00
+https://forums.anandtech.com/threads/budget-mobo-recommendation.2633355/post-41548249,Iron Woode,"[Iron Woode](https://forums.anandtech.com/members/iron-woode.1321/)
+
+##### Elite Member
+
+**Super Moderator**
+
+Oct 10, 199931,37812,866136
+
+> [Kledgie said:](https://forums.anandtech.com/goto/post?id=41548186)
+>
+> Hey guys. I am building a budget PC for an older lady who wants to play Monsters & Memories. System requirements are vague at the moment:
+>
+> - 16gb of RAM
+> - A modern-ish CPU
+>
+> Her budget is really only $40 to $50 for the MOBO. I've had good luck ordering from Ebay in the past. So, I'm not opposed to rolling the dice on an open box for her. Just need some recommendations. The newer the better.
+>
+>
+> Click to expand...
+
+best bang for the buck would be to buy either a good used system or a good used motherboard/CPU/ram combo and do the rest yourself.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Kledgie](https://forums.anandtech.com/posts/41548468/reactions)
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.anandtech.com/threads/apple-silicon-soc-thread.2587205/)
+
+
+
+  - Started by Eug
+  - Nov 10, 2020
+  - Replies: 11K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![IronLynx](https://anandtech-data.community.forum/avatars/s/476/476350.jpg?1716357741)](https://forums.anandtec",AnandTech,2025-12-22T00:00:00
+https://forums.anandtech.com/threads/new-work-laptop-amd-or-intel.2632915/post-41539278,sdifox,"[sdifox](https://forums.anandtech.com/members/sdifox.180307/)
+
+##### No Lifer
+
+Sep 30, 2005101,07818,169126
+
+![develop3d.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fdevelop3d.com%2Fwp-content%2Fuploads%2F2021%2F08%2FMulticore-for-CAD_Dark-Theme.jpg&hash=70b5356627064db1437c9562c02eb434&return_error=1)
+
+### [Talking heads: Multicore for CAD](https://develop3d.com/cad/multicore-for-cad/)
+
+Is there scope for making CAD software more multithreaded, enabling it to use more cores, more efficiently? We asked the experts to find out more
+
+![develop3d.com](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fdevelop3d.com%2Fwp-content%2Fuploads%2F2020%2F03%2Ffavicon-65x65.png&hash=7f71ce8edff570c28e69614e9940828b&return_error=1)
+develop3d.com
+
+
+Not sure how applicable is it for your use but worth a read.
+
+[https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Support-for-multi-core-processors-with-AutoCAD.html](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Support-for-multi-core-processors-with-AutoCAD.html)
+
+[![poke01](https://anandtech-data.community.forum/avatars/s/478/478379.jpg?1646784275)](https://forums.anandtech.com/members/poke01.478379/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/new-work-laptop-amd-or-intel.2632915/post-41539278,poke01,"[poke01](https://forums.anandtech.com/members/poke01.478379/)
+
+##### Diamond Member
+
+Mar 8, 20224,8026,128106
+
+> [In2Photos said:](https://forums.anandtech.com/goto/post?id=41538977)
+>
+> Looking for a new laptop to replace my Dell XPS 15 7590. Need something for office and engineering/2D CAD work. It will be connected to a TB dock most of the time. I had a Lenovo before the Dell and had a much better experience with that laptop so thinking about going back to Lenovo.
+>
+> The P16S Gen 4 AMD has my eye. The model I'm looking at has the HX Pro 370 with 890m graphics, 64GB sodimm RAM, 1TB Gen 4 NVME and the 16"" IPS anti glare screen which is best for outdoor use on job sites. I've used AMD for desktops but never for a laptop. Just figured I'd get some thoughts from others here.
+>
+>
+> Click to expand...
+
+Go for it
+
+[![In2Photos](https://anandtech-data.community.forum/avatars/s/212/212749.jpg?1700168845)](https://forums.anandtech.com/members/in2photos.212749/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/new-work-laptop-amd-or-intel.2632915/post-41539278,In2Photos,"[In2Photos](https://forums.anandtech.com/members/in2photos.212749/)
+
+##### Platinum Member
+
+Mar 21, 20072,6252,794136
+
+I decided to go with the Lenovo. Spent the last week or so migrating everything over. So far so good. No issues yet, but's it's only been a week. Haven't taken it into the field yet either, but looking forward to it.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [DAPUNISHER](https://forums.anandtech.com/posts/41541813/reactions)
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.anandtech.com/threads/apple-silicon-soc-thread.2587205/)
+
+
+
+  - Started by Eug
+  - Nov 10, 2020
+  - Replies: 11K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![IronLynx](https://anandtech-data.community.forum/avatars/s/476/476350.jpg?1716357741)](https://forums.anandtech.com/members/ironlynx.476350/)
+
+
+
+[QuestionZen 6 Speculation Thread](https://forums.anandtech.com/threads/zen-6-speculation-thread.2619444/)
+
+
+
+  - Started by IronLynx
+  - May 22, 2024
+  - Replies: 9K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+[COMPANY](https://forums.anandtech.com/threads/new-work-laptop-amd-or-intel.2632915/#)
+
+![](https://forums.anandtech.com/styles/anandtech/anand",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/is-it-possible-to-install-win-7-on-dell-7820-workstation.2630861/post-41473030,mikeymikec,"[mikeymikec](https://forums.anandtech.com/members/mikeymikec.293403/)
+
+##### Lifer
+
+May 19, 201121,48216,706136
+
+Dell lists Win7 drivers for that computer so I don't see why not. If nvidia lists Win7 drivers for that card then ditto my opinion.
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [dan99t](https://forums.anandtech.com/posts/41473030/reactions)
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.anandtech.com/threads/apple-silicon-soc-thread.2587205/)
+
+
+
+  - Started by Eug
+  - Nov 10, 2020
+  - Replies: 11K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![IronLynx](https://anandtech-data.community.forum/avatars/s/476/476350.jpg?1716357741)](https://forums.anandtech.com/members/ironlynx.476350/)
+
+
+
+[QuestionZen 6 Speculation Thread](https://forums.anandtech.com/threads/zen-6-speculation-thread.2619444/)
+
+
+
+  - Started by IronLynx
+  - May 22, 2024
+  - Replies: 9K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+[COMPANY](https://forums.anandtech.com/threads/is-it-possible-to-install-win-7-on-dell-7820-workstation.2630861/#)
+
+![](https://forums.anandtech.com/styles/anandtech/anandtech/FUTURE_logo_white.png)
+
+AnandTech is part of Future plc, an in",AnandTech,2025-07-07T00:00:00
+https://forums.anandtech.com/threads/dell-alienware-2230-nvme-with-power-leads.2633420/,![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374),"Attachments
+
+- [![20251230_123001[1].jpg](https://anandtech-data.community.forum/attachments/135/135995-1445069d70992b52a56261f6db2df852.jpg)](https://forums.anandtech.com/attachments/20251230_123001-1-jpg.135883/)
+
+
+20251230\_123001\[1\].jpg
+
+
+332.2 KB
+
+· Views: 4
+
+
+
+
+
+Last edited: Dec 30, 2025
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.anandtech.com/threads/apple-silicon-soc-thread.2587205/)
+
+
+
+  - Started by Eug
+  - Nov 10, 2020
+  - Replies: 11K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![IronLynx](https://anandtech-data.community.forum/avatars/s/476/476350.jpg?1716357741)](https://forums.anandtech.com/members/ironlynx.476350/)
+
+
+
+[QuestionZen 6 Speculation Thread](https://forums.anandtech.com/threads/zen-6-speculation-thread.2619444/)
+
+
+
+  - Started by IronLynx
+  - May 22, 2024
+  - Replies: 9K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+[COMPANY](https://forums.anandtech.com/threads/dell-alienware-2230-nvme-with-power-leads.2633420/#)
+
+![](https://forums.anandtech.com/styles/anandtech/anandtech/FUTURE_logo_white.png)
+
+AnandTech is part of Future plc, an international media group and leading digital publisher. [**Visit our corpor",AnandTech,2025-12-30T00:00:00
+https://forums.anandtech.com/threads/help-deciding-between-these-lenovo-thinkpad-and-dell-inspiron-laptops-any-insight-appreciated.2627084/,Captain Kirk,"[Captain Kirk](https://forums.anandtech.com/members/captain-kirk.357133/)
+
+##### Member
+
+Feb 28, 201543066
+
+It looks like the inspirion is your best bet
+
+better quality and all around performance.
+
+the thinkpad has less capabilities and is limited
+
+I think you will be happier with an inspirion purchanse
+
+[I](https://forums.anandtech.com/members/igor_kavinski.458890/)
+",AnandTech,2025-02-20T00:00:00
+https://forums.anandtech.com/threads/help-deciding-between-these-lenovo-thinkpad-and-dell-inspiron-laptops-any-insight-appreciated.2627084/,igor\_kavinski,"[igor\_kavinski](https://forums.anandtech.com/members/igor_kavinski.458890/)
+
+##### Lifer
+
+Jul 27, 202028,17319,210146
+
+I would steer you towards a Lunar Lake laptop, with a 258V CPU at the very least.
+
+But if you want the best, there's currently nothing better than a Strix Halo laptop. Get the 128GB version. It's not a lot of money and it should last you a good 5 to 8 years with excellent long lasting performance.
+
+[You must log in or register to reply here.](https://forums.anandtech.com/login/)
+
+Share:
+
+FacebookX (Twitter)RedditTumblrWhatsAppEmailShareLink
+
+### [TRENDING THREADS](https://forums.anandtech.com/trending/threads.1/)
+
+- [![DisEnchantment](https://anandtech-data.community.forum/avatars/s/379/379236.jpg?1708365374)](https://forums.anandtech.com/members/disenchantment.379236/)
+
+
+
+[DiscussionZen 5 Speculation (EPYC Turin and Strix Point/Granite Ridge - Ryzen 9000)](https://forums.anandtech.com/threads/zen-5-speculation-epyc-turin-and-strix-point-granite-ridge-ryzen-9000.2607350/)
+
+
+
+  - Started by DisEnchantment
+  - Sep 29, 2022
+  - Replies: 25K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [T](https://forums.anandtech.com/members/tigerick.479115/)
+
+
+
+[DiscussionIntel Meteor, Arrow, Lunar & Panther Lakes + WCL Discussion Threads](https://forums.anandtech.com/threads/intel-meteor-arrow-lunar-panther-lakes-wcl-discussion-threads.2606448/)
+
+
+
+  - Started by Tigerick
+  - Aug 22, 2022
+  - Replies: 24K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![TheF34RChannel](https://anandtech-data.community.forum/avatars/s/387/387208.jpg?1497745832)](https://forums.anandtech.com/members/thef34rchannel.387208/)
+
+
+
+[DiscussionIntel current and future Lakes & Rapids thread](https://forums.anandtech.com/threads/intel-current-and-future-lakes-rapids-thread.2509080/)
+
+
+
+  - Started by TheF34RChannel
+  - Jun 18, 2017
+  - Replies: 23K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![Eug](https://anandtech-data.community.forum/avatars/s/14/14838.jpg?1567948201)](https://forums.anandtech.com/members/eug.14838/)
+
+
+
+[DiscussionApple Silicon SoC thread](https://forums.anandtech.com/threads/apple-silicon-soc-thread.2587205/)
+
+
+
+  - Started by Eug
+  - Nov 10, 2020
+  - Replies: 11K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+- [![IronLynx](https://anandtech-data.community.forum/avatars/s/476/476350.jpg?1716357741)](https://forums.anandtech.com/members/ironlynx.476350/)
+
+
+
+[QuestionZen 6 Speculation Thread](https://forums.anandtech.com/threads/zen-6-speculation-thread.2619444/)
+
+
+
+  - Started by IronLynx
+  - May 22, 2024
+  - Replies: 9K
+
+[CPUs and Overclocking](https://forums.anandtech.com/forums/cpus-and-overclocking.5/)
+
+[COMPANY](https://forums.anandtech.com/threads/help-deciding-between-these-lenovo-thinkpad-and-dell-inspiron-laptops-any-insight-appreciated.2627084/#)
+
+![](https://forums.ana",AnandTech,2025-02-20T00:00:00

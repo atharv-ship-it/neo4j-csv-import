@@ -1,0 +1,344 @@
+thread_url,author,text,source_platform,post_date
+https://forums.anandtech.com/threads/charge-ms-surface-laptop-w-usb-cable.2632473/post-41523723,12Compuguy,"[12Compuguy](https://forums.anandtech.com/members/12compuguy.527811/)
+
+##### Junior Member
+
+Oct 16, 2025106
+
+Can I charge a MS Surface laptop model 1943 with a regular A or C usb cable?
+
+MS website is so crowded and convoluted - it's incredible
+
+[C](https://forums.anandtech.com/members/c1.232336/)
+",AnandTech,2025-10-16T00:00:00
+https://forums.anandtech.com/threads/cant-install-w11-on-dell-optiplex-9020-wont-shutdown.2631005/,Geos54,"[Geos54](https://forums.anandtech.com/members/geos54.474990/)
+
+##### Member
+
+Nov 24, 2021281551
+
+My Dell Optiplex 9020 (8GB/256GB) was originally a Win7 machine. When I tried to install Win11 with a USB drive created with Rufus I got a BIOS message something about EUFI and changing to MBR instead of GPT. I pressed Enter and it shut down. When I pressed the Power button a few times nothing happened. After about a half hour I tried again, it did power on and I was able to install Linux Mint. Everything seems to work properly but I can't get it to Shutdown only Reboot!!! I did create a new W11 GPT install USB drive but it won't boot at all! I tried various BIOS boot options to no avail. Any ideas???
+
+[I](https://forums.anandtech.com/members/igor_kavinski.458890/)
+",AnandTech,2025-07-19T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535918,mikeymikec,"[mikeymikec](https://forums.anandtech.com/members/mikeymikec.293403/)
+
+##### Lifer
+
+May 19, 201121,48216,706136
+
+I'm surprised that Intel haven't taken a page from AMD's book, being ""when they go high, you go low"" (and vice versa). Yes, Intel are in trouble with regard to their higher-end products (though I don't think I've heard anything about their Xeon lines being affected by their Raptor Lake problems), but what I really don't get is that when I look at their low-end processors, it's like they've got their priorities all out of whack. I understand that low-end CPUs aren't going to fix Intel's problems, but when AMD was being trounced by Intel (ie. in AMD's FX + FMx socket era), they put a load of processors out that were very cheap and at least \*sold for something\*.
+
+In my average user PC builds in recent years I've been going for for processors like the 2200G/3200G/4300G (even if lower end AM4 APUs were available). In years past, I would have expected to see Athlons, Celerons, Pentiums and i3s all competing at the same time, but for some reason this is all I can see from Intel:
+
+Intel Core i3-12100F (4c 8t no integrated graphics so it's a total non-starter in a basic usage system given the price of GPUs): £66.99
+
+Intel Core i3-14100F (4c 8t no igpu, slightly cheaper than the 4300G): £83.99
+
+AMD Ryzen 3 4300G (4c 8t): £88.99
+
+Intel Processor 300 (2c 4t, nearly a tenner more expensive than the 4300G): £95.99
+
+(edited this because my supplier lists it as 2c 2t but Intel and TPU list it as 2c 4t)
+
+... some more Intel cpus with no igpu ...
+
+AMD Ryzen 7 5700G (8c 16t): £139.99
+
+Intel i3-12100 (finally! 4c 8t with igpu): £140.99
+
+Another supplier's cheapest Intel CPU + iGPU is:
+
+Intel Core i5-12600K: £169.26
+
+If it wasn't for the ""Intel Processor 300"", then I would have assumed that both AMD and Intel have completely abandoned their Celeron / Pentium / Athlon product lines because there's just no money in it any more (understandable given that most average people probably think a laptop/tablet is a better choice). Perhaps the 300 is just sitting there with tonnes of unused inventory, but surely Intel would have slashed the price by now?
+
+I just don't understand why Intel basically abandoned competing with AMD at product points that clearly are profitable for AMD to produce something at, and there are plenty of people/companies out there who would buy an Intel CPU even if the Ryzen equivalent is \*a bit\* better, all Intel has to do is show up? Let alone bringing a 2c/2t to a 4c/8t gunfight or 4c/8t to an 8c/16t gunfight.
+
+When I was mainly building Intel iGPU basic PCs, the Pentium for a good long time was my minimum recommendation just because it could do the job tolerably and was a good bit cheaper than the i3. These days I think it's utter madness to go for anything less than 4c (ignoring atom-type stuff) on a new PC what with Win11's needs, but my overall point is there used to be some choice, practically speaking!
+
+
+Last edited: Nov 14, 2025
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Ken g6, lightmanek, fastandfurious6 and 1 other person](https://forums.anandtech.com/posts/41535416/reactions)
+
+[![coercitiv](https://anandtech-data.community.forum/avatars/s/341/341496.jpg?1525614148)](https://forums.anandtech.com/members/coercitiv.341496/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/dell-27-gaming-monitors-g2724d-and-g2725d-on-sale-for-150-free-shipping-from-dell.2623851/,MadScientist,"[MadScientist](https://forums.anandtech.com/members/madscientist.61690/)
+
+##### Platinum Member
+
+Jul 15, 20012,1896491
+
+I received [it](https://www.dell.com/en-us/shop/dell-27-gaming-monitor-g2724d/apd/210-bhxc/monitors-monitor-accessories) this week and calibrated it with DisplayCal and a SpyderX Pro at 1440P and 165Hz refresh rate. Review at [Rtings](https://www.rtings.com/monitor/reviews/dell/g2724d). In Custom Color mode my RGB gain calibration settings were 100-100-99. Gamma was 2.2 before and after calibration. For $150. the picture looks great right out of the box and didn't need much tweaking.
+
+The [G2725D](https://www.dell.com/en-us/shop/dell-27-gaming-monitor-g2725d/apd/210-bnrn/monitors-monitor-accessories) is also on sale for the same price, 185Hz refresh rate.
+
+
+Last edited: Dec 9, 2024
+
+[J](https://forums.anandtech.com/members/jimminy.456792/)
+",AnandTech,2024-11-27T00:00:00
+https://forums.anandtech.com/threads/dram-prices-speculation-omg.2632914/post-41540039,fastandfurious6,"[fastandfurious6](https://forums.anandtech.com/members/fastandfurious6.505099/)
+
+##### Senior member
+
+Jun 1, 20249191,05496
+
+up to 150% increase throughout all DRAM products 😭
+
+128GB now costs upwards $1000.... was $400 just 6 months ago
+
+is it going to go back?
+
+- ![Wow](<Base64-Image-Removed>)
+
+Reactions: [Fjodor2001](https://forums.anandtech.com/posts/41538929/reactions)
+
+[D](https://forums.anandtech.com/members/doug-s.453258/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/intels-current-woes-and-the-low-end-of-the-desktop-cpu-market.2632825/post-41535916,mikeymikec,"[mikeymikec](https://forums.anandtech.com/members/mikeymikec.293403/)
+
+##### Lifer
+
+May 19, 201121,48216,706136
+
+I'm surprised that Intel haven't taken a page from AMD's book, being ""when they go high, you go low"" (and vice versa). Yes, Intel are in trouble with regard to their higher-end products (though I don't think I've heard anything about their Xeon lines being affected by their Raptor Lake problems), but what I really don't get is that when I look at their low-end processors, it's like they've got their priorities all out of whack. I understand that low-end CPUs aren't going to fix Intel's problems, but when AMD was being trounced by Intel (ie. in AMD's FX + FMx socket era), they put a load of processors out that were very cheap and at least \*sold for something\*.
+
+In my average user PC builds in recent years I've been going for for processors like the 2200G/3200G/4300G (even if lower end AM4 APUs were available). In years past, I would have expected to see Athlons, Celerons, Pentiums and i3s all competing at the same time, but for some reason this is all I can see from Intel:
+
+Intel Core i3-12100F (4c 8t no integrated graphics so it's a total non-starter in a basic usage system given the price of GPUs): £66.99
+
+Intel Core i3-14100F (4c 8t no igpu, slightly cheaper than the 4300G): £83.99
+
+AMD Ryzen 3 4300G (4c 8t): £88.99
+
+Intel Processor 300 (2c 4t, nearly a tenner more expensive than the 4300G): £95.99
+
+(edited this because my supplier lists it as 2c 2t but Intel and TPU list it as 2c 4t)
+
+... some more Intel cpus with no igpu ...
+
+AMD Ryzen 7 5700G (8c 16t): £139.99
+
+Intel i3-12100 (finally! 4c 8t with igpu): £140.99
+
+Another supplier's cheapest Intel CPU + iGPU is:
+
+Intel Core i5-12600K: £169.26
+
+If it wasn't for the ""Intel Processor 300"", then I would have assumed that both AMD and Intel have completely abandoned their Celeron / Pentium / Athlon product lines because there's just no money in it any more (understandable given that most average people probably think a laptop/tablet is a better choice). Perhaps the 300 is just sitting there with tonnes of unused inventory, but surely Intel would have slashed the price by now?
+
+I just don't understand why Intel basically abandoned competing with AMD at product points that clearly are profitable for AMD to produce something at, and there are plenty of people/companies out there who would buy an Intel CPU even if the Ryzen equivalent is \*a bit\* better, all Intel has to do is show up? Let alone bringing a 2c/2t to a 4c/8t gunfight or 4c/8t to an 8c/16t gunfight.
+
+When I was mainly building Intel iGPU basic PCs, the Pentium for a good long time was my minimum recommendation just because it could do the job tolerably and was a good bit cheaper than the i3. These days I think it's utter madness to go for anything less than 4c (ignoring atom-type stuff) on a new PC what with Win11's needs, but my overall point is there used to be some choice, practically speaking!
+
+
+Last edited: Nov 14, 2025
+
+- ![Like](<Base64-Image-Removed>)
+
+Reactions: [Ken g6, lightmanek, fastandfurious6 and 1 other person](https://forums.anandtech.com/posts/41535416/reactions)
+
+[![coercitiv](https://anandtech-data.community.forum/avatars/s/341/341496.jpg?1525614148)](https://forums.anandtech.com/members/coercitiv.341496/)
+",AnandTech,2025-11-14T00:00:00
+https://forums.anandtech.com/threads/i5-14400-in-a-prebuilt-system-rebadged-alder-lake-or-raptor-lake.2633129/post-41544886,Dave3000,"[Dave3000](https://forums.anandtech.com/members/dave3000.286702/)
+
+##### Golden Member
+
+Jan 10, 20111,548114106
+
+I thinking about buying a low-end pre-built system for a family member as a Christmas gift to replace her 15 year old PC, which is also a low-end tier, and I was considering one with an i5-14400 if it's actually a rebadged Alder Lake. I don't want to buy one with a Raptor Lake inside. I heard that early steppings of the 14400 are actually based on Alder Lake and the later steppings are based on Raptor Lake, so it's the luck of the draw if I end up with one with a rebadged Alder Lake i5-14400. I was consider a PowerSpec B687 and a HP OmniDesk S301-0041, but what are the chances of those having the Alder Lake based i5-14400? Otherwise I might get her a Dell Slim ECS1250 that has the i3-14100 (all those ones are based on Alder Lake right?).
+
+
+Last edited: Dec 11, 2025
+
+[![Thunder 57](https://anandtech-data.community.forum/avatars/s/220/220659.jpg?1563394416)](https://forums.anandtech.com/members/thunder-57.220659/)
+",AnandTech,2025-12-11T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469075,purbeast0,"[purbeast0](https://forums.anandtech.com/members/purbeast0.69291/)
+
+##### No Lifer
+
+Sep 13, 200153,7396,617126
+
+I am trying to get 2 of these very specific monitors that are 25.5"" 16:10 1920x1200 for a very specific project I am doing. There are literally 2 ASUS models of this monitor that are from 2010, so there are hardly any around.
+
+I have found about 10 of them in the entire country but only 2 of them were willing to ship them, and those 2 canceled their orders after I ordered them, so I still don't have them.
+
+Then there is a lady in Brick, NJ who has 2 of them in great shape. Initially she did not want to ship them but she looked into it for me after a while, as to having UPS package them. The cost JUST to package/ship them was $140.
+
+Long story short, that fell through after the cost of that. It would cost more for her UPS store to package/ship them than the items themselves, and right now I just can't justify that.
+
+So I'm wondering if there is anyone in or around Brick, NJ that would be willing to be a middle man for this and pick up the monitors for me and ship them to me. I'm in MD so it's about 200 miles away. I would provide the prepaid shipping label as well. The only thing I'd ask is that you would be comfortable packing 2 monitors in a large box so that they are packaged well enough that they will be safe and sound. I would definitely be willing to compensate you a bit for your time as well.
+
+Anyways I know it's a long shot but figured it's worth a shot asking here since this community is decently large.
+
+Oh one of the orders that was canceled, the lady canceled it on ebay because she said it was not worth the effort for the amount she was making and that it was using so much of her shipping materials, and she sent me this pic of her packaging job. I think I dodged a bullet with this too, cause this would be coming from California.
+
+![uIi3XJZ.jpeg](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fi.imgur.com%2FuIi3XJZ.jpeg&hash=4ab0232c8289cfe03dbbd9ab17521a7c)
+
+[![lxskllr](https://anandtech-data.community.forum/avatars/s/153/153110.jpg?1548545165)](https://forums.anandtech.com/members/lxskllr.153110/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/which-gpu-upgrade-made-the-most-noticeable-difference-in-real-world-tasks.2633448/post-41554238,emiliojohn,"[emiliojohn](https://forums.anandtech.com/members/emiliojohn.529441/)
+
+##### Junior Member
+
+Dec 18, 2025106
+
+GPUs aren’t just for gaming — they power rendering, video editing, AI workloads, multiple displays, and more. Some upgrades feel like night and day, while others barely improve everyday performance despite strong benchmark numbers.
+
+From your experience, **which GPU upgrade gave the most noticeable difference in real-world tasks**, and what kind of work benefited the most — content creation, computation, or multi-monitor setups?
+
+[![NTMBK](https://anandtech-data.community.forum/avatars/s/301/301096.jpg?1470821212)](https://forums.anandtech.com/members/ntmbk.301096/)
+",AnandTech,2026-01-03T00:00:00
+https://forums.anandtech.com/threads/new-work-laptop-amd-or-intel.2632915/,In2Photos,"[In2Photos](https://forums.anandtech.com/members/in2photos.212749/)
+
+##### Platinum Member
+
+Mar 21, 20072,6252,794136
+
+Looking for a new laptop to replace my Dell XPS 15 7590. Need something for office and engineering/2D CAD work. It will be connected to a TB dock most of the time. I had a Lenovo before the Dell and had a much better experience with that laptop so thinking about going back to Lenovo.
+
+The P16S Gen 4 AMD has my eye. The model I'm looking at has the HX Pro 370 with 890m graphics, 64GB sodimm RAM, 1TB Gen 4 NVME and the 16"" IPS anti glare screen which is best for outdoor use on job sites. I've used AMD for desktops but never for a laptop. Just figured I'd get some thoughts from others here.
+
+
+Last edited: Nov 23, 2025
+
+[![sdifox](https://anandtech-data.community.forum/avatars/s/180/180307.jpg?1285015932)](https://forums.anandtech.com/members/sdifox.180307/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/long-shot-but-anyone-live-around-brick-nj-who-would-be-willing-to-help-a-fellow-old-timer-out.2630760/post-41469069,purbeast0,"[purbeast0](https://forums.anandtech.com/members/purbeast0.69291/)
+
+##### No Lifer
+
+Sep 13, 200153,7396,617126
+
+I am trying to get 2 of these very specific monitors that are 25.5"" 16:10 1920x1200 for a very specific project I am doing. There are literally 2 ASUS models of this monitor that are from 2010, so there are hardly any around.
+
+I have found about 10 of them in the entire country but only 2 of them were willing to ship them, and those 2 canceled their orders after I ordered them, so I still don't have them.
+
+Then there is a lady in Brick, NJ who has 2 of them in great shape. Initially she did not want to ship them but she looked into it for me after a while, as to having UPS package them. The cost JUST to package/ship them was $140.
+
+Long story short, that fell through after the cost of that. It would cost more for her UPS store to package/ship them than the items themselves, and right now I just can't justify that.
+
+So I'm wondering if there is anyone in or around Brick, NJ that would be willing to be a middle man for this and pick up the monitors for me and ship them to me. I'm in MD so it's about 200 miles away. I would provide the prepaid shipping label as well. The only thing I'd ask is that you would be comfortable packing 2 monitors in a large box so that they are packaged well enough that they will be safe and sound. I would definitely be willing to compensate you a bit for your time as well.
+
+Anyways I know it's a long shot but figured it's worth a shot asking here since this community is decently large.
+
+Oh one of the orders that was canceled, the lady canceled it on ebay because she said it was not worth the effort for the amount she was making and that it was using so much of her shipping materials, and she sent me this pic of her packaging job. I think I dodged a bullet with this too, cause this would be coming from California.
+
+![uIi3XJZ.jpeg](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fi.imgur.com%2FuIi3XJZ.jpeg&hash=4ab0232c8289cfe03dbbd9ab17521a7c)
+
+[![lxskllr](https://anandtech-data.community.forum/avatars/s/153/153110.jpg?1548545165)](https://forums.anandtech.com/members/lxskllr.153110/)
+",AnandTech,2025-06-27T00:00:00
+https://forums.anandtech.com/threads/budget-mobo-recommendation.2633355/post-41548249,Kledgie,"[Kledgie](https://forums.anandtech.com/members/kledgie.370963/)
+
+##### Member
+
+Jun 21, 20161913191
+
+Hey guys. I am building a budget PC for an older lady who wants to play Monsters & Memories. System requirements are vague at the moment:
+
+- 16gb of RAM
+- A modern-ish CPU
+
+Her budget is really only $40 to $50 for the MOBO. I've had good luck ordering from Ebay in the past. So, I'm not opposed to rolling the dice on an open box for her. Just need some recommendations. The newer the better.
+
+[![aigomorla](https://anandtech-data.community.forum/avatars/s/180/180190.jpg?1620966825)](https://forums.anandtech.com/members/aigomorla.180190/)
+",AnandTech,2025-12-22T00:00:00
+https://forums.anandtech.com/threads/new-work-laptop-amd-or-intel.2632915/post-41539278,In2Photos,"[In2Photos](https://forums.anandtech.com/members/in2photos.212749/)
+
+##### Platinum Member
+
+Mar 21, 20072,6252,794136
+
+Looking for a new laptop to replace my Dell XPS 15 7590. Need something for office and engineering/2D CAD work. It will be connected to a TB dock most of the time. I had a Lenovo before the Dell and had a much better experience with that laptop so thinking about going back to Lenovo.
+
+The P16S Gen 4 AMD has my eye. The model I'm looking at has the HX Pro 370 with 890m graphics, 64GB sodimm RAM, 1TB Gen 4 NVME and the 16"" IPS anti glare screen which is best for outdoor use on job sites. I've used AMD for desktops but never for a laptop. Just figured I'd get some thoughts from others here.
+
+
+Last edited: Nov 23, 2025
+
+[![sdifox](https://anandtech-data.community.forum/avatars/s/180/180307.jpg?1285015932)](https://forums.anandtech.com/members/sdifox.180307/)
+",AnandTech,2025-11-22T00:00:00
+https://forums.anandtech.com/threads/is-it-possible-to-install-win-7-on-dell-7820-workstation.2630861/post-41473030,dan99t,"[dan99t](https://forums.anandtech.com/members/dan99t.301892/)
+
+##### Member
+
+Nov 29, 2011109481
+
+Hi,
+
+I want to buy a Refurbished Dell Precision 7820 Workstation & install Windows-7 on it to run some old software. Also I don’t like Win-11 due to it’s tiny fonts because I am running 12 x 24 inch monitors currently using Win-7 on another very old Dell 7500 Workstation which is about to crash anytime.
+
+The shop that is trying to sell me the Refurbished 7820 workstation says they will install Win-7 on that M/C and let me test it before they ship it. So what should I look for when testing ?
+
+The specs are :
+
+Dell Precision 7820 Tower Workstation
+
+2 x Intel Xeon Gold 6138 @200 GHz Processors
+
+64GB DDR4 Memory
+
+Nvidia Quadro P2000 GPU
+
+New 500Gb SSD
+
+4TB SATA 7.2k RPM HDD
+
+I will replace Nvidia Quadro P2000 GPU with 2 X Nvidia Quadro P1000 GPU that I have to run 8 Monitors.
+
+I do realize the security issues with very outdated Win-7 but I am going to use this M/C offline.
+
+I want to run following software :
+
+Office 2016
+
+Adobe Acrobat Pro V.XI
+
+Macrium Reflect Free V.8
+
+Etc.
+
+My question is, is it advisable to buy this M/C and would I run into any drivers issues ?
+
+I would appreciate all your suggestions before I buy this M/C.
+
+Thank You
+
+[![mikeymikec](https://anandtech-data.community.forum/avatars/s/293/293403.jpg?1724774028)](https://forums.anandtech.com/members/mikeymikec.293403/)
+",AnandTech,2025-07-07T00:00:00
+https://forums.anandtech.com/threads/dell-alienware-2230-nvme-with-power-leads.2633420/,Markfw,"[Markfw](https://forums.anandtech.com/members/markfw.88092/)
+
+##### Moderator Emeritus, Elite Member
+
+May 16, 200227,39316,236136
+
+Help ! How to I disconnect this, and can I cut the leads ? and just copy using a standard 2230 device ? Trying to upgrade from 500 gig to 1 tb
+
+cancel this, thats a network device . I found the 2280- nvme
+",AnandTech,2025-12-30T00:00:00
+https://forums.anandtech.com/threads/help-deciding-between-these-lenovo-thinkpad-and-dell-inspiron-laptops-any-insight-appreciated.2627084/,calvin2376,"[calvin2376](https://forums.anandtech.com/members/calvin2376.366003/)
+
+##### Junior Member
+
+Nov 27, 20157066
+
+I need to make a decision on a new laptop and could use help deciding. I'm down to the ones listed in the below table (though if you think I should consider a different one let me know). I don't use this for anything particularly intensive or specific (e.g., no gaming, programming, CAD, etc), this is just an all-around laptop. I would say my main criteria is reliability/build quality - I tend to keep laptops a long time (e.g. 8-10 years) so I want this to last a long time. That said, I would appreciate a nice screen (I do use it for some photo/video editing) and would like decent battery life (though it spends most of its time plugged in).
+
+[![r/laptops - Help deciding between these Lenovo ThinkPad and Dell Inspiron laptops - any insight appreciated](https://forums.anandtech.com/proxy.php?image=https%3A%2F%2Fpreview.redd.it%2Fhelp-deciding-between-these-lenovo-thinkpad-and-dell-v0-709cqhhecbke1.jpg%3Fwidth%3D1110%26format%3Dpjpg%26auto%3Dwebp%26s%3D531ed32ca405215d31e1394e75f0e75176ad1fca&hash=204da376382bb264b0cf75d8a68ac989)](https://preview.redd.it/help-deciding-between-these-lenovo-thinkpad-and-dell-v0-709cqhhecbke1.jpg?width=1110&format=pjpg&auto=webp&s=531ed32ca405215d31e1394e75f0e75176ad1fca)
+
+Here is my current thinking on these - I would appreciate anyone's input/thoughts, personal experience, etc.
+
+- **Lenovo vs. Dell** \- I like Lenovo a lot, I have one for my work computer and I love the keyboard. I'm leaning that way, but per the below I am trying to figure out why I wouldn't get the Dell...
+- **Yoga 9i** \- I love this and this was going to be my choice (particularly love the design and screen), but I'm concerned about (i) only 16 GB of RAM (I could bump it up but that's $500-600 more) and (ii) lots of reviews say the real-world battery life is very poor.
+- **X1 Carbon Gen 11** \- I know this is a prior gen but the new one is too expensive. Main concern with this one is the lower resolution screen (obviously has an older processor, but again shouldn't make a huge difference in what I use it for).
+- **ThinkPad T14** \- This is obviously more expensive and has the same drawback of lower quality screen, but it's on the list because (i) it seems to be basically a tank that would last a long time (and could be easily repaired if need be) and (ii) it comes with a 3-year warranty.
+- **Dell Inspiron** \- The background here is I went to Micro Center to try out the Lenovos and saw the stats on this one and I'm basically trying to figure out what the catch is with this. It generally has the same or better specs than all the others for quite a bit cheaper. What is the catch or drawback with this one? My one concern (other than the fact that I must be missing something) is that it has a lower brightness of 300 nits (which I feel could be an annoyance when using it in a bright room for example).
+
+I hope to buy this in the next day or so, so thanks for all the help!
+
+[![Captain Kirk](https://anandtech-data.community.forum/avatars/s/357/357133.jpg?1505027585)](https://forums.anandtech.com/members/captain-kirk.357133/)
+",AnandTech,2025-02-20T00:00:00
