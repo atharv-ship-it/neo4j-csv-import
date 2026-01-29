@@ -88,30 +88,58 @@ async function discoverSchema() {
 function buildSchemaDescription(nodes, _relationships, structure, samples) {
   let desc = "GRAPH SCHEMA:\n\n";
 
-  desc += "NODE TYPES:\n";
+  desc += "NODE TYPES (with properties):\n";
   for (const node of nodes) {
-    const props = node.properties.map(p => p.name).join(", ");
-    desc += `  ${node.label}: [${props}]\n`;
+    const props = node.properties.map(p => p.name);
+
+    // Identify the CONTENT property (what to return for meaningful answers)
+    const contentProp = props.find(p => /^text$/i.test(p)) ||
+                        props.find(p => /^content$/i.test(p)) ||
+                        props.find(p => /^description$/i.test(p)) ||
+                        props.find(p => /^body$/i.test(p)) ||
+                        props.find(p => /^title$/i.test(p)) ||
+                        props.find(p => /^name$/i.test(p) && !/id/i.test(p));
+
+    // Identify ID property
+    const idProp = props.find(p => /^id$/i.test(p));
+
+    desc += `  ${node.label}:\n`;
+    desc += `    - ID field: ${idProp || 'none'}\n`;
+    desc += `    - CONTENT field (use this for answers): ${contentProp || props[0] || 'none'}\n`;
+    desc += `    - All properties: [${props.join(", ")}]\n`;
   }
 
-  desc += "\nRELATIONSHIPS:\n";
+  desc += "\nRELATIONSHIPS (how nodes connect):\n";
   for (const edge of structure) {
     desc += `  (${edge.from})-[:${edge.rel}]->(${edge.to})\n`;
   }
 
-  // Add sample data if available
+  // Add sample data to show what actual content looks like
   if (samples.length > 0) {
-    desc += "\nSAMPLE DATA:\n";
+    desc += "\nSAMPLE DATA (shows what real content looks like):\n";
     for (const s of samples.slice(0, 5)) {
       if (s.samples && s.samples.length > 0) {
         const sample = s.samples[0]?.properties || s.samples[0];
         if (sample) {
-          const preview = JSON.stringify(sample).substring(0, 150);
-          desc += `  ${s.label}: ${preview}...\n`;
+          // Show the content field value, not the ID
+          const contentKey = Object.keys(sample).find(k =>
+            /text|content|description|body|title|name/i.test(k) && !/id/i.test(k)
+          );
+          if (contentKey && sample[contentKey]) {
+            const preview = String(sample[contentKey]).substring(0, 200);
+            desc += `  ${s.label}.${contentKey}: "${preview}..."\n`;
+          } else {
+            desc += `  ${s.label}: ${JSON.stringify(sample).substring(0, 150)}...\n`;
+          }
         }
       }
     }
   }
+
+  desc += "\nCRITICAL RULES:\n";
+  desc += "- NEVER return just IDs (like 'iss_128') - always return the CONTENT field\n";
+  desc += "- When searching for issues/problems, return the text/description that explains what the issue IS\n";
+  desc += "- To find content about a topic, search in text/content fields using CONTAINS\n";
 
   return desc;
 }
@@ -227,8 +255,12 @@ INSTRUCTIONS:
 3. If the question cannot be answered with this schema, respond with: {"cannotAnswer": true, "reason": "explanation"}
 4. For text search, use: toLower(n.property) CONTAINS toLower("term")
 5. Always LIMIT results (default 10)
-6. Return meaningful content properties, not just IDs
-7. For ranking/counting, use aggregation (count, collect) with ORDER BY
+6. CRITICAL: Always return the CONTENT field (text, description, content, body) NOT the ID field
+   - BAD: RETURN i.id, count(*) as mentions
+   - GOOD: RETURN i.text, count(*) as mentions
+7. For ranking/counting, still return the content so users know WHAT is being counted
+8. To find issues about "battery" or "BIOS", search: toLower(i.text) CONTAINS toLower("battery")
+9. Traverse relationships to get full context (Issue <- Report <- Post has the discussion text)
 
 RESPOND WITH JSON ONLY:
 {
