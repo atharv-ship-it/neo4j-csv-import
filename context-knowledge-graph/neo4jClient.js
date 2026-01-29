@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-// Basic env validation (warning only, won’t crash)
+// Basic env validation (warning only, won't crash)
 ["NEO4J_URI", "NEO4J_USER", "NEO4J_PASSWORD"].forEach((key) => {
   if (!process.env[key]) {
     console.warn(`⚠️ Missing env var ${key} for Neo4j connection`);
@@ -21,12 +21,36 @@ const driver = neo4j.driver(
 );
 
 /**
+ * Convert JavaScript types to Neo4j types
+ */
+function convertToNeo4jTypes(params) {
+  const converted = {};
+  
+  for (const [key, value] of Object.entries(params)) {
+    if (typeof value === 'number' && Number.isInteger(value)) {
+      // Convert integers to Neo4j int type
+      converted[key] = neo4j.int(value);
+    } else if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+      // Recursively convert nested objects
+      converted[key] = convertToNeo4jTypes(value);
+    } else {
+      converted[key] = value;
+    }
+  }
+  
+  return converted;
+}
+
+/**
  * Run a read/write Cypher query
  */
 export async function runCypher(query, params = {}) {
   const session = driver.session();
   try {
-    const result = await session.run(query, params);
+    // Convert params to Neo4j types
+    const neo4jParams = convertToNeo4jTypes(params);
+    
+    const result = await session.run(query, neo4jParams);
     return result.records.map((record) => record.toObject());
   } finally {
     await session.close();
@@ -39,7 +63,10 @@ export async function runCypher(query, params = {}) {
 export async function runCypherReadOnly(query, params = {}) {
   const session = driver.session({ defaultAccessMode: neo4j.session.READ });
   try {
-    const result = await session.executeRead((tx) => tx.run(query, params));
+    // Convert params to Neo4j types
+    const neo4jParams = convertToNeo4jTypes(params);
+    
+    const result = await session.executeRead((tx) => tx.run(query, neo4jParams));
     return result.records.map((record) => record.toObject());
   } finally {
     await session.close();
