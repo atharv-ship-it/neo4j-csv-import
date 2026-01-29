@@ -1,10 +1,6 @@
 // queryUnderstanding.js - LLM-Powered Graph Intelligence
 //
-// Design principles:
-// 1. LLM generates Cypher from actual schema (not hallucinated)
-// 2. Conversation memory for context continuity
-// 3. Results are validated - only return what exists
-// 4. Answers are grounded in actual data
+// Core principle: Search ALL text in the graph, then traverse to find context
 
 import { runCypher } from "./neo4jClient.js";
 import { callLLM } from "./llmClient.js";
@@ -14,134 +10,63 @@ import { callLLM } from "./llmClient.js";
 // ============================================================================
 let schema = null;
 let conversation = {
-  history: [],        // [{role: 'user'|'assistant', content: string}]
-  lastEntities: [],   // [{type, id, data}] - for resolving "this", "that"
-  lastQuery: null,    // Last successful cypher query
-  lastResults: []     // Last query results
+  history: [],
+  lastEntities: [],
+  lastQuery: null,
+  lastResults: []
 };
 
 // ============================================================================
-// INITIALIZATION - Load actual schema from Neo4j
+// INITIALIZATION
 // ============================================================================
 export async function initialize() {
   console.log("🔄 Loading graph schema...");
   schema = await discoverSchema();
-  console.log(`✅ Schema: ${schema.nodes.length} node types, ${schema.relationships.length} relationships`);
+  console.log(`✅ Schema loaded: ${schema.nodeLabels.length} node types`);
   return schema;
 }
 
 async function discoverSchema() {
-  // Get everything about the actual graph structure
-  const [nodeData, relData, structureData, sampleData] = await Promise.all([
-    // Node types with their properties
+  const [nodeData, structureData] = await Promise.all([
     runCypher(`
       CALL db.schema.nodeTypeProperties() YIELD nodeType, propertyName, propertyTypes
       WITH replace(replace(nodeType, ':\`', ''), '\`', '') as label,
            collect({name: propertyName, types: propertyTypes}) as props
       RETURN label, props
     `),
-    // Relationship types with properties
-    runCypher(`
-      CALL db.schema.relTypeProperties() YIELD relType, propertyName, propertyTypes
-      WITH replace(replace(relType, ':\`', ''), '\`', '') as type,
-           collect({name: propertyName, types: propertyTypes}) as props
-      RETURN type, props
-    `),
-    // How nodes connect
     runCypher(`
       MATCH (a)-[r]->(b)
       WITH labels(a)[0] as from, type(r) as rel, labels(b)[0] as to
       RETURN DISTINCT from, rel, to
-    `),
-    // Sample data to understand content
-    runCypher(`
-      CALL db.labels() YIELD label
-      CALL apoc.cypher.run(
-        'MATCH (n:\`' + label + '\`) RETURN n LIMIT 2', {}
-      ) YIELD value
-      RETURN label, collect(value.n) as samples
-    `).catch(() => []) // APOC might not be available
+    `)
   ]);
 
-  const nodes = nodeData.map(n => ({
-    label: n.label,
-    properties: n.props.filter(p => p.name)
-  }));
+  const nodeLabels = [];
+  const properties = {};
+  const textFields = {}; // Which fields contain searchable text
 
-  const relationships = relData.map(r => ({
-    type: r.type,
-    properties: r.props.filter(p => p.name)
-  }));
+  for (const n of nodeData) {
+    nodeLabels.push(n.label);
+    const props = n.props.filter(p => p.name).map(p => p.name);
+    properties[n.label] = props;
 
-  // Build readable schema description for LLM
-  const schemaDescription = buildSchemaDescription(nodes, relationships, structureData, sampleData);
-
-  return {
-    nodes,
-    relationships,
-    structure: structureData,
-    samples: sampleData,
-    description: schemaDescription
-  };
-}
-
-function buildSchemaDescription(nodes, _relationships, structure, samples) {
-  let desc = "GRAPH SCHEMA:\n\n";
-
-  desc += "NODE TYPES (with properties):\n";
-  for (const node of nodes) {
-    const props = node.properties.map(p => p.name);
-
-    // Identify the CONTENT property (what to return for meaningful answers)
-    const contentProp = props.find(p => /^text$/i.test(p)) ||
-                        props.find(p => /^content$/i.test(p)) ||
-                        props.find(p => /^description$/i.test(p)) ||
-                        props.find(p => /^body$/i.test(p)) ||
-                        props.find(p => /^title$/i.test(p)) ||
-                        props.find(p => /^name$/i.test(p) && !/id/i.test(p));
-
-    // Identify ID property
-    const idProp = props.find(p => /^id$/i.test(p));
-
-    desc += `  ${node.label}:\n`;
-    desc += `    - ID field: ${idProp || 'none'}\n`;
-    desc += `    - CONTENT field (use this for answers): ${contentProp || props[0] || 'none'}\n`;
-    desc += `    - All properties: [${props.join(", ")}]\n`;
-  }
-
-  desc += "\nRELATIONSHIPS (how nodes connect):\n";
-  for (const edge of structure) {
-    desc += `  (${edge.from})-[:${edge.rel}]->(${edge.to})\n`;
-  }
-
-  // Add sample data to show what actual content looks like
-  if (samples.length > 0) {
-    desc += "\nSAMPLE DATA (shows what real content looks like):\n";
-    for (const s of samples.slice(0, 5)) {
-      if (s.samples && s.samples.length > 0) {
-        const sample = s.samples[0]?.properties || s.samples[0];
-        if (sample) {
-          // Show the content field value, not the ID
-          const contentKey = Object.keys(sample).find(k =>
-            /text|content|description|body|title|name/i.test(k) && !/id/i.test(k)
-          );
-          if (contentKey && sample[contentKey]) {
-            const preview = String(sample[contentKey]).substring(0, 200);
-            desc += `  ${s.label}.${contentKey}: "${preview}..."\n`;
-          } else {
-            desc += `  ${s.label}: ${JSON.stringify(sample).substring(0, 150)}...\n`;
-          }
-        }
-      }
+    // Identify text fields for this node type
+    const textProp = props.find(p => /^text$/i.test(p)) ||
+                     props.find(p => /^content$/i.test(p)) ||
+                     props.find(p => /^description$/i.test(p)) ||
+                     props.find(p => /^body$/i.test(p)) ||
+                     props.find(p => /^title$/i.test(p));
+    if (textProp) {
+      textFields[n.label] = textProp;
     }
   }
 
-  desc += "\nCRITICAL RULES:\n";
-  desc += "- NEVER return just IDs (like 'iss_128') - always return the CONTENT field\n";
-  desc += "- When searching for issues/problems, return the text/description that explains what the issue IS\n";
-  desc += "- To find content about a topic, search in text/content fields using CONTAINS\n";
-
-  return desc;
+  return {
+    nodeLabels,
+    properties,
+    textFields,
+    structure: structureData
+  };
 }
 
 // ============================================================================
@@ -153,190 +78,235 @@ export async function answerUserQuery(question) {
   console.log(`\n🔍 "${question}"`);
   const startTime = Date.now();
 
-  // Add to conversation history
   conversation.history.push({ role: 'user', content: question });
 
   try {
-    // Step 1: Generate Cypher query using LLM with full context
-    const queryPlan = await generateQuery(question);
+    // Extract search terms from the question
+    const searchTerms = extractSearchTerms(question);
+    console.log(`🔎 Search terms: ${searchTerms.join(', ')}`);
 
-    if (queryPlan.cannotAnswer) {
-      const response = {
-        question,
-        answer: queryPlan.reason,
-        method: "not-answerable"
-      };
-      conversation.history.push({ role: 'assistant', content: queryPlan.reason });
-      return response;
+    // Search across ALL text fields in the graph
+    let results = await searchGraph(searchTerms, question);
+
+    if (results.length === 0) {
+      // Try LLM-generated query as fallback
+      console.log("⚠️ Broad search empty, trying LLM query...");
+      results = await tryLLMQuery(question);
     }
 
-    console.log(`📝 Cypher: ${queryPlan.cypher.split('\n')[0]}...`);
-
-    // Step 2: Execute query
-    let results;
-    try {
-      results = await runCypher(queryPlan.cypher);
-    } catch (queryError) {
-      console.error(`⚠️ Query failed: ${queryError.message}`);
-      // Try to fix the query
-      const fixedPlan = await fixQuery(question, queryPlan.cypher, queryError.message);
-      if (fixedPlan.cypher) {
-        console.log(`🔧 Retrying with: ${fixedPlan.cypher.split('\n')[0]}...`);
-        results = await runCypher(fixedPlan.cypher);
-      } else {
-        throw queryError;
-      }
+    if (results.length === 0) {
+      const response = "I searched the knowledge graph but found no data matching your question.";
+      conversation.history.push({ role: 'assistant', content: response });
+      return { question, answer: response, method: "no-data" };
     }
 
-    // Step 3: Validate results - don't fabricate
-    if (!results || results.length === 0) {
-      const noDataResponse = "I searched the knowledge graph but found no data matching your question.";
-      conversation.history.push({ role: 'assistant', content: noDataResponse });
-      return {
-        question,
-        answer: noDataResponse,
-        cypher: queryPlan.cypher,
-        method: "no-data"
-      };
-    }
+    // Update memory
+    conversation.lastEntities = results.slice(0, 10).map(r => ({
+      type: r._nodeType || 'Unknown',
+      id: r.id || Object.values(r)[0],
+      data: r
+    }));
+    conversation.lastResults = results;
 
-    // Step 4: Update conversation memory
-    updateMemory(results);
-
-    // Step 5: Generate intelligent answer from actual data
+    // Synthesize answer
     const answer = await synthesizeAnswer(question, results);
 
     console.log(`✅ ${results.length} results in ${Date.now() - startTime}ms`);
-
     conversation.history.push({ role: 'assistant', content: answer });
-    conversation.lastQuery = queryPlan.cypher;
-    conversation.lastResults = results;
 
     return {
       question,
       answer,
-      cypher: queryPlan.cypher,
       resultCount: results.length,
-      data: results.slice(0, 10),
       queryTime: Date.now() - startTime,
-      method: "llm-cypher"
+      method: "graph-search"
     };
 
   } catch (error) {
     console.error("❌", error.message);
-    const errorResponse = `I couldn't process that question. Error: ${error.message}`;
-    conversation.history.push({ role: 'assistant', content: errorResponse });
-    return {
-      question,
-      answer: errorResponse,
-      error: error.message
-    };
+    const response = `Error: ${error.message}`;
+    conversation.history.push({ role: 'assistant', content: response });
+    return { question, answer: response, error: error.message };
   }
 }
 
 // ============================================================================
-// LLM QUERY GENERATION - Grounded in actual schema
+// SEARCH - The core intelligence
 // ============================================================================
-async function generateQuery(question) {
-  // Build context from conversation memory
-  const contextInfo = buildConversationContext();
 
-  const prompt = `You are a Neo4j Cypher expert. Generate a query to answer the user's question.
+function extractSearchTerms(question) {
+  const q = question.toLowerCase();
 
-${schema.description}
+  // Remove common words
+  const stopWords = new Set([
+    'what', 'which', 'how', 'why', 'when', 'where', 'who', 'is', 'are', 'was', 'were',
+    'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with',
+    'about', 'tell', 'me', 'show', 'find', 'get', 'list', 'any', 'some', 'most', 'top',
+    'there', 'this', 'that', 'these', 'those', 'it', 'they', 'them', 'issues', 'issue',
+    'problems', 'problem', 'can', 'you', 'i', 'my', 'your', 'do', 'does', 'did', 'have', 'has'
+  ]);
 
-${contextInfo}
+  // Extract meaningful terms
+  const terms = q
+    .replace(/[?!.,;:'"]/g, '')
+    .split(/\s+/)
+    .filter(word => word.length > 2 && !stopWords.has(word));
 
-USER QUESTION: "${question}"
+  // Also check for quoted phrases
+  const quoted = question.match(/"([^"]+)"/g);
+  if (quoted) {
+    terms.push(...quoted.map(q => q.replace(/"/g, '')));
+  }
 
-INSTRUCTIONS:
-1. Use ONLY the node labels, relationship types, and properties shown in the schema above
-2. If the question references "this", "that", "these" etc., use the PREVIOUS CONTEXT provided
-3. If the question cannot be answered with this schema, respond with: {"cannotAnswer": true, "reason": "explanation"}
-4. For text search, use: toLower(n.property) CONTAINS toLower("term")
-5. Always LIMIT results (default 10)
-6. CRITICAL: Always return the CONTENT field (text, description, content, body) NOT the ID field
-   - BAD: RETURN i.id, count(*) as mentions
-   - GOOD: RETURN i.text, count(*) as mentions
-7. For ranking/counting, still return the content so users know WHAT is being counted
-8. To find issues about "battery" or "BIOS", search: toLower(i.text) CONTAINS toLower("battery")
-9. Traverse relationships to get full context (Issue <- Report <- Post has the discussion text)
+  // If asking about previous context, use stored entities
+  if (/\b(this|that|these|those|it)\b/.test(q) && conversation.lastEntities.length > 0) {
+    // Return IDs from previous results for follow-up
+    return conversation.lastEntities.slice(0, 3).map(e => String(e.id));
+  }
 
-RESPOND WITH JSON ONLY:
-{
-  "intent": "brief description of what user wants",
-  "cypher": "the cypher query",
-  "cannotAnswer": false
-}`;
+  return [...new Set(terms)]; // Dedupe
+}
 
-  const response = await callLLM(prompt, { temperature: 0.1, max_tokens: 500 });
+async function searchGraph(searchTerms, question) {
+  if (searchTerms.length === 0) {
+    // No specific terms - check if it's a general query
+    return await handleGeneralQuery(question);
+  }
+
+  // Build UNION query to search ALL text fields
+  const searchQueries = [];
+
+  for (const [label, textField] of Object.entries(schema.textFields)) {
+    const allProps = schema.properties[label] || [];
+
+    // Build WHERE clause for this node type
+    const conditions = searchTerms.map(term =>
+      `toLower(n.${textField}) CONTAINS toLower("${term.replace(/"/g, '\\"')}")`
+    ).join(' OR ');
+
+    // Select properties to return
+    const returnProps = allProps.slice(0, 5).map(p => `n.${p} as ${p}`).join(', ');
+
+    searchQueries.push(`
+      MATCH (n:${label})
+      WHERE ${conditions}
+      RETURN ${returnProps}, "${label}" as _nodeType
+      LIMIT 5
+    `);
+  }
+
+  if (searchQueries.length === 0) {
+    return [];
+  }
+
+  // Execute UNION of all searches
+  const unionQuery = searchQueries.join('\nUNION ALL\n') + '\nLIMIT 15';
 
   try {
-    const jsonMatch = response.match(/\{[\s\S]*\}/);
-    if (jsonMatch) {
-      const parsed = JSON.parse(jsonMatch[0]);
-      // Clean up cypher
-      if (parsed.cypher) {
-        parsed.cypher = parsed.cypher
-          .replace(/```cypher\n?/g, '')
-          .replace(/```\n?/g, '')
-          .trim();
+    console.log(`📝 Searching ${Object.keys(schema.textFields).length} node types...`);
+    const results = await runCypher(unionQuery);
+
+    // If we found content, try to enrich with related data
+    if (results.length > 0) {
+      return await enrichResults(results);
+    }
+    return results;
+  } catch (error) {
+    console.error("Search query failed:", error.message);
+    return [];
+  }
+}
+
+async function handleGeneralQuery(question) {
+  const q = question.toLowerCase();
+
+  // Count queries
+  if (/how many|count|total number/.test(q)) {
+    for (const label of schema.nodeLabels) {
+      if (q.includes(label.toLowerCase())) {
+        const result = await runCypher(`MATCH (n:${label}) RETURN count(n) as count`);
+        return result;
       }
-      return parsed;
     }
-  } catch (e) {
-    console.error("Failed to parse LLM response:", e.message);
   }
 
-  // If parsing failed, try to extract just the cypher
-  const cypherMatch = response.match(/MATCH[\s\S]+?(?:RETURN[\s\S]+?)(?:LIMIT \d+)?/i);
-  if (cypherMatch) {
-    return { intent: "extracted query", cypher: cypherMatch[0].trim(), cannotAnswer: false };
+  // Top/most queries
+  if (/most|top|frequent|common|popular/.test(q)) {
+    // Find what's being asked about
+    for (const label of schema.nodeLabels) {
+      if (q.includes(label.toLowerCase()) || q.includes(label.toLowerCase() + 's')) {
+        const textField = schema.textFields[label];
+        if (textField) {
+          // Find most mentioned/connected items
+          const result = await runCypher(`
+            MATCH (n:${label})<-[r]-()
+            WITH n, count(r) as connections
+            ORDER BY connections DESC
+            LIMIT 10
+            RETURN n.${textField} as content, connections
+          `).catch(() => []);
+          if (result.length > 0) return result;
+        }
+      }
+    }
   }
 
-  return { cannotAnswer: true, reason: "Could not generate a valid query for this question." };
+  return [];
 }
 
-function buildConversationContext() {
-  let context = "";
+async function enrichResults(results) {
+  // For each result, try to get related context
+  const enriched = [];
 
-  // Recent conversation
-  if (conversation.history.length > 0) {
-    const recent = conversation.history.slice(-6); // Last 3 exchanges
-    context += "CONVERSATION HISTORY:\n";
-    for (const msg of recent) {
-      context += `${msg.role.toUpperCase()}: ${msg.content.substring(0, 200)}\n`;
+  for (const r of results) {
+    const nodeType = r._nodeType;
+    const enrichedResult = { ...r };
+
+    // Find related nodes based on graph structure
+    const connections = schema.structure.filter(s =>
+      s.from === nodeType || s.to === nodeType
+    );
+
+    if (connections.length > 0 && r.id) {
+      // Get one level of connected context
+      try {
+        const contextQuery = `
+          MATCH (n:${nodeType} {id: $id})-[rel]-(connected)
+          RETURN type(rel) as relationship, labels(connected)[0] as connectedType,
+                 connected.text as text, connected.title as title, connected.name as name
+          LIMIT 3
+        `;
+        const context = await runCypher(contextQuery, { id: r.id });
+        if (context.length > 0) {
+          enrichedResult._context = context;
+        }
+      } catch {
+        // Ignore enrichment errors
+      }
     }
-    context += "\n";
+
+    enriched.push(enrichedResult);
   }
 
-  // Last entities mentioned (for resolving references)
-  if (conversation.lastEntities.length > 0) {
-    context += "PREVIOUS CONTEXT (for resolving 'this', 'that', etc.):\n";
-    context += `Entity type: ${conversation.lastEntities[0].type}\n`;
-    context += `Entity IDs: ${conversation.lastEntities.map(e => e.id).join(", ")}\n`;
-    context += `Sample data: ${JSON.stringify(conversation.lastEntities[0].data).substring(0, 200)}\n`;
-    context += "\n";
-  }
-
-  return context;
+  return enriched;
 }
 
-async function fixQuery(question, failedCypher, errorMessage) {
-  const prompt = `The following Cypher query failed. Fix it.
+async function tryLLMQuery(question) {
+  const schemaDesc = buildSchemaDescription();
 
-SCHEMA:
-${schema.description}
+  const prompt = `Generate a Neo4j Cypher query to answer this question.
 
-FAILED QUERY:
-${failedCypher}
+${schemaDesc}
 
-ERROR:
-${errorMessage}
+QUESTION: "${question}"
 
-USER QUESTION: "${question}"
+RULES:
+1. Use ONLY labels and properties from the schema
+2. Return actual content (text, title, name), not just IDs
+3. Add LIMIT 10
+4. If the data doesn't exist in this schema, return: RETURN "not_available" as status
 
-Return ONLY the fixed Cypher query, nothing else.`;
+Return ONLY the Cypher query, nothing else.`;
 
   const response = await callLLM(prompt, { temperature: 0, max_tokens: 300 });
 
@@ -345,124 +315,68 @@ Return ONLY the fixed Cypher query, nothing else.`;
     .replace(/```\n?/g, '')
     .trim();
 
-  // Validate it looks like cypher
-  if (cypher.toUpperCase().includes('MATCH') || cypher.toUpperCase().includes('RETURN')) {
-    return { cypher };
+  if (cypher.includes('not_available')) {
+    return [];
   }
 
-  return { cypher: null };
+  try {
+    return await runCypher(cypher);
+  } catch {
+    return [];
+  }
+}
+
+function buildSchemaDescription() {
+  let desc = "SCHEMA:\n";
+
+  for (const label of schema.nodeLabels) {
+    const props = schema.properties[label] || [];
+    const textField = schema.textFields[label];
+    desc += `${label}: [${props.join(', ')}]${textField ? ` (text in: ${textField})` : ''}\n`;
+  }
+
+  desc += "\nRELATIONSHIPS:\n";
+  for (const s of schema.structure) {
+    desc += `(${s.from})-[:${s.rel}]->(${s.to})\n`;
+  }
+
+  return desc;
 }
 
 // ============================================================================
-// MEMORY MANAGEMENT
-// ============================================================================
-function updateMemory(results) {
-  if (!results || results.length === 0) return;
-
-  // Extract entities for future reference
-  conversation.lastEntities = results.slice(0, 10).map(r => {
-    // Try to identify the entity type and ID
-    const keys = Object.keys(r);
-    const idKey = keys.find(k => /id$/i.test(k)) || keys[0];
-    const typeKey = keys.find(k => /type|label/i.test(k));
-
-    return {
-      type: typeKey ? r[typeKey] : 'Unknown',
-      id: r[idKey],
-      data: r
-    };
-  });
-}
-
-// ============================================================================
-// ANSWER SYNTHESIS - Grounded in actual data
+// ANSWER SYNTHESIS
 // ============================================================================
 async function synthesizeAnswer(question, results) {
-  // For simple results, format directly without LLM
-  if (results.length === 1 && Object.keys(results[0]).length <= 2) {
-    const keys = Object.keys(results[0]);
-    if (keys.includes('count')) {
-      return `There are ${results[0].count} matching items in the knowledge graph.`;
-    }
-    return `Result: ${JSON.stringify(results[0])}`;
+  // Simple results - format directly
+  if (results.length === 1 && results[0].count !== undefined) {
+    return `There are ${results[0].count} items.`;
   }
 
-  // For complex results, use LLM to synthesize a helpful answer
-  const dataPreview = JSON.stringify(results.slice(0, 10), null, 2);
+  // Use LLM to create a coherent answer
+  const dataStr = JSON.stringify(results.slice(0, 10), null, 2);
 
-  const prompt = `Generate a helpful, actionable answer based on this data.
+  const prompt = `Answer this question using ONLY the data provided.
 
 QUESTION: "${question}"
 
-DATA FROM KNOWLEDGE GRAPH:
-${dataPreview}
+DATA:
+${dataStr}
 
-INSTRUCTIONS:
-1. Answer ONLY using the data provided - do not invent or assume anything
-2. If the data doesn't fully answer the question, say what IS available
-3. Be specific - cite actual values, names, counts from the data
-4. If this is for decision-making, highlight key insights
-5. Keep it concise but informative (3-5 sentences max)
-6. If the data is empty or irrelevant, say "The knowledge graph doesn't contain this information"
+RULES:
+- Use ONLY information from the data above
+- Be specific - cite actual text/values
+- If data is insufficient, say what WAS found
+- 2-4 sentences max
+- Do not invent or assume anything not in the data`;
 
-Answer:`;
-
-  const answer = await callLLM(prompt, { temperature: 0.2, max_tokens: 400 });
-
-  // Validate the answer doesn't hallucinate
-  return validateAnswer(answer, results);
-}
-
-function validateAnswer(answer, results) {
-  // Basic check: if answer mentions specific values, verify they exist in results
-  const resultStr = JSON.stringify(results).toLowerCase();
-
-  // Extract numbers from answer
-  const numbersInAnswer = answer.match(/\d+/g) || [];
-
-  // Check if answer seems to be making up data
-  // (This is a heuristic - if answer has many numbers not in results, it might be hallucinating)
-  let suspiciousNumbers = 0;
-  for (const num of numbersInAnswer) {
-    if (!resultStr.includes(num) && parseInt(num) > 1) {
-      suspiciousNumbers++;
-    }
-  }
-
-  if (suspiciousNumbers > 3) {
-    // Too many numbers not in data - regenerate with stricter prompt
-    console.warn("⚠️ Answer may contain hallucinated data, using raw results");
-    return formatRawResults(results);
-  }
-
-  return answer;
-}
-
-function formatRawResults(results) {
-  if (results.length === 0) {
-    return "No data found.";
-  }
-
-  const items = results.slice(0, 7).map((r, i) => {
-    const values = Object.entries(r)
-      .map(([k, v]) => `${k}: ${typeof v === 'string' && v.length > 100 ? v.substring(0, 100) + '...' : v}`)
-      .join(', ');
-    return `${i + 1}. ${values}`;
-  }).join('\n');
-
-  return `Found ${results.length} results:\n${items}`;
+  return await callLLM(prompt, { temperature: 0.2, max_tokens: 300 });
 }
 
 // ============================================================================
-// UTILITIES
+// EXPORTS
 // ============================================================================
 export function clearConversation() {
-  conversation = {
-    history: [],
-    lastEntities: [],
-    lastQuery: null,
-    lastResults: []
-  };
+  conversation = { history: [], lastEntities: [], lastQuery: null, lastResults: [] };
 }
 
 export function getConversation() {
